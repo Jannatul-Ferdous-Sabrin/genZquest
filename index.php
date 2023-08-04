@@ -22,7 +22,7 @@
         }
         .swiper-container {
             width: 100%;
-            height: 60vh; 
+            height: 50vh; 
          } 
 
          .swiper-slide {
@@ -84,7 +84,7 @@
 </div>
 </div>
 
-<div class="jumbotron text-center" style="max-width: 800px; margin: 0 auto; padding: 80px;">
+<div class="jumbotron text-center" style="max-width: 800px; margin: 0 auto; padding: 80px; background-color: transparent;">
     <h3 class="h-font">Your Bright Future Starts Here Now</h3>
     <p>Finding the Most Exciting Startup Jobs</p>
     
@@ -200,39 +200,66 @@
   </div>
 </section>
 
-<section class="resume py-5 text-center text-white">
-  <div class="container py-5">
-    <div class="row py-5">
-      <div class="col-lg-10 m-auto">
-      <p class="pb-3">FEATURED</p>
-      <h1>Make a Difference with Your Online resume!</h1>
-    </div>
-    </div>
 
-    <div class="row">
-      <div class="col-lg-5 py-5 m-auto">
-      <button class="btn3">UPLOAD YOUR CV</button>
-      </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Your website content here -->
+
+<footer class="bg-dark text-white p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Contact Us</h4>
+                <p>Email: sabb@example.com</p>
+                <p>Phone: +8801777777777</p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-between align-items-center">
+                <div>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0">&copy; 2023 genZquest. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
+</footer>
+
+<!--  Bootstrap JS and other scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".swiper-container", {
-      spaceBetween: 30,
-      effect: "fade",
-
-      loop: true,
-autoplay:{
-delay:3500,
-disableOnInteraction:false,
-}
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
     });
-  </script>
+</script>
 </body>
 </html>
 
