@@ -40,11 +40,11 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6"   placeholder="Password" name="r_pass">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name="r_pass">
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6"   placeholder="Confirm Password" name="r_con_pass">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" name="r_con_pass">
                 </div>
 
                 <div class="input-group mb-3">

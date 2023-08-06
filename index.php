@@ -1,9 +1,6 @@
 <?php
-
 session_start();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +11,6 @@ session_start();
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 
   <link
     href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
@@ -37,13 +33,46 @@ session_start();
 
     .swiper-container {
       width: 100%;
-      height: 50vh;
+      height: 55vh;
     }
 
     .swiper-slide {
       background-size: cover;
       background-position: center;
     }
+
+    .blur-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+        backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        /* text-align: center; */
+    }
+
+    .slide-con {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-85%, -50%);
+        color: white;
+        /* text-align: center; */
+    }
+  .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
   </style>
 
 </head>
@@ -97,49 +126,51 @@ session_start();
     </div>
   </nav>
 
-
-  <!-- Carousel/slides -->
   <div class="container-fluid px-lg-4 mt-4">
-    <div class="swiper swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="Images/pic1.jpg" class="w-100 d-block"></div>
-        <div class="swiper-slide"><img src="Images/pic2.jpg" class="w-100 d-block"></div>
-        <div class="swiper-slide"><img src="Images/pic3.jpg" class="w-100 d-block"></div>
-        <div class="swiper-slide"><img src="Images/pic4.jpg" class="w-100 d-block"></div>
-        <div class="swiper-slide"><img src="Images/pic5.jpg" class="w-100 d-block"></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('Images/pic1.jpeg');">
+            <div class="blur-overlay"></div>
+                <div class="jumbotron text-center py-6 slide-content">
+                <h1 class="h-font" >Your Bright Future Starts Here Now</h1>
+                <p >Find the most exciting startup jobs</p>
+                    <form class="form-inline" id="homesearch">
+                        <input type="text" class="form-control" size="40" placeholder="Job title or keyword" name="keyword" id="keyword">
+                        <button type="button" class="btn btn-danger" style="color: white;">
+                            <i class="fas fa-search"></i> Find Job
+                        </button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container (About Section) -->
+
+<section id="about">
+  <div class="container my-5 py-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="Images/p1.png" alt="" class="w-100">
+      </div>
+      <div class="col-md-6">
+        <h1 class="fs-4 mb-0" style="color: rgb(7, 7, 78);">About GenZquest</h1><br>
+        <h2 class="display-6 fw-bold">Simplifying job hunting for seekers and optimizing recruitment for employers.</h2><br>
+        <p class="lead mb-4">GenZquest offers a platform for job seekers to find jobs that match their qualifications. Job seekers can easily register and create a comprehensive profile, including their educational background. They have the freedom to explore diverse job opportunities and apply seamlessly.</p>
+        <button class="btn btn-primary px-4">Get in Touch</button>
       </div>
     </div>
   </div>
-
-  <div class="jumbotron text-center"
-    style="max-width: 800px; margin: 0 auto; padding: 80px; background-color: transparent;">
-    <h3 class="h-font">Your Bright Future Starts Here Now</h3>
-    <p>Finding the Most Exciting Startup Jobs</p>
-
-    <form>
-      <div class="input-group">
-        <input type="text" class="form-control" style="width: 60%;" placeholder="Job title or keyword" required>
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-danger">Find Job</button>
-        </div>
-      </div>
-    </form>
-  </div>
-
-
+</section>
 
   <!-- CETA SECTION -->
   <section class="ceta">
     <div class="container-fluid py-3 text-center">
       <p style="color: red;">Our Specialization</p>
-
       <h2>Browse Top Categories</h2>
       <div class="row py-3">
-
         <div class="col-lg-11 m-auto pt-3">
-
           <div class="row py-3">
-
             <div class="col-lg-3">
               <div class="card py-3">
                 <div class="card-body">
@@ -176,11 +207,8 @@ session_start();
                 </div>
               </div>
             </div>
-
           </div>
-
           <div class="row">
-
             <div class="col-lg-3">
               <div class="card py-3">
                 <div class="card-body">
@@ -217,7 +245,6 @@ session_start();
                 </div>
               </div>
             </div>
-
             <div class="row py-5">
               <div class="col-lg-5 m-auto">
                 <button class="btn3">BROWSE ALL SECTORS</button>
@@ -228,6 +255,79 @@ session_start();
       </div>
   </section>
 
+<!-- Carousel wrapper -->
+<div class="container">
+        <div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+          	<span class="subheading">Testimonial</span>
+            <h2 class="mb-3"><span>Happy</span> Clients</h2>
+          </div>
+        </div>
+</div>
+<div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="rounded-circle shadow-1-strong mb-4"
+        src="Images/person2.svg" alt="avatar"
+        style="width: 150px;" />
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h5 class="mb-3">Maria Kate</h5>
+          <p>Photographer</p>
+          <p class="text-muted">
+            <i class="fas fa-quote-left pe-2"></i>
+           Website has everything I wanted , and all adjustments I asked for were done in a timely manner!
+          </p>
+        </div>
+      </div>
+      <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="far fa-star fa-sm"></i></li>
+      </ul>
+    </div>
+    
+    <div class="carousel-item">
+      <img class="rounded-circle shadow-1-strong mb-4"
+        src="Images/person2.svg" alt="avatar"
+        style="width: 150px;" />
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h5 class="mb-3">John Doe</h5>
+          <p>Web Developer</p>
+          <p class="text-muted">
+            <i class="fas fa-quote-left pe-2"></i>
+            Thanks for providing such an amazing platform!
+          </p>
+        </div>
+      </div>
+      <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="far fa-star fa-sm"></i></li>
+      </ul>
+    </div>
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!--footer -->
   <footer class="bg-dark text-white p-4">
     <div class="container">
       <div class="row">
@@ -256,24 +356,9 @@ session_start();
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".swiper-container", {
-      spaceBetween: 30,
-      effect: "fade",
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-    });
-  </script>
+  
 </body>
-
 </html>
