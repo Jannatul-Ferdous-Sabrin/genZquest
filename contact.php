@@ -80,10 +80,10 @@
         <p>Contact us and we'll get back to you within 24 hours.</p>
         <p><span class="bi bi-geo-alt-fill"></span> Sylhet, Bangladesh</p>
 
-        <p><span class="bi bi-telephone-fill"></span> +8801777777777</p>
+        <p><span class="bi bi-telephone-fill"></span> +8801783-618103</p>
 
         
-        <p><span class="bi bi-envelope"></span><a href="mailto:sabb@gmail.com"> sabb@gmail.com</a></p>
+        <p><span class="bi bi-envelope"></span><a href="mailto:sabb@gmail.com"> jannatulsabrina1067@gmail.com</a></p>
       </div>
 
    <div class="col-sm-7 slideanim">
@@ -114,15 +114,15 @@
 
         <div class="text-center py-3">
                 <p>or sign up with:</p>
-                <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-primary btn-floating mx-1">
+                <a href="https://www.facebook.com/JFSabrin" target="_blank" class="btn btn-outline-primary btn-floating mx-1">
                     <i class="fab fa-facebook-f" style="color: #1877F2;"></i></a>
                 </button>
 
-                <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-danger btn-floating mx-1">
+                <a href="https://youtube.com/@jannatsabrin7426" target="_blank" class="btn btn-outline-danger btn-floating mx-1">
                     <i class="fab fa-youtube" style="color: #DB4437;"></i></a>
                 </button>
 
-                <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-info btn-floating mx-1">
+                <a href="https://twitter.com/jf_sabb" target="_blank" class="btn btn-outline-info btn-floating mx-1">
                      <i class="fab fa-twitter" style="color: #1DA1F2;"></i></a>
 
 

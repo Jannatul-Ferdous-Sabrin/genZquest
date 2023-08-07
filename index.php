@@ -157,7 +157,7 @@ session_start();
         <h1 class="fs-4 mb-0" style="color: rgb(7, 7, 78);">About GenZquest</h1><br>
         <h2 class="display-6 fw-bold">Simplifying job hunting for seekers and optimizing recruitment for employers.</h2><br>
         <p class="lead mb-4">GenZquest offers a platform for job seekers to find jobs that match their qualifications. Job seekers can easily register and create a comprehensive profile, including their educational background. They have the freedom to explore diverse job opportunities and apply seamlessly.</p>
-        <button class="btn btn-primary px-4">Get in Touch</button>
+        <button class="btn btn-primary px-4">Read more</button>
       </div>
     </div>
   </div>
@@ -268,12 +268,12 @@ session_start();
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="rounded-circle shadow-1-strong mb-4"
-        src="Images/person2.svg" alt="avatar"
+        src="Images/person1.svg" alt="avatar"
         style="width: 150px;" />
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
-          <h5 class="mb-3">Maria Kate</h5>
-          <p>Photographer</p>
+          <h5 class="mb-3">Anisur Rahman</h5>
+          <p>Full stack web developer</p>
           <p class="text-muted">
             <i class="fas fa-quote-left pe-2"></i>
            Website has everything I wanted , and all adjustments I asked for were done in a timely manner!
@@ -282,8 +282,8 @@ session_start();
       </div>
       <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
         <li><i class="fas fa-star fa-sm"></i></li>
-        <li><i class="fas fa-star fa-sm"></i></li>
-        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>                             
+        <li><i class="fas fa-star fa-sm"></i></li>                              
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="far fa-star fa-sm"></i></li>
       </ul>
@@ -295,11 +295,11 @@ session_start();
         style="width: 150px;" />
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
-          <h5 class="mb-3">John Doe</h5>
-          <p>Web Developer</p>
+          <h5 class="mb-3">JF Sabrin</h5>
+          <p>Graphics Designer</p>
           <p class="text-muted">
             <i class="fas fa-quote-left pe-2"></i>
-            Thanks for providing such an amazing platform!
+            Thank you for offering such an incredible platform! However, there is room for improvement over time as I have encountered some bugs.
           </p>
         </div>
       </div>
@@ -307,7 +307,7 @@ session_start();
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="fas fa-star fa-sm"></i></li>
-        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="far fa-star fa-sm"></i></li>
         <li><i class="far fa-star fa-sm"></i></li>
       </ul>
     </div>
@@ -332,16 +332,16 @@ session_start();
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h4>Contact Us</h4>
-          <p>Email: sabb@example.com</p>
-          <p>Phone: +8801777777777</p>
+          <h5>Contact Us</h5>
+          <p>Email: jannatulsabrina1067@gmail.com</p>
+          <p>Phone: +8801783-618103</p>
         </div>
         <div class="col-md-6 d-flex justify-content-between align-items-center">
           <div>
             <ul class="list-unstyled mb-0">
-              <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/JFSabrin" target="_blank"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/jf_sabb" target="_blank"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="https://github.com/Jannatul-Ferdous-Sabrin" target="_blank"><i class="fab fa-github"></i></a></li>
             </ul>
           </div>
           <div class="text-center">
