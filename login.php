@@ -18,7 +18,7 @@
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
                 style="background: #103cbe;">
                 <div class="featured-image mb-3">
-                    <img src="Images/login.svg" class="img-fluid" style="width: 500px;">
+                    <img src="Images/login1.svg" class="img-fluid" style="width: 500px;">
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                                         Me</small></label>
                             </div>
                             <div class="forgot">
-                                <small><a href="#">Forgot Password?</a></small>
+                                <small><a href="password-reset.php">Forgot Password?</a></small>
                             </div>
                         </div>
                         <div class="input-group mb-3">

@@ -231,7 +231,7 @@ session_start();
               <div class="card py-3">
                 <div class="card-body">
                   <img src="Images/icon7.JPG" class="img-fluid my-3" alt="">
-                  <h6>Lifestyle</h6>
+                  <h6>UI/UX Illustrator</h6>
                   <h6 style="color: red;"></h6>
                 </div>
               </div>
