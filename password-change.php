@@ -1,6 +1,6 @@
-<!<?php
+<?php
 session_start();
-
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,11 +39,12 @@ session_start();
                         </div>
                     <div class="card-body p-4">
                         <form action="password-reset-code.php" method="POST">
+                            <input type="hidden" name="password_token" value="<?php if (isset($_GET['token'])) {echo $_GET['token'];}?>">
 
                             <div class="form-group mb-3">
-                                <label >Email Address</label>
-                                <input type="text"  name="email" class="form-control" placeholder="Enter Email Address">
-                            </div>
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" value="<?php if (isset($_GET['email'])) {echo $_GET['email'];}?>" class="form-control" placeholder="Enter Email Address">
+                                </div>
                             <div class="form-group mb-3">
                                 <label >New Password</label>
                                 <input type="text"  name="new_password" class="form-control" placeholder="Enter New Password">
