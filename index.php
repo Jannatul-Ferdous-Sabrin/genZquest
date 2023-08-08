@@ -116,8 +116,6 @@ session_start();
             </li>";
           }
           ?>
-
-
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label>
@@ -175,7 +173,7 @@ session_start();
               <div class="card py-3">
                 <div class="card-body">
                   <img src="Images/icon1.JPG" class="img-fluid my-3" alt="graphics">
-                  <h6>Graphics & Design</h6>
+                  <h6 ><a href="graphics.php" >Graphics & Design</a></h6>
                   <h6 style="color: red;"></h6>
                 </div>
               </div>
@@ -359,6 +357,26 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
+
+    <script>
+  // Function to handle the search button click
+  function searchJobs() {
+    var keyword = document.getElementById("keyword").value;
+    // You can replace this alert with your actual search logic
+    alert("Searching for: " + keyword);
+  }
+</script>
+
+<script>
+function scrollToSection(sectionClass) {
+const section = document.querySelector(sectionClass);
+if (section) {
+section.scrollIntoView({ behavior: 'smooth' });
+}
+}
+
+</script>
   
 </body>
 </html>

@@ -102,33 +102,4 @@ body {
   .right-box {
     padding: 20px;
   }
-
 }
-
-
-/* .input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px 0;
-  border: 0;
-  outline: 0;
-  font-size: 24px;
-  color: #555;
-  padding-right: 40px;
-}
-
-
-.input-group img {
-  width: 35px;
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-} */
