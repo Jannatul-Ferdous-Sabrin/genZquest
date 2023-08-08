@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <title>Login Form</title>
 </head>
 <body>
@@ -29,28 +27,27 @@
                      <p>Thanks for choosing us!</p>
                 </div>
                 <form action="registerAction.php" method="POST">
-                <div class="input-group mb-3">
+                <div class="mb-3">
                     <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username"name = "r_username">
                 </div>
 
-                <div class="input-group mb-3">
-                <i class="fa fa-envelope" ></i>
+                <div class="mb-3">
                     <input type="Email" class="form-control form-control-lg bg-light fs-6" placeholder="Email" name="r_email">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="mb-3">
                     <input type="tel" class="form-control form-control-lg bg-light fs-6" placeholder="Mobile" name="r_mobile">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="mb-3">
                     <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name="r_pass">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="mb-3">
                     <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" name="r_con_pass">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="mb-3">
                     <button class="btn btn-lg btn-primary w-100 fs-6" name="submit">Register</button>
                 </div>
                 

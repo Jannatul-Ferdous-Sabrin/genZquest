@@ -5,11 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <title>Login Form</title>
+    <style>
+        .custom-password-input {
+            width: 100%;
+            outline: 0;
+            font-size: 24px;
+            color: #555;
+            padding-right: 40px;
+            transition: border-color 0.3s ease;
+        }
+
+        .custom-password-input:focus {
+            border-color: #103cbe;
+        }
+
+        #eyeicon {
+            position: absolute;
+            right: 23rem;
+            top: 20rem;
+            width: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,20 +48,21 @@
             <div class="col-md-6 right-box">
                 <div class="row align-items-center">
                     <div class="header-text mb-4">
-                        <h2>Hello,Again</h2>
-                        <p>We are happy to have you back.</p>
+                        <h2>Welcome back!</h2>
+                        <p>We are happy to have you again.</p>
                     </div>
                     <form action="loginAction.php" method="POST">
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
                             <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username"
                                 name="l_username">
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control form-control-lg bg-light fs-6"
+                        <div class="mb-3 d-flex">
+                            <input type="password"
+                                class="form-control form-control-lg bg-light fs-6 custom-password-input"
                                 placeholder="Password" name="l_pass">
                             <img src="Images/eye-close.png" id="eyeicon">
                         </div>
-                        <div class="input-group mb-5 d-flex justify-content-between">
+                        <div class=" mb-5 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">
                                 <label for="formCheck" class="form-check-label text-secondary"><small>Remember
@@ -50,7 +72,7 @@
                                 <small><a href="password-reset.php">Forgot Password?</a></small>
                             </div>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="mb-3">
                             <button class="btn btn-lg btn-primary w-100 fs-6" name="login">Login</button>
                         </div>
 
@@ -64,22 +86,23 @@
     </div>
 
 
-   <script>
+    <script>
 
-let eyeicon = document.getElementById("eyeicon");
-let password = document.querySelector('input[name="l_pass"]');
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.querySelector('input[name="l_pass"]');
 
-eyeicon.addEventListener("click", function() {
-    if (password.type === "password") {
-        password.type = "text";
-        eyeicon.src = "Images/eye-open.png"; // Change the icon image source
-    } else {
-        password.type = "password";
-        eyeicon.src = "Images/eye-close.png"; // Change the icon image source back
-    }
-});
+        eyeicon.addEventListener("click", function () {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeicon.src = "Images/eye-open.png";
+            } else {
+                password.type = "password";
+                eyeicon.src = "Images/eye-close.png";
+            }
+        });
 
-</script>
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
