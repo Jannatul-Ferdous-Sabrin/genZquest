@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <title>Login Form</title>
 </head>
 <body>
@@ -32,6 +34,7 @@
                 </div>
 
                 <div class="input-group mb-3">
+                <i class="fa fa-envelope" ></i>
                     <input type="Email" class="form-control form-control-lg bg-light fs-6" placeholder="Email" name="r_email">
                 </div>
 

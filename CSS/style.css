@@ -44,10 +44,6 @@
   transition: all 0.4s;
 }
 
-
-
-
-
 /*login and Signup */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
@@ -56,6 +52,8 @@ body{
     font-family: 'Poppins', sans-serif;
     background: #ececec;
 }
+
+
 
 /*------------ Login container ------------*/
 
@@ -100,3 +98,32 @@ body{
      }
 
 }
+
+     /* Style for .input-group */
+     .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+  }
+
+  /* Style for .input-group input */
+  .input-group input {
+      width: 100%;
+      padding: 10px 0;
+      border: 0;
+      outline: 0;
+      font-size: 24px;
+      color: #555;
+      padding-right: 40px;
+  }
+
+  /* Style for .input-group img */
+  .input-group img {
+      width: 35px;
+      cursor: pointer;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
