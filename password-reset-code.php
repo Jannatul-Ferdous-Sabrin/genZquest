@@ -18,7 +18,7 @@ function send_password_link($get_name, $get_email, $token)
         $mail->SMTPAuth = true;
         $mail->Host = 'smtp.gmail.com';
         $mail->Username = 'jannatulsabrina1067@gmail.com';
-        $mail->Password = 'FeRdouSsabrina';
+        $mail->Password = '';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587; 
     
