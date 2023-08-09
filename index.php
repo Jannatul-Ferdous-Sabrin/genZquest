@@ -153,8 +153,9 @@ session_start();
       </div>
       <div class="col-md-6">
         <h1 class="fs-4 mb-0" style="color: rgb(7, 7, 78);">About GenZquest</h1><br>
-        <h2 class="display-6 fw-bold">Simplifying job hunting for seekers and optimizing recruitment for employers.</h2><br>
-        <p class="lead mb-4">GenZquest offers a platform for job seekers to find jobs that match their qualifications. Job seekers can easily register and create a comprehensive profile, including their educational background. They have the freedom to explore diverse job opportunities and apply seamlessly.</p>
+        <h2 class="display-6 fw-bold">Simplifying job hunting for seekers and optimizing recruitment for employers.</h2>
+        <br>
+        <p class="lead mb-6">GenZquest offers a platform for job seekers to find jobs that match their qualifications. Job seekers can easily register and create a comprehensive profile, including their educational background. They have the freedom to explore diverse job opportunities and apply seamlessly.</p>
         <button class="btn btn-primary px-4">Read more</button>
       </div>
     </div>
@@ -337,7 +338,7 @@ session_start();
         <div class="col-md-6 d-flex justify-content-between align-items-center">
           <div>
             <ul class="list-unstyled mb-0">
-              <li><a href="https://www.facebook.com/JFSabrin" target="_blank"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://www.facebook.com/sabb.uwu" target="_blank"><i class="fab fa-facebook"></i></a></li>
               <li><a href="https://twitter.com/jf_sabb" target="_blank"><i class="fab fa-twitter"></i></a></li>
               <li><a href="https://github.com/Jannatul-Ferdous-Sabrin" target="_blank"><i class="fab fa-github"></i></a></li>
             </ul>

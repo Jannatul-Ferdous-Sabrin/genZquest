@@ -50,7 +50,6 @@ function sendmail($r_email, $r_username, $verify_token)
     echo 'Message has been sent';
 }
 
-
 if (isset($_POST['submit'])) {
     $r_username = $_POST['r_username'];
     $r_pass = $_POST["r_pass"];
@@ -83,9 +82,6 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Password and Confirm Password do not match!!')</script>";
         echo "<script>location.href='register.php'</script>";
     }
-
-
-
 
     if (!mysqli_query($conn, $insert_query)) {
         error_log("Failed to insert user data into the database.");

@@ -51,13 +51,10 @@
                             <input type="password" class="form-control form-control-lg bg-light fs-6 custom-password-input" placeholder="Password" name="l_pass">
                             <img src="Images/eye-close.png" id="eyeicon">
                         </div>
-                        <div class=" mb-5 d-flex justify-content-between">
+                        <div class="mb-5 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">
                                 <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
-                            </div>
-                            <div class="forgot">
-                                <small><a href="password-reset.php">Forgot Password?</a></small>
                             </div>
                         </div>
                         <div class="mb-3">
