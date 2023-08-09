@@ -41,12 +41,12 @@ session_start();
                         <h5>Reset Password</h5>
                     </div>
                     <div class="card-body p-4">
-                        <form action="password-reset-code.php" method="POST">
-                            <div class=" mb-3">
+                        <form action="" method="POST">
+                            <div class="mb-3">
                                 <label for="email">Email Address</label>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email Address">
                             </div>
-                            <div class=" mb-3">
+                            <div class="mb-3">
                                 <button type="submit" name="password_reset_link" class="btn btn-primary btn-block">Send Password Reset Link</button>
                             </div>
                         </form>
