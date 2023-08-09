@@ -98,9 +98,6 @@
           <div class="feature mb-3 logo-style">Business Cards & stationery</div>
           <div class="feature mb-3 logo-style">Fonts & Typography</div>
         </div>
-          <a href="#" class="btn btn-outline" >Go somewhere</a>
-          
-        
          </div>
         </div>
         <div class="col-lg-4 col-md-6 my-3">
@@ -113,10 +110,7 @@
           <div class="feature mb-3 logo-style">App Design </div>
           <div class="feature mb-3 logo-style">UX Design </div>
           <div class="feature mb-3 logo-style"> Icon Design</div>
-        </div>
-          <a href="#" class="btn btn-outline" >Go somewhere</a>
-          
-        
+      </div>
          </div>
         </div>
         <div class="col-lg-4 col-md-6 my-3">
@@ -130,7 +124,7 @@
           <div class="feature mb-3 logo-style">Resume Design</div>
           <div class="feature mb-3 logo-style">Infographic design</div>
         </div>
-          <a href="#" class="btn btn-outline" >Go somewhere</a>
+        
          </div>
         </div>
     </div>
