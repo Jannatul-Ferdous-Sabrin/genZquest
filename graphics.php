@@ -43,7 +43,6 @@
     background-color: rgba(0, 0, 0, 0.2); 
     backdrop-filter: blur(3px); /* Adjust the blur amount as needed */
 }
-
 .banner-content {
     position: absolute;
     top: 50%;
@@ -52,16 +51,8 @@
     color: white;
     text-align: center;
 }
-   
-
-
-  
-
 </style>
 </head>
-
-
-
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-2 shadow-sm sticky-top">
@@ -111,9 +102,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="container">
     <div class="row py-4">
         <div class="col-lg-4 col-md-6 my-3 ">
@@ -127,9 +115,6 @@
           <div class="feature mb-3 logo-style">Business Cards & stationery</div>
           <div class="feature mb-3 logo-style">Fonts & Typography</div>
         </div>
-          
-          
-        
          </div>
         </div>
         <div class="col-lg-4 col-md-6 my-3">
@@ -172,9 +157,7 @@
           <div class="feature mb-3 logo-style">Game Art</div>
           <div class="feature mb-3 logo-style">Character Modeling </div>
           <div class="feature mb-3 logo-style">Graphics for Streamers</div>
-        </div>
-          
-      
+</div>
          </div>
         </div>
         <div class="col-lg-4 col-md-6 my-3">
@@ -188,9 +171,6 @@
           <div class="feature mb-3 logo-style">3D Jewelry Design</div>
           <div class="feature mb-3 logo-style"> 3D Architecture</div>
         </div>
-         
-          
-        
          </div>
         </div>
         <div class="col-lg-4 col-md-6 my-3">
@@ -203,27 +183,10 @@
           <div class="feature mb-3 logo-style">AI Artists</div>
           <div class="feature mb-3 logo-style">Cartoons & Comics </div>
           <div class="feature mb-3 logo-style">Pattern Design</div>
-
         </div>
-    </div>
-
 </div>
-
-
-  
-
-
-
-
-
-
-		
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-
-
-
-
 </body>
 </html>
