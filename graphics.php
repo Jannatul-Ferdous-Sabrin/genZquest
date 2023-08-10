@@ -41,7 +41,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2); 
-    backdrop-filter: blur(3px); /* Adjust the blur amount as needed */
+    backdrop-filter: blur(3px);
 }
 .banner-content {
     position: absolute;
@@ -61,31 +61,6 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active me-2" aria-current="page" href="./index.php">Home</a>
-        </li>
-
-         <li class="nav-item">
-        <a class="nav-link me-2" href="./index.php">About</a>
-      </li>
-       <li class="nav-item">
-          <a class="nav-link me-2" href="./contact.php">Contact Us</a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="./signup.php" > <i class="bi bi-person"></i>Register</a>
-        </li>
-
-         <li class="nav-item">
-         <a class="nav-link" href="./login.php"><i class="bi bi-person-circle"></i> Login</a>
-  </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
     </div>
   </div>
 </nav>
@@ -107,7 +82,7 @@
             <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
             <img class="img-wrapper" src="Images/logo.webp" alt="Logo &amp; Brand Identity" class="card-img-top">
              <div class="card-body">
-             <h3 class="text-display-5 title-wrapper ">Logo &amp; Brand Identity</h3>
+             <h3 class="text-display-5 title-wrapper ">Brand Identity</h3>
           <h5 class="mb-4 logo-style">Logo design</h5>
           
           <div class="feature mb-3 logo-style">Brand Style Guide</div>
@@ -120,7 +95,7 @@
             <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
             <img class="img-wrapper" src="Images/logo2.webp" alt="Web &amp; App Design" class="card-img-top">
              <div class="card-body">
-             <h3 class="text-display-5 title-wrapper ">Web  &amp; App Design"</h3>
+             <h3 class="text-display-5 title-wrapper ">Web Design"</h3>
           <h5 class="mb-4 logo-style">Website Design </h5>
           
           <div class="feature mb-3 logo-style">App Design </div>
