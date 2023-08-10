@@ -1,12 +1,10 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
-    echo "<script>location.href='index.php'</script>";
-}
+    echo "<script>location.href='login.php'</script>";}
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -18,21 +16,21 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <h1 class="text-center m-2 pt-5">Welcome To Admin Home</h1>
-    <h2 class="text-center text-info mb-5">
+    <h2 class="text-center m-2 pt-5">Welcome To Admin Home</h2>
+    <h2 class="text-center text-info mb-2">
         <?php echo $_SESSION['username']; ?>
     </h2>
     <div class="d-flex row justify-content-center container-fluid">
         <div class="border border-secondary col-lg-5 col-md-12 col-sm-12 rounded m-4">
-            <h3 >List of accounts awaiting registration</h3>
+            <h4 >List of accounts awaiting registration</h4>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col" style="width: 10%;">ID</th>
-                        <th scope="col" style="width: 25%;">Username</th>
+                        <th scope="col" style="width: 15%;">ID</th>
+                        <th scope="col" style="width: 20%;">Username</th>
                         <th scope="col" style="width: 20%;">Status</th>
                         <th scope="col" style="width: 20%;">Approved Time</th>
-                        <th scope="col" style="width: 20%;">Reject Column</th>
+                        <th scope="col" style="width: 15%;">Reject Column</th>
                     </tr>
                     </thead>
                 <tbody>

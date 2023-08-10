@@ -12,27 +12,28 @@ function sendmail($r_email, $r_username, $verify_token)
     //Server settings
     $mail = new PHPMailer(true);
     $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
-    $mail->isSMTP(); //Send using SMTP
-    $mail->SMTPAuth = true; //Enable SMTP authentication
+    $mail->isSMTP();                       //Send using SMTP
+    $mail->SMTPAuth = true;                //Enable SMTP authentication
 
-    $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
-    $mail->Username = 'ferdousjannat0103@gmail.com'; //SMTP username
-    $mail->Password = 'xvduhbgpzbgpbarq'; //SMTP password
+    $mail->Host = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    $mail->Username = 'ferdousjannat0103@gmail.com';      //SMTP username
+    $mail->Password = 'xvduhbgpzbgpbarq';                 //SMTP password      
 
     $mail->SMTPOptions = array(
         'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
+            'verify_peer' => false,                             //Sets options for SMTP conne
+            'verify_peer_name' => false,                        //disable peer veri
             'allow_self_signed' => true
         )
     );
 
-    $mail->SMTPSecure = 'ssl'; //Enable implicit SSL encryption
-    $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    //SSl encryt w port
+    $mail->SMTPSecure = 'ssl';                                 
+    $mail->Port = 465;
 
-    //Recipients
+     //set sender and recipient email address
     $mail->setFrom('from@example.com', 'Admin');
-    $mail->addAddress($r_email); //Add a recipient
+    $mail->addAddress($r_email);                                
 
     //Content
     $mail->isHTML(true); //Set email format to HTML
@@ -41,11 +42,9 @@ function sendmail($r_email, $r_username, $verify_token)
          <h2>You have create an account successfully</h2>
          <h4>Verify your email address using the below given Link</h4>
          <br><br>
-         <a href='http://localhost/genzquest/verifyemail.php?token=$verify_token'>Verification Link</a>
-     ";
+         <a href='http://localhost/genzquest/verifyemail.php?token=$verify_token'>Verification Link</a>";
 
     $mail->Body = $email_template;
-
     $mail->send();
     echo 'Message has been sent';
 }
@@ -83,6 +82,9 @@ if (isset($_POST['submit'])) {
         echo "<script>location.href='register.php'</script>";
     }
 
+
+
+    //Handles  insertion of user data into DB
     if (!mysqli_query($conn, $insert_query)) {
         error_log("Failed to insert user data into the database.");
         echo "<script>alert('Registration failed!')</script>";

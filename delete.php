@@ -2,7 +2,7 @@
 include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'])) {
-    $user_id = $_POST['user_id'];
+    $user_id = $_POST['user_id'];                                              //retrieve value of user id frm post
 
    
     $delete_query = "DELETE FROM registration WHERE id = '$user_id'";

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['username'])) {
+  echo "<script>alert('Please login first!')</script>";
+  echo "<script>location.href='login.php'</script>";}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,10 +149,10 @@ session_start();
 <!-- Container (About Section) -->
 
 <section id="about">
-  <div class="container my-5 py-5">
+  <div class="container my-4 py-4">
     <div class="row">
-      <div class="col-md-6">
-        <img src="Images/p1.png" alt="" class="w-100">
+      <div class="col-md-6 d-flex align-items-center">
+        <img src="Images/p11.png" alt="img-fluid" class="w-300">
       </div>
       <div class="col-md-6">
         <h1 class="fs-4 mb-0" style="color: rgb(7, 7, 78);">About GenZquest</h1><br>
@@ -311,6 +314,8 @@ session_start();
       </ul>
     </div>
   </div>
+
+  
   
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
     data-bs-slide="prev">

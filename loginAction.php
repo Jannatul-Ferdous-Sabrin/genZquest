@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST['login'])) {
     include 'config.php';
-    $l_username = $_POST['l_username'];
-    $l_pass = $_POST['l_pass'];
+    $l_username = $_POST['l_username'];                      //recover username,pass values from submitted form
+    $l_pass = $_POST['l_pass'];                        
 
-    if ($l_username === 'admin' && $l_pass == 'admin') {
+    if ($l_username === 'admin' && $l_pass == 'admin') {                  //hardcoded
         session_start();
         $_SESSION['username'] = $l_username;
         echo "<script>location.href='adminhome.php'</script>";
