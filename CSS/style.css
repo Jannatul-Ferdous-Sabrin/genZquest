@@ -19,6 +19,17 @@
   width: 48px;
 }
 
+.bucket-top .img-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.bucket-top .img-wrapper {
+  border-radius: 8px;
+  height: 54px;
+  width: 80px;
+}
+
 .ceta .card:hover {
   color: red;
   cursor: pointer;
