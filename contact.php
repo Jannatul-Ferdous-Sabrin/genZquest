@@ -52,8 +52,7 @@
        <li class="nav-item">
           <a class="nav-link me-2" href="contact.php">Contact Us</a>
         </li>
-
-
+        
         <li class="nav-item">
           <a class="nav-link" href="register.php" > <i class="bi bi-person"></i>Register</a>
         </li>
@@ -77,7 +76,7 @@
       <div class="contact-image">
           <img src="Images/p1.png" alt="Small Image" class="img-fluid" width="500" height="500">
         </div>
-        <p>Contact us and we'll get back to you within 24 hours.</p>
+        <p >Contact us and we'll get back to you within 24 hours.</p>
         <p><span class="bi bi-geo-alt-fill"></span> Sylhet, Bangladesh</p>
 
         <p><span class="bi bi-telephone-fill"></span> +8801783-618103</p>

@@ -50,8 +50,8 @@ if (!isset($_SESSION['username'])) {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
-        backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+        background-color: rgba(0, 0, 0, 0.2); 
+        backdrop-filter: blur(3px); 
     }
 
     .slide-content {
@@ -60,17 +60,9 @@ if (!isset($_SESSION['username'])) {
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        /* text-align: center; */
+      
     }
 
-    .slide-con {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-85%, -50%);
-        color: white;
-        /* text-align: center; */
-    }
   .form-inline .form-control {
     display: inline-block;
     width: auto;
@@ -152,7 +144,7 @@ if (!isset($_SESSION['username'])) {
   <div class="container my-4 py-4">
     <div class="row">
       <div class="col-md-6 d-flex align-items-center">
-        <img src="Images/p11.png" alt="img-fluid" class="w-300">
+        <img src="Images/img3.svg" alt="img-fluid" class="w-100">
       </div>
       <div class="col-md-6">
         <h1 class="fs-4 mb-0" style="color: rgb(7, 7, 78);">About GenZquest</h1><br>
@@ -247,7 +239,7 @@ if (!isset($_SESSION['username'])) {
                 </div>
               </div>
             </div>
-            <div class="row py-5">
+            <div class="row py-3">
               <div class="col-lg-5 m-auto">
                 <button class="btn3">BROWSE ALL SECTORS</button>
               </div>
@@ -282,7 +274,7 @@ if (!isset($_SESSION['username'])) {
           </p>
         </div>
       </div>
-      <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+      <ul class="list-unstyled d-flex justify-content-center text-warning mb-3">
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="fas fa-star fa-sm"></i></li>                             
         <li><i class="fas fa-star fa-sm"></i></li>                              
@@ -293,7 +285,7 @@ if (!isset($_SESSION['username'])) {
     
     <div class="carousel-item">
       <img class="rounded-circle shadow-1-strong mb-4"
-        src="Images/person2.svg" alt="avatar"
+        src="Images/person3.svg" alt="avatar"
         style="width: 150px;" />
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
@@ -301,11 +293,11 @@ if (!isset($_SESSION['username'])) {
           <p>Graphics Designer</p>
           <p class="text-muted">
             <i class="fas fa-quote-left pe-2"></i>
-            Thank you for offering such an incredible platform! However, there is room for improvement over time as I have encountered some bugs.
+           Such an incredible platform! However,there is room for improvement as I have encountered some bugs.
           </p>
         </div>
       </div>
-      <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+      <ul class="list-unstyled d-flex justify-content-center text-warning mb-3">
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="fas fa-star fa-sm"></i></li>
         <li><i class="fas fa-star fa-sm"></i></li>
@@ -313,10 +305,31 @@ if (!isset($_SESSION['username'])) {
         <li><i class="far fa-star fa-sm"></i></li>
       </ul>
     </div>
+
+    <div class="carousel-item">
+      <img class="rounded-circle shadow-1-strong mb-4"
+        src="Images/person2.svg" alt="avatar"
+        style="width: 150px;" />
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h5 class="mb-3">Fariha Chy</h5>
+          <p>Graphics Designer</p>
+          <p class="text-muted">
+            <i class="fas fa-quote-left pe-2"></i>
+           A nice website-Learned and Gained many knowledge
+          </p>
+        </div>
+      </div>
+      <ul class="list-unstyled d-flex justify-content-center text-warning mb-3">
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="fas fa-star fa-sm"></i></li>
+        <li><i class="far fa-star fa-sm"></i></li>
+      </ul>
+    </div>
   </div>
 
-  
-  
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
     data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -364,15 +377,6 @@ if (!isset($_SESSION['username'])) {
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-
-    <script>
-  // Function to handle the search button click
-  function searchJobs() {
-    var keyword = document.getElementById("keyword").value;
-    // You can replace this alert with your actual search logic
-    alert("Searching for: " + keyword);
-  }
-</script>
 
 <script>
 function scrollToSection(sectionClass) {
