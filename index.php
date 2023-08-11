@@ -67,10 +67,6 @@ if (!isset($_SESSION['username'])) {
   </style>
 
 
-
-
-
-
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-2 shadow-sm sticky-top">
@@ -83,8 +79,8 @@ if (!isset($_SESSION['username'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active me-2" aria-current="page" href="#">Home</a>
-          </li>R
+            <a class="nav-link active me-2" aria-current="page" href="#home">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="#about">About</a>
           </li>
@@ -99,13 +95,13 @@ if (!isset($_SESSION['username'])) {
               <a class='nav-link' href='register.php'><i class='bi bi-person'></i> Register</a>
             </li>
             <li class='nav-item'>
-              <a class='nav-link' href='login.php'><i class='bi bi-box-arrow-in-right'></i> Login</a>
+              <a class='nav-link' href='login.php'><i class='bbi bi-person'></i> Login</a>
             </li>
           ";
           } else {
             echo "
             <li class='nav-item'>
-              <a class='nav-link' href='logout.php'><i class='bi bi-box-arrow-in-right'></i>Logout</a>
+              <a class='nav-link' href='logout.php'><i class='bi bi-person-circle'></i>Logout</a>
             </li>";
           }
           ?>
@@ -116,7 +112,6 @@ if (!isset($_SESSION['username'])) {
       </div>
     </div>
   </nav>
-
 
   
 
@@ -137,10 +132,12 @@ if (!isset($_SESSION['username'])) {
                 </div>
         </div>
     </div>
-</div>
+        </div>
+
+
+
 
 <!-- Container (About Section) -->
-
 <section id="about">
   <div class="container my-4 py-4">
     <div class="row">
@@ -158,6 +155,8 @@ if (!isset($_SESSION['username'])) {
     </div>
   </div>
 </section>
+
+
 
   <!-- CETA SECTION -->
   <section class="ceta">
@@ -251,6 +250,12 @@ if (!isset($_SESSION['username'])) {
       </div>
   </section>
 
+
+
+
+
+
+
 <!-- Carousel wrapper -->
 <div class="container">
         <div class="row justify-content-center mb-3 pb-3">
@@ -260,6 +265,9 @@ if (!isset($_SESSION['username'])) {
           </div>
         </div>
 </div>
+
+
+
 <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -333,17 +341,20 @@ if (!isset($_SESSION['username'])) {
   </div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-    data-bs-slide="prev">
+    data-bs-slide="prev">                
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
     data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
+
 
 
 <!--footer -->
@@ -371,6 +382,12 @@ if (!isset($_SESSION['username'])) {
     </div>
   </footer>
 
+
+
+
+
+  
+
   <!--  Bootstrap JS and other scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -387,8 +404,6 @@ if (section) {
 section.scrollIntoView({ behavior: 'smooth' });
 }
 }
-
 </script>
-  
 </body>
 </html>
