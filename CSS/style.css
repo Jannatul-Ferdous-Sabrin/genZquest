@@ -1,5 +1,4 @@
 .jumbotron {
-  /* background-color: blueviolet; */
   color: black;
   padding: 100px 25px;
   font-family: Montserrat, sans-serif;
@@ -7,9 +6,7 @@
 
 .ceta h1 {
   color: rgb(7, 7, 78);
-
   font-size: 3.5em;
-  ;
 }
 
 .card-body img {
@@ -75,13 +72,11 @@ body {
   width: 930px;
 }
 
-/*------------ Right box ------------*/
 
 .right-box {
   padding: 40px 30px 40px 40px;
 }
 
-/*------------ Custom Placeholder ------------*/
 
 ::placeholder {
   font-size: 16px;

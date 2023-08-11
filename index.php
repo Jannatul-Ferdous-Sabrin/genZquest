@@ -4,46 +4,45 @@ if (!isset($_SESSION['username'])) {
   echo "<script>alert('Please login first!')</script>";
   echo "<script>location.href='login.php'</script>";}
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>genZquest</title>
-
+  <link rel="stylesheet" href="CSS/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
   <link
     href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
     rel="stylesheet">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="CSS/style.css">
+
+
+
+
 
   <style>
     * {
       font-family: 'Poppins', sans-serif;
     }
-
     .h-font {
       font-family: 'Merienda', cursive;
     }
-
     .swiper-container {
       width: 100%;
-      height: 55vh;
+      height: 50vh;
     }
-
     .swiper-slide {
       background-size: cover;
       background-position: center;
     }
-
     .blur-overlay {
         position: absolute;
         top: 0;
@@ -53,16 +52,13 @@ if (!isset($_SESSION['username'])) {
         background-color: rgba(0, 0, 0, 0.2); 
         backdrop-filter: blur(3px); 
     }
-
     .slide-content {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-      
     }
-
   .form-inline .form-control {
     display: inline-block;
     width: auto;
@@ -70,10 +66,13 @@ if (!isset($_SESSION['username'])) {
   }
   </style>
 
+
+
+
+
+
 </head>
-
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-2 shadow-sm sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">genZquest</a>
@@ -85,8 +84,7 @@ if (!isset($_SESSION['username'])) {
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active me-2" aria-current="page" href="#">Home</a>
-          </li>
-
+          </li>R
           <li class="nav-item">
             <a class="nav-link me-2" href="#about">About</a>
           </li>
@@ -118,6 +116,9 @@ if (!isset($_SESSION['username'])) {
       </div>
     </div>
   </nav>
+
+
+  
 
   <div class="container-fluid px-lg-4 mt-4">
     <div class="swiper-container">
@@ -151,7 +152,8 @@ if (!isset($_SESSION['username'])) {
         <h2 class="display-6 fw-bold">Simplifying job hunting for seekers and optimizing recruitment for employers.</h2>
         <br>
         <p class="lead mb-6">GenZquest offers a platform for job seekers to find jobs that match their qualifications. Job seekers can easily register and create a comprehensive profile, including their educational background. They have the freedom to explore diverse job opportunities and apply seamlessly.</p>
-        <button class="btn btn-primary px-4">Read more</button>
+        <br>
+        <button class="btn btn-outline-primary px-4" onclick="scrollToSection('.ceta')">Get in Touch</button>
       </div>
     </div>
   </div>
