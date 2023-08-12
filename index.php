@@ -304,7 +304,7 @@ if (!isset($_SESSION['username'])) {
           <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
               <h5 class="mb-3">JF Sabrin</h5>
-              <p>Graphics Designer</p>
+              <p>Software Engineer</p>
               <p class="text-muted">
                 <i class="fas fa-quote-left pe-2"></i>
                 Such an incredible platform! However,there is room for improvement as I have encountered some bugs.

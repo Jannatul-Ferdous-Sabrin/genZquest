@@ -81,7 +81,6 @@ if (isset($_POST['submit'])) {
         echo "<script>location.href='register.php'</script>";
     }
     
-    
 
     //Handles  insertion of user data into DB
     if (!mysqli_query($conn, $insert_query)) {
