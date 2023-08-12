@@ -1,12 +1,12 @@
 <?php
 if (isset($_POST['login'])) {
     include 'config.php';
-    $l_username = $_POST['l_username'];                      //recover username,pass values from submitted form
+    $l_username = $_POST['l_username'];                   //recover username,pass values from submitted form
     $l_pass = $_POST['l_pass'];                        
 
     if ($l_username === 'admin' && $l_pass == 'admin') {                  //hardcoded
         session_start();
-        $_SESSION['username'] = $l_username;
+        $_SESSION['username'] = $l_username;                              //store
         echo "<script>location.href='adminhome.php'</script>";
     } else {
         $result = mysqli_query($conn, "SELECT * FROM `registration` WHERE username='$l_username' AND BINARY `password`='$l_pass' AND verify_status = '1'");
