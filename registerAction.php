@@ -68,10 +68,6 @@ if (isset($_POST['submit'])) {
 
     $email_pattern = "/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/";
     $_mobile_pattern = "/(\+88)?-?01[3-9]\d{8}/";
-    $password_pattern = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
-
-
-
 
     // Validate email and mobile, and ensure password matches
     if (!preg_match($email_pattern, $r_email)) {
@@ -84,6 +80,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Password and Confirm Password do not match!!')</script>";
         echo "<script>location.href='register.php'</script>";
     }
+    
     
 
     //Handles  insertion of user data into DB
