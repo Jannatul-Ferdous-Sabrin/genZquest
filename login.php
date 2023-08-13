@@ -36,7 +36,7 @@
                     <img src="Images/login1.svg" class="img-fluid" style="width: 500px;">
                 </div>
             </div>
-            <div class="col-md-6 right-box">
+            <div class="col-md-6 right-box">                          
                 <div class="row align-items-center">
                     <div class="header-text mb-4">
                         <h2>Welcome back!</h2>
@@ -46,10 +46,12 @@
                         <div class="mb-3">
                             <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" name="l_username">
                         </div>
+
                         <div class="mb-3 d-flex">
                             <input type="password" class="form-control form-control-lg bg-light fs-6 custom-password-input" placeholder="Password" name="l_pass">
                             <img src="Images/eye-close.png" id="eyeicon">
                         </div>
+                        
                         <div class="mb-5 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">

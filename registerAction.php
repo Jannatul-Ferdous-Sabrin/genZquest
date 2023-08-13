@@ -84,6 +84,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Password and Confirm Password do not match!!')</script>";
         echo "<script>location.href='register.php'</script>";
     }
+    
     // else if (mysqli_num_rows($duplicate_username) > 0) { 
     //     echo "<script>alert('This Username is already taken..!!')</script>";
     //     echo "<script>location.href='register.php'</script>";
@@ -92,6 +93,7 @@ if (isset($_POST['submit'])) {
     //     echo "<script>location.href='register.php'</script>";
     // } 
 
+    
     else 
     {
 

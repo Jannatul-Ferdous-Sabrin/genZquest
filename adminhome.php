@@ -47,7 +47,7 @@ if (!isset($_SESSION['username'])) {
                             "<tr>
                             <th scope='row'>" . $row['id'] . "</th>
                             <td>" . $row['username'] . "</td>
-                            <td>Registered</td>
+                            <td>" . $row['verify_status'] . "</td>
                             <td>" . ($row['approvedTime'] ? date('Y-m-d H:i:s', strtotime($row['approvedTime'])) : 'Not Approved') . "</td>
                             <td>
                                 <form method='POST' action='delete.php' onsubmit='return confirm(\"Are you sure you want to delete this account?\");'>
