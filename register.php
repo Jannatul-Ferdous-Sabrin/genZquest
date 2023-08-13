@@ -13,7 +13,6 @@
             width: 100%;
             outline: 0;
             font-size: 24px;
-            color: #555;
             padding-right: 40px;
             transition: border-color 0.3s ease;
         }
