@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 
     $email_pattern = "/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/";
     $_mobile_pattern = "/(\+88)?-?01[3-9]\d{8}/";
-    $_password_pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-|])(?=.*[0-9]).+$/";
+    $_password_pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[0-9]).+$/";
 
     $duplicate_username = mysqli_query($conn, "SELECT * FROM `registration` WHERE username='$r_username'");
     $duplicate_email = mysqli_query($conn, "SELECT * FROM `registration` WHERE email='$r_email'");
@@ -99,9 +99,10 @@ if (isset($_POST['submit'])) {
             echo "<script>location.href='register.php'</script>";
         }
     }
-} else {
-    echo "<script>alert('Not Accessible!')</script>";
-    echo "<script>location.href='login.php'</script>";
 }
+//  else {
+//     echo "<script>alert('Not Accessible!')</script>";
+//     echo "<script>location.href='login.php'</script>";
+// }
 
 ?>

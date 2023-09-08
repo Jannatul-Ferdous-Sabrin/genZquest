@@ -24,6 +24,7 @@
             right: 23rem;
             top: 20rem;
             width: 30px;
+            cursor: pointer;
         }
     </style>
 </head>

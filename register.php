@@ -14,7 +14,7 @@
             outline: 0;
             font-size: 24px;
             padding-right: 40px;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.9s ease;
         }
 
         .custom-password-input:focus {
