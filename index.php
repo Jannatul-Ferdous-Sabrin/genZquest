@@ -1,11 +1,11 @@
 <?php
+require('config.php');
 session_start();
 if (!isset($_SESSION['username'])) {
   echo "<script>alert('Please login first!')</script>";
   echo "<script>location.href='login.php'</script>";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +21,6 @@ if (!isset($_SESSION['username'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
 
   <style>
     * {
@@ -65,57 +64,19 @@ if (!isset($_SESSION['username'])) {
       width: auto;
       vertical-align: middle;
     }
+
+    .job-col:hover {
+      cursor: pointer;
+      box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+    }
   </style>
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-2 shadow-sm sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">genZquest</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active me-2" aria-current="page" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="contact.php">Contact Us</a>
-          </li>
-
-          <?php
-          if (!isset($_SESSION['username'])) {
-            echo "
-            <li class='nav-item'>
-              <a class='nav-link' href='register.php'><i class='bi bi-person'></i> Register</a>
-            </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='login.php'><i class='bbi bi-person'></i> Login</a>
-            </li>
-          ";
-          } else {
-            echo "
-            <li class='nav-item'>
-              <a class='nav-link' href='logout.php'><i class='bi bi-person-circle'></i>Logout</a>
-            </li>";
-          }
-          ?>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-
-
+  <?php require('inc/header.php'); ?>
   <div class="container-fluid px-lg-4 mt-4">
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -124,10 +85,11 @@ if (!isset($_SESSION['username'])) {
           <div class="jumbotron text-center py-6 slide-content">
             <h1 class="h-font">Your Bright Future Starts Here Now</h1>
             <p>Find the most exciting startup jobs</p>
-            <form class="form-inline" id="homesearch">
+
+            <form class="form-inline" id="homesearch" action="search.php" method="POST">
               <input type="text" class="form-control" size="40" placeholder="Job title or keyword" name="keyword"
                 id="keyword">
-              <button type="button" class="btn btn-danger" style="color: white;">
+              <button type="submit" class="btn btn-danger" style="color: white;">
                 <i class="fas fa-search"></i> Find Job
               </button>
             </form>
@@ -135,8 +97,6 @@ if (!isset($_SESSION['username'])) {
         </div>
       </div>
     </div>
-
-
 
 
     <!-- Container (About Section) -->
@@ -162,6 +122,61 @@ if (!isset($_SESSION['username'])) {
       </div>
     </section>
 
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 latest-job margin-bottom-20">
+            <h1 class="text-center">Latest Jobs</h1>
+
+            <br>
+            <?php
+
+            // Fetch the job listings based on user preferences
+            $sql = "SELECT * FROM `company` c, `job` j, `registration` r  WHERE c.`COMPANYID` = j.`COMPANYID` 
+        ORDER BY r.`Preference` = j.`keyword` DESC, DATEPOSTED DESC 
+        LIMIT 4";
+
+            $result = $conn->query($sql);
+
+            // Display the job listings
+            if ($result) {
+              $jobCount = 0;
+              echo '<div class="container">';
+
+              while ($row = $result->fetch_assoc()) {
+                if ($jobCount % 4 == 0) {
+                  echo '<div class="row">';
+                }
+
+                echo '<div class="col-md-3 job-col" style="border: 2px solid #ccc; margin: 10px; padding: 10px;">';
+                echo '<h3><a href="http://localhost/genzquest/applicationform.php?search=' . $row['JOBID'] . '" style="text-decoration: none; color: black;">' . $row['OCCUPATIONTITLE'] . '</a></h3>';
+
+                echo '<p> ' . $row['COMPANYNAME'] . '</p>';
+                echo '<p>Work Experience: ' . $row['QUALIFICATION_WORKEXPERIENCE'] . '</p>';
+                echo '<p>Experience Requirement : ' . $row['keyword'] . '</p>';
+
+                echo '<p>Date Posted: ' . date_format(date_create($row['DATEPOSTED']), 'M d, Y') . '</p>';
+
+                echo '</div>';
+
+                if ($jobCount % 4 == 3 || $jobCount == $result->num_rows - 1) {
+                  echo '</div>';
+                }
+
+                $jobCount++;
+              }
+
+              echo '</div>';
+              $result->free_result();
+            } else {
+              echo "Error: " . $conn->error;
+            }
+            ?>
+
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!-- CETA SECTION -->
@@ -255,9 +270,6 @@ if (!isset($_SESSION['username'])) {
           </div>
         </div>
     </section>
-
-
-
 
 
 
@@ -356,10 +368,6 @@ if (!isset($_SESSION['username'])) {
     </div>
 
 
-
-
-
-
     <!--footer -->
     <footer class="bg-dark text-white p-4">
       <div class="container">
@@ -385,12 +393,6 @@ if (!isset($_SESSION['username'])) {
         </div>
       </div>
     </footer>
-
-
-
-
-
-
 
     <!--  Bootstrap JS and other scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adminpanel</title>
+    <title>Joblist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -30,20 +30,18 @@ if (!isset($_SESSION['username'])) {
 
         <div style="flex: 1;">
 
-            <h2 class="text-center text-info mb-2">
-                <?php echo $_SESSION['username']; ?>
-            </h2>
             <div class="d-flex row justify-content-center container-fluid">
-                <div class="border border-secondary col-lg-5 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of accounts awaiting registration</h4>
+                <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
+                    <h4>JOB LISTS</h4>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 15%;">ID</th>
-                                <th scope="col" style="width: 20%;">Username</th>
-                                <th scope="col" style="width: 20%;">Status</th>
-                                <th scope="col" style="width: 20%;">Approved Time</th>
-                                <th scope="col" style="width: 15%;">Reject Column</th>
+                                <th scope="col" style="width: 15%;">JOBID</th>
+                                <th scope="col" style="width: 20%;">COMPANYID</th>
+                                <th scope="col" style="width: 20%;">CATEGORY</th>
+                                <th scope="col" style="width: 20%;">OCCUPATIONTITLE</th>
+                                <th scope="col" style="width: 15%;">SALARIES</th>
+                                <th scope="col" style="width: 15%;">DURATION_EMPLOYMENT</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,20 +49,17 @@ if (!isset($_SESSION['username'])) {
                             <?php
                             include '../config.php';
 
-                            $unregistered = mysqli_query($conn, "SELECT * FROM `registration`");
+                            $unregistered = mysqli_query($conn, "SELECT * FROM `job`");
                             while ($row = mysqli_fetch_array($unregistered)) {
                                 echo
                                     "<tr>
-                            <th scope='row'>" . $row['id'] . "</th>
-                            <td>" . $row['username'] . "</td>
-                            <td>" . $row['verify_status'] . "</td>
-                            <td>" . ($row['approvedTime'] ? date('Y-m-d H:i:s', strtotime($row['approvedTime'])) : 'Not Approved') . "</td>
-                            <td>
-                                <form method='POST' action='delete.php' onsubmit='return confirm(\"Are you sure you want to delete this account?\");'>
-                                    <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                    <button type='submit' class='btn btn-outline-warning' name='delete'>Delete</button>
-                                </form>
-                            </td>
+                            <th scope='row'>" . $row['JOBID'] . "</th>
+                            <td>" . $row['COMPANYID'] . "</td>
+                            <td>" . $row['CATEGORY'] . "</td>
+                            <td>" . $row['OCCUPATIONTITLE'] . "</td>
+                            <td>" . $row['SALARIES'] . "</td>
+                            <td>" . $row['DURATION_EMPLOYMENT'] . "</td>
+
                         </tr>";
                             }
                             ?>

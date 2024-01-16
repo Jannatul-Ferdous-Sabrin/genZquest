@@ -1,41 +1,31 @@
-<div class="flex-shrink-0 p-3" style="width: 280px;">
+<div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 100vh; background-color: #222e3c;">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <svg class="bi pe-none me-2" width="30" height="24">
             <use xlink:href="#bootstrap"></use>
         </svg>
-        <span class="fs-4 fw-bolder">genZquest</span>
+        <span class="fs-4 fw-bolder">Admin Panel</span>
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
                 data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                Home
+                <span>Dashboard</span>
             </button>
-            <div class="collapse" id="home-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a>
-                    </li>
-                </ul>
-            </div>
         </li>
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
                 data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                Dashboard
+                <span>Users</span>
             </button>
             <div class="collapse" id="dashboard-collapse" style="">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a>
+                    <li><a href="clientList.php"
+                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Client
+                                List</span></a>
                     </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a>
+                    <li><a href="userslist.php"
+                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Users
+                                List</span></a>
                     </li>
                 </ul>
             </div>
@@ -43,38 +33,31 @@
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
                 data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                Orders
+                <span>Jobs</span>
             </button>
             <div class="collapse" id="orders-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a>
-                    </li>
+                <ul class="btn-toggle-nav list-unstyled fw-normal p-3 small">
+                    <li><a href="joblist.php"
+                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Job
+                                List</a></span></li>
                 </ul>
             </div>
         </li>
+
+        <ul class="list-unstyled">
+            <li class="mb-1">
+                <a href="companydetails.php"
+                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-semibold fs-5">
+                    <span>Company Details</span>
+                </a>
+            </li>
+        </ul>
         <li class="border-top my-3"></li>
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
-                data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                Account
+                data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false"><span>
+                    Manage Users</span>
             </button>
-            <div class="collapse" id="account-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
-                    </li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a>
-                    </li>
-                </ul>
-            </div>
         </li>
     </ul>
 </div>

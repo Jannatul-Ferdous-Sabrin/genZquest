@@ -16,7 +16,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 />
-<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="CSS/style.css" >
 <style>
 *{
     font-family: 'Poppins', sans-serif; 
