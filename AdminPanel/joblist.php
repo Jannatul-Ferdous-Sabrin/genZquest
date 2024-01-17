@@ -34,7 +34,8 @@ if (!isset($_SESSION['username'])) {
 
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of all jobs</h4>
+                    <h4>List of vacancies</h4>
+                    <br>
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
@@ -44,6 +45,8 @@ if (!isset($_SESSION['username'])) {
                                 <th scope="col" style="width: 20%;">OCCUPATIONTITLE</th>
                                 <th scope="col" style="width: 15%;">SALARIES</th>
                                 <th scope="col" style="width: 15%;">DURATION_EMPLOYMENT</th>
+                             
+
                             </tr>
                         </thead>
                         <tbody>
@@ -61,6 +64,7 @@ if (!isset($_SESSION['username'])) {
                             <td>" . $row['OCCUPATIONTITLE'] . "</td>
                             <td>" . $row['SALARIES'] . "</td>
                             <td>" . $row['DURATION_EMPLOYMENT'] . "</td>
+                          
                         </tr>";
                             }
                             ?>

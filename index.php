@@ -152,7 +152,7 @@ if (!isset($_SESSION['username'])) {
                 echo '<h3><a href="http://localhost/genzquest/applicationform.php?search=' . $row['JOBID'] . '" style="text-decoration: none; color: black;">' . $row['OCCUPATIONTITLE'] . '</a></h3>';
 
                 echo '<p> ' . $row['COMPANYNAME'] . '</p>';
-                echo '<p>Work Experience: ' . $row['QUALIFICATION_WORKEXPERIENCE'] . '</p>';
+                echo '<p>Work Experience: ' . $row['WORK_EXPERIENCE'] . '</p>';
                 echo '<p>Experience Requirement : ' . $row['keyword'] . '</p>';
 
                 echo '<p>Date Posted: ' . date_format(date_create($row['DATEPOSTED']), 'M d, Y') . '</p>';

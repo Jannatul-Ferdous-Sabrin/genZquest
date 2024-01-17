@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
             </h2>
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border border-secondary col-lg-5 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of accounts awaiting registration</h4>
+                    <h4>Admin Dashboard</h4>
                     <table class="table table-striped">
                         <thead>
                             <tr>

@@ -36,7 +36,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
 
         <div style="flex: 1;">
             <div class="d-flex row justify-content-center container-fluid">
-                <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
+                <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                     <h4>List of Companies</h4>
                     <br>
 
@@ -47,6 +47,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                 <th scope="col" style="width: 20%;">COMPANYNAME</th>
                                 <th scope="col" style="width: 20%;">COMPANYADDRESS</th>
                                 <th scope="col" style="width: 20%;">COMPANYCONTACTNO</th>
+                                <th scope="col" style="width: 15%;">ACTION</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,6 +59,18 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                     <td><?= $row['COMPANYNAME'] ?></td>
                                     <td><?= $row['COMPANYADDRESS'] ?></td>
                                     <td><?= $row['COMPANYCONTACTNO'] ?></td>
+                                    <td>
+                                        <div class='d-flex'>
+                                            <form method='POST' action='edit-company.php'>
+                                                <input type='hidden' name='company_id' value='<?= $row['COMPANYID'] ?>'>
+                                                <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
+                                            </form>
+                                            <form method='POST' action=''>
+                                                <input type='hidden' name='company_id' value='<?= $row['COMPANYID'] ?>'>
+                                                <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php
                             }
