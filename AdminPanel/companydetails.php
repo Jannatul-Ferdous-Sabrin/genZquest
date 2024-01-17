@@ -37,7 +37,9 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         <div style="flex: 1;">
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
-                    <h4>COMPANY DETAILS</h4>
+                    <h4>List of Companies</h4>
+                    <br>
+
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
@@ -66,8 +68,6 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
             </div>
         </div>
     </div>
-
-    <br><br><br><br><br><br><br><br><br><br>
 
     <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

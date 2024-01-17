@@ -31,18 +31,10 @@
             </div>
         </li>
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
-                data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                <span>Jobs</span>
-            </button>
-            <div class="collapse" id="orders-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal p-3 small">
-                    <li><a href="joblist.php"
-                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Job
-                                List</a></span></li>
-                </ul>
-            </div>
-        </li>
+    <a href="joblist.php" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-semibold fs-5">
+        <span>Job List</span>
+    </a>
+</li>
 
         <ul class="list-unstyled">
             <li class="mb-1">

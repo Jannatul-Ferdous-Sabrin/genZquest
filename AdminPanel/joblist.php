@@ -16,7 +16,9 @@ if (!isset($_SESSION['username'])) {
     <title>Joblist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
+<!-- DataTable -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
     <style>
         .sidebar span {
             color: #fff;
@@ -31,9 +33,9 @@ if (!isset($_SESSION['username'])) {
         <div style="flex: 1;">
 
             <div class="d-flex row justify-content-center container-fluid">
-                <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
-                    <h4>JOB LISTS</h4>
-                    <table class="table table-striped">
+                <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
+                    <h4>List of all jobs</h4>
+                    <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">JOBID</th>
@@ -59,7 +61,6 @@ if (!isset($_SESSION['username'])) {
                             <td>" . $row['OCCUPATIONTITLE'] . "</td>
                             <td>" . $row['SALARIES'] . "</td>
                             <td>" . $row['DURATION_EMPLOYMENT'] . "</td>
-
                         </tr>";
                             }
                             ?>
@@ -69,13 +70,19 @@ if (!isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-
-
-    <br><br><br><br><br><br><br><br><br><br>
-
+  <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
+    <script>
+        //DataTable
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        })
+    </script>
+</body>
 </html>
