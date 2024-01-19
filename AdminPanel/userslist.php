@@ -6,7 +6,6 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -16,6 +15,7 @@ if (!isset($_SESSION['username'])) {
     <title>adminpanel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <!-- DataTable -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
@@ -26,13 +26,10 @@ if (!isset($_SESSION['username'])) {
         }
     </style>
 </head>
-
 <body>
     <div class="d-flex flex-row flex-wrap">
         <?php include 'sidebar.php' ?>
-
         <div style="flex: 1;">
-
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
                     <h4>List of Users</h4>
@@ -88,7 +85,6 @@ if (!isset($_SESSION['username'])) {
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
         //DataTable
         $(document).ready(function () {
@@ -96,5 +92,4 @@ if (!isset($_SESSION['username'])) {
         })
     </script>
 </body>
-
 </html>

@@ -31,8 +31,13 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
 </head>
 
 <body>
-    <div class="d-flex flex-row flex-wrap">
+    
+    <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
+
+           <!-- Form -->
+           <div class="" style="width: 100%;">
+            <?php include 'adminheader.php'; ?>
 
         <div style="flex: 1;">
             <div class="d-flex row justify-content-center container-fluid">

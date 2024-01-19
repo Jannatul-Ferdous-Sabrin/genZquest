@@ -27,9 +27,16 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <div class="d-flex flex-row flex-wrap">
-        <?php include 'sidebar.php' ?>
 
+    <div class="d-flex flex-nowrap">
+        <?php include 'sidebar.php' ?>
+        
+          <!-- Form -->
+
+        <div class="" style="width: 100%;">
+            <?php include 'adminheader.php'; ?>
+
+    
         <div style="flex: 1;">
 
             <div class="d-flex row justify-content-center container-fluid">
@@ -43,8 +50,8 @@ if (!isset($_SESSION['username'])) {
                                 <th scope="col" style="width: 20%;">COMPANYID</th>
                                 <th scope="col" style="width: 20%;">CATEGORY</th>
                                 <th scope="col" style="width: 20%;">OCCUPATIONTITLE</th>
-                                <th scope="col" style="width: 15%;">SALARIES</th>
-                                <th scope="col" style="width: 15%;">DURATION_EMPLOYMENT</th>
+                                <th scope="col" style="width: 15%;">JOB STATUS</th>
+                                <th scope="col" style="width: 15%;">ACTION</th>
                              
 
                             </tr>
@@ -55,17 +62,22 @@ if (!isset($_SESSION['username'])) {
                             include '../config.php';
 
                             $unregistered = mysqli_query($conn, "SELECT * FROM `job`");
-                            while ($row = mysqli_fetch_array($unregistered)) {
+                            while ($row = mysqli_fetch_array($unregistered)) 
+                            {
                                 echo
                                     "<tr>
-                            <th scope='row'>" . $row['JOBID'] . "</th>
-                            <td>" . $row['COMPANYID'] . "</td>
-                            <td>" . $row['CATEGORY'] . "</td>
-                            <td>" . $row['OCCUPATIONTITLE'] . "</td>
-                            <td>" . $row['SALARIES'] . "</td>
-                            <td>" . $row['DURATION_EMPLOYMENT'] . "</td>
-                          
-                        </tr>";
+                                        <th scope='row'>" . $row['JOBID'] . "</th>
+                                        <td>" . $row['COMPANYID'] . "</td>
+                                        <td>" . $row['CATEGORY'] . "</td>
+                                        <td>" . $row['OCCUPATIONTITLE'] . "</td>
+                                        <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Declined" : "Allowed") . "</span></td>
+                                        <td>
+                                            <div class='d-flex'>
+                                                <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-warning me-3'>Details</button></a>
+                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'>Delete</button></a>
+                                            </div>
+                                        </td>
+                                    </tr>";
                             }
                             ?>
                         </tbody>

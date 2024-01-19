@@ -1,3 +1,5 @@
+
+
 <div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 100vh; background-color: #222e3c;">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <svg class="bi pe-none me-2" width="30" height="24">
@@ -18,7 +20,7 @@
                 <span>User Details</span>
             </button>
             <div class="collapse" id="dashboard-collapse" style="">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
                     <li><a href="clientList.php"
                             class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Client
                                 List</span></a>
