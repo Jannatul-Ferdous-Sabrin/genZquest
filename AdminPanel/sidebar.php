@@ -1,6 +1,4 @@
-
-
-<div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 100vh; background-color: #222e3c;">
+<div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 55rem; background-color: #222e3c;">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <svg class="bi pe-none me-2" width="30" height="24">
             <use xlink:href="#bootstrap"></use>

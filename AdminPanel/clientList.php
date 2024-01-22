@@ -27,10 +27,11 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <div class="d-flex flex-row flex-wrap">
+    <div class="d-flex flex-row flex-nowrap">
         <?php include 'sidebar.php' ?>
 
-        <div style="flex: 1;">
+        <div style="width: 100%;">
+            <?php include 'adminheader.php'; ?>
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
                     <h4>List of clients</h4>
@@ -52,23 +53,23 @@ if (!isset($_SESSION['username'])) {
                             while ($row = mysqli_fetch_array($clientList)) {
                                 echo
                                     "<tr>
-                            <th scope='row'>" . $row['id'] . "</th>
-                            <td>" . $row['username'] . "</td>
-                            <td>" . $row['email'] . "</td>
-                            <td>" . $row['mobile'] . "</td>
-                            <td>
-                                <div class='d-flex'>
-                                    <form method='POST' action='edit.php'>
-                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                        <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
-                                    </form>
-                                    <form method='POST' action='delete.php'>
-                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                        <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>";
+                                            <th scope='row'>" . $row['id'] . "</th>
+                                            <td>" . $row['username'] . "</td>
+                                            <td>" . $row['email'] . "</td>
+                                            <td>" . $row['mobile'] . "</td>
+                                            <td>
+                                                <div class='d-flex'>
+                                                    <form method='POST' action='edit.php'>
+                                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
+                                                        <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
+                                                    </form>
+                                                    <form method='POST' action='delete.php'>
+                                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
+                                                        <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>";
                             }
                             ?>
                         </tbody>
@@ -76,9 +77,10 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
+
     </div>
 
-  <!-- Bootstrap JS and DataTables JS -->
+    <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
