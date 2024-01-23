@@ -196,10 +196,10 @@ $row = mysqli_fetch_array($jobQuery);
                             <i class="fa-solid fa-arrow-right mt-2"></i>
                             <div class="d-flex ms-4 mt-1">
                                 <div class="form-check">
-                                    <input type="radio" name="status" value="1" <?php echo ($row['status'] == 1 ? "checked" : "") ?>>Allowed
+                                    <input type="radio" name="status" value="1" <?php echo ($row['status'] == 1 ? "checked" : "") ?>>Approved
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" name="status" value="0" <?php echo ($row['status'] == 0 ? "checked" : "") ?>>Not Allowed
+                                    <input type="radio" name="status" value="0" <?php echo ($row['status'] == 0 ? "checked" : "") ?>>Not Approved
                                 </div>
                             </div>
                         </div>

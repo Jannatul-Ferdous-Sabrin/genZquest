@@ -5,18 +5,21 @@ if (!isset($_SESSION['username'])) {
     echo "<script>location.href='login.php'</script>";
     exit();
 }
-?>
 
+$clientcollapse = 1;
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>adminpanel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <!-- DataTable -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
 
     <style>
@@ -28,13 +31,12 @@ if (!isset($_SESSION['username'])) {
 
 <body>
     <div class="d-flex flex-row flex-nowrap">
-        <?php include 'sidebar.php' ?>
-
-        <div style="width: 100%;">
+        <?php include 'sidebar.php'; ?>
+        <div style="width:100%;">
             <?php include 'adminheader.php'; ?>
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of clients</h4>
+                    <h4>List of Employees</h4>
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
@@ -46,11 +48,12 @@ if (!isset($_SESSION['username'])) {
                             </tr>
                         </thead>
                         <tbody>
+
                             <?php
                             include '../config.php';
 
-                            $clientList = mysqli_query($conn, "SELECT * FROM `registration` WHERE `preference`='client'");
-                            while ($row = mysqli_fetch_array($clientList)) {
+                            $employeeList = mysqli_query($conn, "SELECT * FROM `registration` WHERE `preference`='employee'");
+                            while ($row = mysqli_fetch_array($employeeList)) {
                                 echo
                                     "<tr>
                                             <th scope='row'>" . $row['id'] . "</th>
@@ -68,6 +71,7 @@ if (!isset($_SESSION['username'])) {
                                                         <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
                                                     </form>
                                                 </div>
+                                                
                                             </td>
                                         </tr>";
                             }
@@ -79,7 +83,6 @@ if (!isset($_SESSION['username'])) {
         </div>
 
     </div>
-
     <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -87,12 +90,11 @@ if (!isset($_SESSION['username'])) {
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
-        // DataTable
+        //DataTable
         $(document).ready(function () {
             $('#datatable').DataTable();
-        });
+        })
     </script>
 </body>
 

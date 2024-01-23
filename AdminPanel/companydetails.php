@@ -31,76 +31,77 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
 </head>
 
 <body>
-    
+
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
 
-           <!-- Form -->
-           <div class="" style="width: 100%;">
+
+        <!-- Form -->
+        <div class="" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
 
-        <div style="flex: 1;">
-            <div class="d-flex row justify-content-center container-fluid">
-                <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of Companies</h4>
-                    <br>
-
-                    <table class="table table-striped" id="datatable">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="width: 15%;">COMPANYID</th>
-                                <th scope="col" style="width: 20%;">COMPANYNAME</th>
-                                <th scope="col" style="width: 20%;">COMPANYADDRESS</th>
-                                <th scope="col" style="width: 20%;">COMPANYCONTACTNO</th>
-                                <th scope="col" style="width: 15%;">ACTION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while ($row = mysqli_fetch_array($companyDetails)) {
-                            ?>
+            <div style="flex: 1;">
+                <div class="d-flex row justify-content-center container-fluid">
+                    <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
+                        <h4>List of Companies</h4>
+                        <table class="table table-striped" id="datatable">
+                            <thead class="bg-light">
                                 <tr>
-                                    <th scope='row'><?= $row['COMPANYID'] ?></th>
-                                    <td><?= $row['COMPANYNAME'] ?></td>
-                                    <td><?= $row['COMPANYADDRESS'] ?></td>
-                                    <td><?= $row['COMPANYCONTACTNO'] ?></td>
-                                    <td>
-                                        <div class='d-flex'>
-                                            <form method='POST' action='edit-company.php'>
-                                                <input type='hidden' name='company_id' value='<?= $row['COMPANYID'] ?>'>
-                                                <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
-                                            </form>
-                                            <form method='POST' action=''>
-                                                <input type='hidden' name='company_id' value='<?= $row['COMPANYID'] ?>'>
-                                                <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                    <th>COMPANYLOGO</th>
+                                    <th>COMPANYNAME</th>
+                                    <th>COMPANYADDRESS</th>
+                                    <th>COMPANYCONTACTNO</th>
+                                    <th>COMPANYEMAIL</th>
                                 </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($row = mysqli_fetch_array($companyDetails)) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="../companylogo/<?= $row['COMPANYLOGO'] ?>" class="rounded-circle"
+                                                    alt="" style="width: 45px; height: 45px" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <?= $row['COMPANYNAME'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['COMPANYADDRESS'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['COMPANYCONTACTNO'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $row['COMPANYEMAIL'] ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap JS and DataTables JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <!-- Bootstrap JS and DataTables JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-    <script>
-        // DataTable Initialization
-        $(document).ready(function () {
-            $('#datatable').DataTable();
-        });
-    </script>
+        <script>
+            // DataTable Initialization
+            $(document).ready(function () {
+                $('#datatable').DataTable();
+            });
+        </script>
 </body>
 
 </html>

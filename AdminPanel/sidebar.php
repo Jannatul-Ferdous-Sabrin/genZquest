@@ -1,5 +1,5 @@
 <div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 55rem; background-color: #222e3c;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+    <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <svg class="bi pe-none me-2" width="30" height="24">
             <use xlink:href="#bootstrap"></use>
         </svg>
@@ -7,34 +7,38 @@
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
-                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                <span>Dashboard</span>
-            </button>
+            <a href="adminhome.php">
+                <button
+                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
+                    data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                    <span>Dashboard</span>
+                </button></a>
+
         </li>
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
                 data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
                 <span>User Details</span>
             </button>
-            <div class="collapse" id="dashboard-collapse" style="">
+            <div class="collapse <?php if(isset($clientcollapse)) echo "show" ?>" id="dashboard-collapse" style="">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
-                    <li><a href="clientList.php"
-                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Client
-                                List</span></a>
+                    <li><a href="employer.php"
+                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Employer
+                                </span></a>
                     </li>
-                    <li><a href="userslist.php"
-                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Users
-                                List</span></a>
+                    <li><a href="employee.php"
+                            class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Employee
+                                </span></a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="mb-1">
-    <a href="joblist.php" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-semibold fs-5">
-        <span>Job Vacancy</span>
-    </a>
-</li>
+            <a href="joblist.php"
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-semibold fs-5">
+                <span>Job Vacancy</span>
+            </a>
+        </li>
 
         <ul class="list-unstyled">
             <li class="mb-1">
