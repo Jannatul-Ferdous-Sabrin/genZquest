@@ -59,9 +59,10 @@
             </ul>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5"
-                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false"><span>
-                        Manage Users</span>
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5 text-white"
+                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    <i class="fa-solid fa-user-large me-2"></i>
+                    <span> Manage Users</span>
                 </button>
             </li>
         </ul>

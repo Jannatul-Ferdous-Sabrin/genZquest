@@ -29,6 +29,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         }
     </style>
 </head>
+
 <body>
 
     <div class="d-flex flex-nowrap">
@@ -46,9 +47,8 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                             <thead class="bg-light">
                                 <tr>
                                     <th>COMPANYLOGO</th>
-                                    <th>COMPANYNAME</th>
+                                    <th>COMPANYTYPE</th>
                                     <th>COMPANYADDRESS</th>
-                                    <th>COMPANYEMAIL</th>
                                     <th>COMPANYSTATUS</th>
                                 </tr>
                             </thead>
@@ -59,14 +59,37 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="../companylogo/<?= $row['COMPANYLOGO'] ?>" class="rounded-circle"
-                                                    alt="" style="width: 45px; height: 45px" />
+                                                <img src="<?php echo $row['COMPANYLOGO'] ?>" alt=""
+                                                    style="width: 45px; height: 45px" class="rounded-circle" />
+                                                <div class="ms-3">
+                                                    <p class="fw-bold mb-1">
+                                                        <?php echo $row['COMPANYNAME']; ?>
+                                                    </p>
+                                                    <p class="text-muted mb-0">
+                                                        <?php echo $row['COMPANYEMAIL']; ?>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td><?= $row['COMPANYNAME'] ?></td>
-                                        <td><?= $row['COMPANYADDRESS'] ?></td>
-                                        <td><?= $row['COMPANYEMAIL'] ?></td>
-                                        <td><?= $row['COMPANYSTATUS'] ?></td>
+                                        <td>
+                                            <?php echo $row['COMPANYTYPE'] ?>
+                                            <p class="text-muted mb-0">
+                                                <?php echo $row['COMPANYDEPARTMENT']; ?>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <span class="">
+                                                <?php echo $row['COMPANYADDRESS']; ?>
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <span
+                                                class='badge text-bg-<?php echo ($row['COMPANYSTATUS'] == 0 ? "danger" : "success"); ?>'>
+                                                <?php echo ($row['COMPANYSTATUS'] == 0 ? "Unauthorized" : "Authorized"); ?>
+                                            </span>
+                                        </td>
+
                                     </tr>
                                     <?php
                                 }
@@ -86,11 +109,11 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
         <script>
-
             // DataTable Initialization
             $(document).ready(function () {
                 $('#datatable').DataTable();
             });
         </script>
-    </body>
+</body>
+
 </html>
