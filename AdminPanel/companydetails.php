@@ -29,29 +29,27 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         }
     </style>
 </head>
-
 <body>
 
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
 
-
         <!-- Form -->
         <div class="" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
-
             <div style="flex: 1;">
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                         <h4>List of Companies</h4>
+                        <br>
                         <table class="table table-striped" id="datatable">
                             <thead class="bg-light">
                                 <tr>
                                     <th>COMPANYLOGO</th>
                                     <th>COMPANYNAME</th>
                                     <th>COMPANYADDRESS</th>
-                                    <th>COMPANYCONTACTNO</th>
                                     <th>COMPANYEMAIL</th>
+                                    <th>COMPANYSTATUS</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,18 +63,10 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                                     alt="" style="width: 45px; height: 45px" />
                                             </div>
                                         </td>
-                                        <td>
-                                            <?= $row['COMPANYNAME'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['COMPANYADDRESS'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['COMPANYCONTACTNO'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $row['COMPANYEMAIL'] ?>
-                                        </td>
+                                        <td><?= $row['COMPANYNAME'] ?></td>
+                                        <td><?= $row['COMPANYADDRESS'] ?></td>
+                                        <td><?= $row['COMPANYEMAIL'] ?></td>
+                                        <td><?= $row['COMPANYSTATUS'] ?></td>
                                     </tr>
                                     <?php
                                 }
@@ -95,13 +85,12 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-
         <script>
+
             // DataTable Initialization
             $(document).ready(function () {
                 $('#datatable').DataTable();
             });
         </script>
-</body>
-
+    </body>
 </html>
