@@ -69,7 +69,7 @@ if (!isset($_SESSION['username'])) {
                                         <td>" . $row['CATEGORY'] . "</td>
                                         <td>" . $row['OCCUPATIONTITLE'] . "</td>
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Declined" : "Allowed") . "</span></td>
-                                        <td>
+                                        <td>                                            
                                             <div class='d-flex'>
                                                 <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-warning me-3'>Details</button></a>
                                                 <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'>Delete</button></a>

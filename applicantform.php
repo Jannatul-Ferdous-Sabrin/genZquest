@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applicant Form</title>
-  
+
     <style>
-        
         .container {
             width: 600px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
         }
+
         form {
             width: 100%;
         }
@@ -64,10 +65,10 @@
             display: flex;
             align-items: center;
         }
-
-</style>
+    </style>
 
 </head>
+
 <body>
     <div class="container">
         <h2>Applicant Form</h2>
@@ -88,13 +89,14 @@
                 <label for="ADDRESS">Address:</label>
                 <textarea class="form-control" id="ADDRESS" name="ADDRESS" placeholder="Address" required></textarea>
             </div>
-            
+
             <div class="form-group">
                 <div class="sex-group">
                     <span class="sex-label">Sex:</span>
                     <div class="sex-radio">
                         <label>
-                            <input id="optionsRadios1" checked="True" name="optionsRadios" type="radio" value="Female">Female
+                            <input id="optionsRadios1" checked="True" name="optionsRadios" type="radio"
+                                value="Female">Female
                         </label>
                         <label>
                             <input id="optionsRadios2" name="optionsRadios" type="radio" value="Male">Male
@@ -108,7 +110,8 @@
             </div>
             <div class="form-group">
                 <label for="BIRTHPLACE">Place of Birth:</label>
-                <textarea class="form-control" id="BIRTHPLACE" name="BIRTHPLACE" placeholder="Place of Birth" required></textarea>
+                <textarea class="form-control" id="BIRTHPLACE" name="BIRTHPLACE" placeholder="Place of Birth"
+                    required></textarea>
             </div>
             <div class="form-group">
                 <label for="TELNO">Contact No.:</label>
@@ -124,10 +127,11 @@
                 </select>
             </div>
 
-            
+
             <div class="form-group">
                 <label for="EMAILADDRESS">Email Address:</label>
-                <input class="form-control" type="email" id="EMAILADDRESS" name="EMAILADDRESS" placeholder="Email Address">
+                <input class="form-control" type="email" id="EMAILADDRESS" name="EMAILADDRESS"
+                    placeholder="Email Address">
             </div>
             <div class="form-group">
                 <label for="USERNAME">Username:</label>
@@ -151,4 +155,5 @@
         </form>
     </div>
 </body>
-    </html>
+
+</html>

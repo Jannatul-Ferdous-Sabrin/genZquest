@@ -32,12 +32,14 @@ if (!isset($_SESSION['username'])) {
         <div style="width: 100%;">
             <?php include 'adminheader.php'; ?>
 
+        
             <!-- Dashboard Section -->
             <div class="d-flex flex-row flex-wrap m-5">
+                
                 <!-- Card Section -->
                 <div class="card col-lg-3 me-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
+                        <div class="rounded-start text-bg-info" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
@@ -49,7 +51,7 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <div class="card col-lg-3 me-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
+                        <div class="rounded-start text-bg-warning" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
@@ -61,7 +63,7 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <div class="card col-lg-3 me-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
+                        <div class="rounded-start text-bg-danger" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
@@ -74,7 +76,7 @@ if (!isset($_SESSION['username'])) {
 
                 <div class="card col-lg-3 me-4 mt-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
+                        <div class="rounded-start text-bg-success" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
@@ -84,6 +86,34 @@ if (!isset($_SESSION['username'])) {
                         </div>
                     </div>
                 </div>
+
+                <div class="card col-lg-3 me-4 mt-4">
+                    <div class="row g-0">
+                        <div class="rounded-start text-bg-secondary" style="width: 1rem;">
+                        </div>
+                        <div class="col-lg-11">
+                            <div class="card-body">
+                                <h5 class="text-primary card-title">Total Client5</h5>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-lg-3 me-4 mt-4">
+                    <div class="row g-0">
+                        <div class="rounded-start text-bg-info" style="width: 1rem;">
+                        </div>
+                        <div class="col-lg-11">
+                            <div class="card-body">
+                                <h5 class="text-primary card-title">Total Client6</h5>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
