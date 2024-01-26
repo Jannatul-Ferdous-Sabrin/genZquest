@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../config.php';
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='login.php'</script>";

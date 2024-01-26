@@ -1,13 +1,14 @@
 <?php
 session_start();
+include '../config.php';
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='login.php'</script>";
     exit();
 }
-
 $clientcollapse = 1;
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -48,9 +49,7 @@ $clientcollapse = 1;
                             </tr>
                         </thead>
                         <tbody>
-
-                            <?php
-                            include '../config.php';
+                        <?php
 
                             $employeeList = mysqli_query($conn, "SELECT * FROM `registration` WHERE `preference`='employee'");
                             while ($row = mysqli_fetch_array($employeeList)) {
