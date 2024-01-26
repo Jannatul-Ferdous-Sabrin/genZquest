@@ -5,6 +5,7 @@ include '../config.php';
 if (isset($_POST['editJob'])) {
     $jobid = $_POST['jobid'];
     $companyid = $_POST['companyid'];
+    $companyname = $_POST['companyname'];
     $category = $_POST['category'];
     $occTitle = $_POST['occTitle'];
     $employee = $_POST['employee'];
@@ -17,7 +18,7 @@ if (isset($_POST['editJob'])) {
     $jobstatus = $_POST['jobstatus'];
     $status = $_POST['status'];
 
-    $update = mysqli_query($conn, "UPDATE `job` SET `JOBID`='$jobid',`COMPANYID`='$companyid',`CATEGORY`='$category',
+    $update = mysqli_query($conn, "UPDATE `job` SET `JOBID`='$jobid',`COMPANYID`='$companyid',`COMPANYNAME`='$companyname',`CATEGORY`='$category',
         `OCCUPATIONTITLE`='$occTitle',`REQ_NO_EMPLOYEES`='$employee',`SALARIES`='$salaries',`DURATION_EMPLOYMENT`='$duration',
         `WORK_EXPERIENCE`='$exp',`JOBDESCRIPTION`='$jobdes',`PREFEREDSEX`='$gender',`SECTOR_VACANCY`='$sector',`JOBSTATUS`='$jobstatus',
         `status`= '$status' WHERE `JOBID`='$jobid'");

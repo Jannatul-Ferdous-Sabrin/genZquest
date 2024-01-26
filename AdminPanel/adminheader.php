@@ -30,7 +30,7 @@ $rowData = mysqli_num_rows($notificationQuery);
                                         alt='profile' width='50' height='50' class='rounded-circle me-3'>
                                     <div>
                                         <span class='fs-6 mb-0 fw-bold'>" . $notificationData['COMPANYNAME'] . "</span>
-                                        <span> HAS POSTED A JOB</span>
+                                        <span> has recently posted a job</span>
                                         <p class='mt-0 text-secondary'>" . $notificationData['DATEPOSTED'] . "</p>
                                     </div>
                                 </div>

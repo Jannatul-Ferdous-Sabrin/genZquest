@@ -70,6 +70,18 @@ $row = mysqli_fetch_array($jobQuery);
 
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
+                                <p>COMPANYNAME</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <div class="col-lg-4 ms-5">
+                                <input type="text" class="form-control" name="companyname"
+                                    value="<?php echo $row['COMPANYNAME']; ?>">
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex">
+                            <div class="col-lg-3 ms-5">
                                 <p>CATEGORY</p>
                             </div>
 
