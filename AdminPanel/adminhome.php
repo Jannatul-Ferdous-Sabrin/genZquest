@@ -45,7 +45,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-primary card-title">Total Client1</h5>
+                                <h5 class="text-primary card-title">TOTAL EMPLOYER</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
