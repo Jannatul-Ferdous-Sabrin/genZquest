@@ -36,7 +36,27 @@
             width: 30px;
             cursor: pointer;
         }
-    </style>
+
+        .register-options {
+        margin-bottom: 20px;
+    }
+
+    .register-options label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .register-options .form-check {
+        display: inline-block;
+        margin-right: 20px; /* Adjust the spacing between the buttons */
+    }
+
+    .register-options .form-check input {
+        margin-right: 5px;
+    }
+</style>
 </head>
 
 <body>
@@ -81,6 +101,21 @@
                                 placeholder="Confirm Password" name="r_con_pass">
                             <img src="Images/eye-close.png" id="eyeiconConfirm">
                         </div>
+
+
+
+                        <div class="mb-3 register-options">
+                            <label>Register As:</label>
+                            <div class="form-check">
+                                <input type="radio" name="register_option" value="employer" checked> Employer
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="register_option" value="employee"> Employee
+                            </div>
+                        </div>
+
+
+
                         <div class="mb-3">
                             <button class="btn btn-lg btn-primary w-100 fs-6" name="submit">Register</button>
                         </div>
@@ -88,6 +123,14 @@
                             <small>Already have an account? <a href="login.php">Login</a></small>
                         </div>
                     </form>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>

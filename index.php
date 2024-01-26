@@ -18,7 +18,11 @@ session_start();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="style.css" >
   <style>
     * {
       font-family: 'Poppins', sans-serif;
@@ -27,6 +31,10 @@ session_start();
     .h-font {
       font-family: 'Merienda', cursive;
     }
+
+    h6 {
+  color: black;
+}
 
     .swiper-container {
       width: 100%;
@@ -136,40 +144,39 @@ session_start();
             $result = $conn->query($sql);
 
             // Display the job listings
-            if ($result) {
-              $jobCount = 0;
-              echo '<div class="container">';
+           if ($result) {
+    $jobCount = 0;
+    echo '<div class="container">'; // Start a container for rows
 
-              while ($row = $result->fetch_assoc()) {
-                if ($jobCount % 4 == 0) {
-                  echo '<div class="row">';
-                }
+    while ($row = $result->fetch_assoc()) {
+        if ($jobCount % 4 == 0) {
+            echo '<div class="row">'; // Start a new row after every 4 jobs
+        }
 
-                echo '<div class="col-md-3 job-col" style="border: 2px solid #ccc; margin: 10px; padding: 10px;">';
-                echo '<h3><a href="http://localhost/genzquest/applicationform.php?search=' . $row['JOBID'] . '" style="text-decoration: none; color: black;">' . $row['OCCUPATIONTITLE'] . '</a></h3>';
+        echo '<div class="col-md-3 job-col" style="border: 2px solid #ccc; margin: 10px; padding: 10px;">'; // Add borders and spacing
+        echo '<h3><a href="http://localhost/pro/applicationform.php?search=' . $row['JOBID'] . '" style="text-decoration: none; color: black;">' . $row['OCCUPATIONTITLE'] . '</a></h3>';
+        
+        echo '<p> ' . $row['COMPANYNAME'] . '</p>'; // Dynamic company name
+        echo '<p>Work Experience: ' .$row['WORK_EXPERIENCE']  . '</p>';
+        echo '<p>Experience Requirement : ' . $row['keyword'] . '</p>'; 
 
-                echo '<p> ' . $row['COMPANYNAME'] . '</p>';
-                echo '<p>Work Experience: ' . $row['WORK_EXPERIENCE'] . '</p>';
-                echo '<p>Experience Requirement : ' . $row['keyword'] . '</p>';
+        echo '<p>Date Posted: ' . date_format(date_create($row['DATEPOSTED']), 'M d, Y') . '</p>';
+        // Display other job details here...
+        echo '</div>';
 
-                echo '<p>Date Posted: ' . date_format(date_create($row['DATEPOSTED']), 'M d, Y') . '</p>';
+        if ($jobCount % 4 == 3 || $jobCount == $result->num_rows - 1) {
+            echo '</div>'; // Close the row
+        }
 
-                echo '</div>';
+        $jobCount++;
+    }
 
-                if ($jobCount % 4 == 3 || $jobCount == $result->num_rows - 1) {
-                  echo '</div>';
-                }
-
-                $jobCount++;
-              }
-
-              echo '</div>';
-              $result->free_result();
-            } else {
-              echo "Error: " . $conn->error;
-            }
-            ?>
-
+    echo '</div>'; // Close the container
+    $result->free_result();
+} else {
+    echo "Error: " . $conn->error;
+}
+?>
           </div>
         </div>
       </div>
