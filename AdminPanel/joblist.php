@@ -18,9 +18,12 @@ include '../config.php';
     <title>Joblist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- Fontawesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- DataTable -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+    
     <style>
         .sidebar span {
             color: #fff;
@@ -52,7 +55,7 @@ include '../config.php';
                                     <th scope="col" style="width: 20%;">CATEGORY</th>
                                     <th scope="col" style="width: 20%;">OCCUPATIONTITLE</th>
                                     <th scope="col" style="width: 15%;">JOB STATUS</th>
-                                    <th scope="col" style="width: 15%;">ACTION</th>
+                                    <th scope="col" style="width: 15%;">DETAILS</th>
 
 
                                 </tr>
@@ -72,8 +75,9 @@ include '../config.php';
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Declined" : "Allowed") . "</span></td>
                                         <td>                                            
                                             <div class='d-flex'>
-                                                <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-warning me-3'>Details</button></a>
-                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'>Delete</button></a>
+                                                <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-primary me-3'>Details</button></a>
+                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'> <i class='fa-solid fa-trash-can'></i>
+                                                </button></a>
                                             </div>
                                         </td>
                                     </tr>";

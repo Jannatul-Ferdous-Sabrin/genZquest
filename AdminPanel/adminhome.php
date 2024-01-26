@@ -17,6 +17,7 @@ if (!isset($_SESSION['username'])) {
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <!-- Fontawesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -40,11 +41,11 @@ if (!isset($_SESSION['username'])) {
                 <!-- Card Section -->
                 <div class="card col-lg-3 me-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-info" style="width: 1rem;">
+                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-info card-title">Total Client1</h5>
+                                <h5 class="text-primary card-title">Total Client1</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
