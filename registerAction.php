@@ -56,6 +56,7 @@ if (isset($_POST['submit'])) {
     $r_con_pass = $_POST["r_con_pass"];
     $r_email = $_POST["r_email"];
     $r_mobile = $_POST["r_mobile"];
+    
     $verify_token = md5(rand());
 
     $insert_query = "INSERT INTO `registration`(`username`, `email`, `mobile`, `password`, `verify_token`) 

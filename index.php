@@ -1,10 +1,7 @@
 <?php
 require('config.php');
 session_start();
-if (!isset($_SESSION['username'])) {
-  echo "<script>alert('Please login first!')</script>";
-  echo "<script>location.href='login.php'</script>";
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

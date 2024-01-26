@@ -5,6 +5,8 @@ if (!isset($_SESSION['username'])) {
     echo "<script>location.href='login.php'</script>";
     exit();
 }
+
+include '../config.php';
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +60,6 @@ if (!isset($_SESSION['username'])) {
                             <tbody>
 
                                 <?php
-                                include '../config.php';
 
                                 $unregistered = mysqli_query($conn, "SELECT * FROM `job`");
                                 while ($row = mysqli_fetch_array($unregistered)) {
