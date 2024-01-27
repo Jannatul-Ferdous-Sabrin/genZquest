@@ -9,16 +9,13 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $l_username;
         echo "<script>location.href='AdminPanel/adminhome.php'</script>";
     } else {
-        $stmt = $conn->prepare("SELECT * FROM `registration` WHERE username=? AND BINARY `password`=? AND verify_status = '1'");
-        $stmt->bind_param("ss", $l_username, $l_pass);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
+        $authQuery = mysqli_query($conn, "SELECT * FROM `registration` WHERE username='$l_username' AND BINARY `password`='$l_pass' AND verify_status = '1'"); 
 
-        if ($row) {
+        if (mysqli_num_rows($authQuery) > 0) {
             session_start();
             $_SESSION['username'] = $l_username;
-
+            $statusQuery = mysqli_query($conn, "SELECT * FROM `registration` WHERE username='$l_username'");
+            $row = mysqli_fetch_assoc($statusQuery);
             // Check if the user is an employer
             if ($row['preference'] === 'employer') {
                 echo "<script>location.href='EmployerPanel/employerhome.php'</script>";
