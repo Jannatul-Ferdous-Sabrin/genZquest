@@ -55,18 +55,21 @@ function sendMail($recipient, $username, $verificationToken)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
+    $rFirstname = $_POST['r_fname'];
+    $rLastname = $_POST['r_lname'];
     $rUsername = $_POST['r_username'];
     $rPassword = $_POST["r_pass"];
     $rConfirmPassword = $_POST["r_con_pass"];
     $rEmail = $_POST["r_email"];
     $rMobile = $_POST["r_mobile"];
     $rPreference = $_POST["register_option"];
+
     // Verify token for email verification
     $verifyToken = md5(rand());
 
-    // SQL query to insert data into the database
-    $insertQuery = "INSERT INTO `registration`(`username`, `email`, `mobile`, `password`, `verify_token`, `preference`) 
-                    VALUES ('$rUsername','$rEmail','$rMobile','$rPassword','$verifyToken', '$rPreference')";
+    // SQL query to insert data into the database (without password hashing)
+    $insertQuery = "INSERT INTO `registration`(`firstname`,`lastname`,`username`, `email`, `mobile`, `password`, `verify_token`, `preference`) 
+                    VALUES ('$rFirstname','$rLastname','$rUsername','$rEmail','$rMobile','$rPassword','$verifyToken', '$rPreference')";
 
     // Regular expressions for validation
     $emailPattern = "/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/";
@@ -107,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         } else {
             // Database insertion failed
-            error_log("Failed to insert user data into the database.");
+            error_log("Failed to insert user data into the database: " . mysqli_error($conn));
             echo "<script>alert('Registration failed!')</script>";
             echo "<script>location.href='register.php'</script>";
         }

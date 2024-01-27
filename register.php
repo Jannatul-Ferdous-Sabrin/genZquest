@@ -75,6 +75,17 @@
                         <p>Thanks for choosing us!</p>
                     </div>
                     <form action="registerAction.php" method="POST">
+
+                    <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Firstname"
+                                name="r_fname">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Lastname"
+                                name="r_lname">
+                        </div>
+
                         <div class="mb-3">
                             <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username"
                                 name="r_username">
