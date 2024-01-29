@@ -36,7 +36,7 @@ $clientcollapse = 1;
         <div style="width:100%;">
             <?php include 'adminheader.php'; ?>
             <div class="d-flex row justify-content-center container-fluid">
-                <div class="border border-secondary col-lg-8 col-md-12 col-sm-12 rounded m-4">
+                <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                     <h4>List of Employees</h4>
                     <table class="table table-striped" id="datatable">
                         <thead>
