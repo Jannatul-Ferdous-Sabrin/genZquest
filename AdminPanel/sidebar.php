@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="flex-shrink-0 p-3 sidebar" style="width: 280px; height: 55rem; background-color: #222e3c;">
-    <a href="" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+    <a href="adminhome.php" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <svg class="bi pe-none me-2" width="30" height="24">
             <use xlink:href="#bootstrap"></use>
         </svg>
-        <span class="fs-4 fw-bolder text-white">Admin Panel</span>
+        <span class="fs-4 fw-bolder text-white">genZquest</span>
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
@@ -24,11 +24,11 @@
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5 text-white"
                 data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
                 <i class="fa-solid fa-user-group me-2"></i>
-                <span>User Details</span>
+                <span>Manage Users</span>
             </button>
             <div class="collapse <?php if (isset($clientcollapse))
                 echo "show" ?>" id="dashboard-collapse" style="">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-5 ">
                         <li><a href="employer.php"
                                 class="link-body-emphasis d-inline-flex text-decoration-none rounded"><span>Employer
                                 </span></a>
@@ -62,7 +62,7 @@
                 <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed fw-semibold fs-5 text-white"
                     data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                     <i class="fa-regular fa-circle-user me-2"></i>
-                    <span> Manage Profile</span>
+                    <span>Admin Query</span>
                 </button>
             </li>
         </ul>

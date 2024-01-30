@@ -39,6 +39,7 @@ $clientcollapse = 1;
             <div class="d-flex row justify-content-center container-fluid">
                 <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                     <h4>List of Employers</h4>
+                    <br>
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>

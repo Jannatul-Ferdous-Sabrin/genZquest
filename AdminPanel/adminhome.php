@@ -6,6 +6,7 @@ if (!isset($_SESSION['username'])) {
     echo "<script>location.href='login.php'</script>";
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-primary card-title">TOTAL EMPLOYER</h5>
+                                <h5 class="text-primary card-title">Total Employer</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
@@ -57,7 +58,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-warning card-title">Total Client2</h5>
+                                <h5 class="text-warning card-title">Total Employees</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
@@ -69,7 +70,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-danger card-title">Total Client3</h5>
+                                <h5 class="text-danger card-title">Verified Employees</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
@@ -82,7 +83,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-success card-title">Total Client4</h5>
+                                <h5 class="text-success card-title">Authorized Companies</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
@@ -91,11 +92,11 @@ if (!isset($_SESSION['username'])) {
 
                 <div class="card col-lg-3 me-4 mt-4">
                     <div class="row g-0">
-                        <div class="rounded-start text-bg-secondary" style="width: 1rem;">
+                        <div class="rounded-start text-bg-danger" style="width: 1rem;">
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-secondary card-title">Total Client5</h5>
+                                <h5 class="text-danger card-title">Active Jobs</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>
@@ -108,7 +109,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-info card-title">Total Client6</h5>
+                                <h5 class="text-info card-title">Featured Jobs</h5>
                                 <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
                             </div>
                         </div>

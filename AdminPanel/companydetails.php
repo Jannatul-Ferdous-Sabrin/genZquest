@@ -29,9 +29,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         }
     </style>
 </head>
-
 <body>
-
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
 

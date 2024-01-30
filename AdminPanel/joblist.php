@@ -72,11 +72,11 @@ include '../config.php';
                                         <td>" . $row['COMPANYID'] . "</td>
                                         <td>" . $row['CATEGORY'] . "</td>
                                         <td>" . $row['OCCUPATIONTITLE'] . "</td>
-                                        <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Declined" : "Allowed") . "</span></td>
+                                        <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Closed" : "Active") . "</span></td>
                                         <td>                                            
                                             <div class='d-flex'>
-                                                <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-primary me-3'>Details</button></a>
-                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'> <i class='fa-solid fa-trash-can'></i>
+                                                <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-primary me-3'><i class='fa-solid fa-pen-to-square'></i></button></a>
+                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'><i class='fa-solid fa-trash-can'></i>
                                                 </button></a>
                                             </div>
                                         </td>

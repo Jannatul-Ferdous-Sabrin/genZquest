@@ -35,14 +35,6 @@
             </li>";
           }
           ?>
-
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="./register.php" > <i class="bi bi-person"></i>Register</a>
-        </li>
-
-         <li class="nav-item">
-         <a class="nav-link" href="./login.php"><i class="bi bi-person-circle"></i> Login</a>
-  </li> -->
          <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Jobs category
