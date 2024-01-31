@@ -47,7 +47,8 @@ $clientcollapse = 1;
                                 <th scope="col" style="width: 20%;">Username</th>
                                 <th scope="col" style="width: 20%;">Email</th>
                                 <th scope="col" style="width: 20%;">Mobile</th>
-                                <th scope="col" style="width: 15%;">Action</th>
+                                <th scope="col" style="width: 15%;">Verified?</th>
+                                <th scope="col" style="width: 10%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,16 +63,23 @@ $clientcollapse = 1;
                                             <td>" . $row['username'] . "</td>
                                             <td>" . $row['email'] . "</td>
                                             <td>" . $row['mobile'] . "</td>
+                                            <td><span class='badge text-bg-" . ($row['verify_status'] == 0 ? "danger" : "success") . "'>" . ($row['verify_status'] == 0 ? "No" : "Yes") . "</span></td>
+
+
+
+                                            
                                             <td>
                                                 <div class='d-flex'>
                                                     <form method='POST' action='edit.php'>
                                                         <input type='hidden' name='user_id' value='" . $row['id'] . "'>
                                                         <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
                                                     </form>
+
                                                     <form method='POST' action='delete.php'>
-                                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                        <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
-                                                    </form>
+                                                    <input type='hidden' name='user_id' value='" . $row['id'] . "'>
+                                                    <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
+                                                </form>
+                            
                                                 </div>
                                             </td>
                                         </tr>";
