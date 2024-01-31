@@ -7,6 +7,12 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+$employeeNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM registration WHERE preference ='employee'"));
+$employerNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM registration WHERE preference ='employer'"));
+$verifieduser = mysqli_num_rows(mysqli_query($conn, "SELECT verify_status FROM registration WHERE verify_status ='1'"));
+$authcomp = mysqli_num_rows(mysqli_query($conn, "SELECT COMPANYSTATUS FROM company WHERE COMPANYSTATUS = '1'"));
+$activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE `status` = '1'"));
+
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +38,12 @@ if (!isset($_SESSION['username'])) {
     <div class="d-flex flex-row flex-nowrap">
         <?php include 'sidebar.php' ?>
 
-        <div style="width: 100%;">
+        <div style="text-align: center;">
             <?php include 'adminheader.php'; ?>
+            <h4 style="color: #3498db; font-weight: bold;">ADMIN DASHBOARD</h4>
+
+
+                    
 
         
             <!-- Dashboard Section -->
@@ -47,7 +57,7 @@ if (!isset($_SESSION['username'])) {
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-primary card-title">Total Employer</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $employerNo; ?></p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +69,7 @@ if (!isset($_SESSION['username'])) {
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-warning card-title">Total Employees</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $employeeNo; ?></p>
                             </div>
                         </div>
                     </div>
@@ -70,8 +80,8 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-danger card-title">Verified Employees</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                                <h5 class="text-danger card-title">Verified Users</h5>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $verifieduser; ?></p>
                             </div>
                         </div>
                     </div>
@@ -84,20 +94,7 @@ if (!isset($_SESSION['username'])) {
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-success card-title">Authorized Companies</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card col-lg-3 me-4 mt-4">
-                    <div class="row g-0">
-                        <div class="rounded-start text-bg-danger" style="width: 1rem;">
-                        </div>
-                        <div class="col-lg-11">
-                            <div class="card-body">
-                                <h5 class="text-danger card-title">Active Jobs</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $authcomp;?></p>
                             </div>
                         </div>
                     </div>
@@ -109,12 +106,14 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div class="col-lg-11">
                             <div class="card-body">
-                                <h5 class="text-info card-title">Featured Jobs</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i>DB Data</p>
+                                <h5 class="text-info card-title">Active Jobs</h5>
+                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $activejob;?></p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
 
 
             </div>

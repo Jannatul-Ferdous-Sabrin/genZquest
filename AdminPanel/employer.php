@@ -27,6 +27,34 @@ $clientcollapse = 1;
         .sidebar span {
             color: #fff;
         }
+
+        /* Edit Form */
+        .editForm {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scale(0.1);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        .openForm {
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        /* Blur */
+        #blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            display: none;
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 
@@ -53,7 +81,6 @@ $clientcollapse = 1;
                         </thead>
                         <tbody>
                             <?php
-                            
 
                             $employerList = mysqli_query($conn, "SELECT * FROM `registration` WHERE `preference`='employer'");
                             while ($row = mysqli_fetch_array($employerList)) {
@@ -65,15 +92,13 @@ $clientcollapse = 1;
                                             <td>" . $row['mobile'] . "</td>
                                             <td><span class='badge text-bg-" . ($row['verify_status'] == 0 ? "danger" : "success") . "'>" . ($row['verify_status'] == 0 ? "No" : "Yes") . "</span></td>
 
-
-
                                             
                                             <td>
                                                 <div class='d-flex'>
-                                                    <form method='POST' action='edit.php'>
-                                                        <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                        <button type='submit' class='btn btn-outline-success me-3' name='edit'>Edit</button>
-                                                    </form>
+                                                   
+                                                    <input type='hidden' name='user_id' value='" . $row['id'] . "'>
+                                                    <button type='submit' class='btn btn-outline-success me-3'
+                                                    onclick='openForm()' name='edit'>Edit</button>
 
                                                     <form method='POST' action='delete.php'>
                                                     <input type='hidden' name='user_id' value='" . $row['id'] . "'>
@@ -91,6 +116,94 @@ $clientcollapse = 1;
             </div>
         </div>
 
+        <!-- Blurred Background -->
+        <div id="blur"></div>
+
+        <!-- Edit Form -->
+        <div class="editForm col-lg-5" id="editForm">
+            <form action="edit-jobAction.php" METHOD="POST">
+                <!-- Form Div -->
+                <div class="border border-secondary-subtle shadow-lg rounded">
+                    <div class="d-flex justify-content-between">
+                        <div>
+
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-center">
+                                <img src="https://avatars.githubusercontent.com/u/124907468?s=400&u=250d6918fb6787cb7362d114df25ea5b94963fef&v=4"
+                                    alt="profile" width="80" height="80" class="mt-2 rounded-circle">
+                            </div>
+                        </div>
+                        <div>
+                            <a onclick="closeForm()"><i class="pe-auto fa-solid fa-xmark m-3"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="ms-5">
+                            <p class="m-0 p-0">JOB ID</p>
+                            <input type="text" class="form-control" name="jobid" value="">
+                        </div>
+
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">COMPANYID</p>
+                            <input type="text" class="form-control" name="companyid" value="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">JOB ID</p>
+                            <input type="text" class="form-control" name="jobid" value="">
+                        </div>
+
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">COMPANYID</p>
+                            <input type="text" class="form-control" name="companyid" value="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">JOB ID</p>
+                            <input type="text" class="form-control" name="jobid" value="">
+                        </div>
+
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">COMPANYID</p>
+                            <input type="text" class="form-control" name="companyid" value="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">JOB ID</p>
+                            <input type="text" class="form-control" name="jobid" value="">
+                        </div>
+
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">COMPANYID</p>
+                            <input type="text" class="form-control" name="companyid" value="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">JOB ID</p>
+                            <input type="text" class="form-control" name="jobid" value="">
+                        </div>
+
+                        <div class=" ms-5">
+                            <p class="m-0 p-0">COMPANYID</p>
+                            <input type="text" class="form-control" name="companyid" value="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center my-5">
+                        <button type="submit" class="btn btn-outline-primary">Update</button>
+                    </div>
+            </form>
+        </div>
     </div>
 
     <!-- Bootstrap JS and DataTables JS -->
@@ -106,6 +219,22 @@ $clientcollapse = 1;
         $(document).ready(function () {
             $('#datatable').DataTable();
         });
+
+        function openForm() {
+            let editForm = document.getElementById("editForm");
+            let blur = document.getElementById("blur");
+
+            blur.style.display = "block";
+            editForm.classList.add("openForm");
+        }
+
+        function closeForm() {
+            let editForm = document.getElementById("editForm");
+            let blur = document.getElementById("blur");
+
+            blur.style.display = "none";
+            editForm.classList.remove("openForm");
+        }
     </script>
 </body>
 

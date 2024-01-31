@@ -76,7 +76,7 @@ include '../config.php';
                                         <td>                                            
                                             <div class='d-flex'>
                                                 <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-primary me-3'><i class='fa-solid fa-pen-to-square'></i></button></a>
-                                                <a href='edit-jobAction.php?deleteid=" . $row['JOBID'] . "'><button class='btn btn-outline-danger'><i class='fa-solid fa-trash-can'></i>
+                                                <a onclick='deleteForm()''><button class='btn btn-outline-danger'><i class='fa-solid fa-trash-can'></i>
                                                 </button></a>
                                             </div>
                                         </td>
@@ -88,6 +88,9 @@ include '../config.php';
                     </div>
                 </div>
             </div>
+
+            <!-- Delete Form -->
+            
         </div>
         <!-- Bootstrap JS and DataTables JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

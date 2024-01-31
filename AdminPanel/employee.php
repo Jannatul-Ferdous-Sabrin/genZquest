@@ -64,10 +64,6 @@ $clientcollapse = 1;
                                             <td><span class='badge text-bg-" . ($row['verify_status'] == 0 ? "danger" : "success") . "'>" . ($row['verify_status'] == 0 ? "No" : "Yes") . "</span></td>
 
 
-
-
-
-
                                             <td>
                                                 <div class='d-flex'>
                                                     <form method='POST' action='edit.php'>
