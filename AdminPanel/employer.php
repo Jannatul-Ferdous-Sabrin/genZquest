@@ -21,6 +21,7 @@ $clientcollapse = 1;
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- DataTable -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
 
     <style>
@@ -141,62 +142,48 @@ $clientcollapse = 1;
 
                     <div class="d-flex gap-3 mt-4">
                         <div class="ms-5">
-                            <p class="m-0 p-0">JOB ID</p>
-                            <input type="text" class="form-control" name="jobid" value="">
+                            <p class="m-0 p-0">Id</p>
+                            <input type="text" class="form-control" name="id" value="">
                         </div>
 
                         <div class=" ms-5">
-                            <p class="m-0 p-0">COMPANYID</p>
-                            <input type="text" class="form-control" name="companyid" value="">
+                            <p class="m-0 p-0">Verify Status</p>
+                            <input type="text" class="form-control" name="verify" value="">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
-                            <p class="m-0 p-0">JOB ID</p>
-                            <input type="text" class="form-control" name="jobid" value="">
+                            <p class="m-0 p-0">First Name</p>
+                            <input type="text" class="form-control" name="fname" value="">
                         </div>
 
                         <div class=" ms-5">
-                            <p class="m-0 p-0">COMPANYID</p>
-                            <input type="text" class="form-control" name="companyid" value="">
+                            <p class="m-0 p-0">Last Name</p>
+                            <input type="text" class="form-control" name="lname" value="">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
-                            <p class="m-0 p-0">JOB ID</p>
-                            <input type="text" class="form-control" name="jobid" value="">
-                        </div>
-
-                        <div class=" ms-5">
-                            <p class="m-0 p-0">COMPANYID</p>
-                            <input type="text" class="form-control" name="companyid" value="">
+                            <p class="m-0 p-0">email</p>
+                            <input type="text" class="form-control" name="email" value="">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
-                            <p class="m-0 p-0">JOB ID</p>
-                            <input type="text" class="form-control" name="jobid" value="">
-                        </div>
-
-                        <div class=" ms-5">
-                            <p class="m-0 p-0">COMPANYID</p>
-                            <input type="text" class="form-control" name="companyid" value="">
+                            <p class="m-0 p-0">username</p>
+                            <input type="text" class="form-control" name="username" value="">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
-                            <p class="m-0 p-0">JOB ID</p>
-                            <input type="text" class="form-control" name="jobid" value="">
+                            <p class="m-0 p-0">Mobile</p>
+                            <input type="text" class="form-control" name="mob" value="">
                         </div>
 
-                        <div class=" ms-5">
-                            <p class="m-0 p-0">COMPANYID</p>
-                            <input type="text" class="form-control" name="companyid" value="">
-                        </div>
                     </div>
 
                     <div class="d-flex justify-content-center my-5">

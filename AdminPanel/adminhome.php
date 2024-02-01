@@ -57,7 +57,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-primary card-title">Total Employer</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $employerNo; ?></p>
+                                <p class="card-text"><i class="fa-solid fa-users me-2"></i><?php echo $employerNo; ?></p>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-warning card-title">Total Employees</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $employeeNo; ?></p>
+                                <p class="card-text"><i class="fa-solid fa-users-gear me-2"></i><?php echo $employeeNo; ?></p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-danger card-title">Verified Users</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $verifieduser; ?></p>
+                                <p class="card-text"><i class="fa-solid fa-user-check me-2"></i><?php echo $verifieduser; ?></p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-success card-title">Authorized Companies</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $authcomp;?></p>
+                                <p class="card-text"><i class="fa-solid fa-building-circle-arrow-right me-2"></i><?php echo $authcomp;?></p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         <div class="col-lg-11">
                             <div class="card-body">
                                 <h5 class="text-info card-title">Active Jobs</h5>
-                                <p class="card-text"><i class="fa-solid fa-user-tie me-2"></i><?php echo $activejob;?></p>
+                                <p class="card-text"><i class="fas fa-calendar-check me-2"></i><?php echo $activejob;?></p>
                             </div>
                         </div>
                     </div>

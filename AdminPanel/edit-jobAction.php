@@ -46,7 +46,14 @@ if (isset($_GET['deleteid'])) {
         echo "<script>location.href='joblist.php'</script>";
     }
 
-} else {
+}
+
+if(isset($_POST['employeeEdit'])) {
+    
+
+}
+
+else {
     echo "<script>alert('Not Accessible')</script>";
     echo "<script>location.href='joblist.php'</script>";
 }
