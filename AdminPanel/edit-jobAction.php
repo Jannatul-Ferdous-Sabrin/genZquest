@@ -7,7 +7,7 @@ if (isset($_POST['editJob'])) {
     $companyid = $_POST['companyid'];
     $companyname = $_POST['companyname'];
     $category = $_POST['category'];
-    $occTitle = $_POST['occTitle'];
+    $jobTitle = $_POST['jobTitle'];
     $employee = $_POST['employee'];
     $salaries = $_POST['salaries'];
     $duration = $_POST['duration'];
@@ -19,7 +19,7 @@ if (isset($_POST['editJob'])) {
     $status = $_POST['status'];
 
     $update = mysqli_query($conn, "UPDATE `job` SET `JOBID`='$jobid',`COMPANYID`='$companyid',`COMPANYNAME`='$companyname',`CATEGORY`='$category',
-        `OCCUPATIONTITLE`='$occTitle',`REQ_NO_EMPLOYEES`='$employee',`SALARIES`='$salaries',`DURATION_EMPLOYMENT`='$duration',
+        `JOBTITLE`='$jobTitle',`REQ_NO_EMPLOYEES`='$employee',`SALARIES`='$salaries',`DURATION_EMPLOYMENT`='$duration',
         `WORK_EXPERIENCE`='$exp',`JOBDESCRIPTION`='$jobdes',`PREFEREDSEX`='$gender',`SECTOR_VACANCY`='$sector',`JOBSTATUS`='$jobstatus',
         `status`= '$status' WHERE `JOBID`='$jobid'");
 

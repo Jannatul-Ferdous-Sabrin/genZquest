@@ -53,7 +53,7 @@ include '../config.php';
                                     <th scope="col" style="width: 15%;">JOBID</th>
                                     <th scope="col" style="width: 20%;">COMPANYID</th>
                                     <th scope="col" style="width: 20%;">CATEGORY</th>
-                                    <th scope="col" style="width: 20%;">OCCUPATIONTITLE</th>
+                                    <th scope="col" style="width: 20%;">JOBTITLE</th>
                                     <th scope="col" style="width: 15%;">JOB STATUS</th>
                                     <th scope="col" style="width: 15%;">DETAILS</th>
 
@@ -71,7 +71,7 @@ include '../config.php';
                                         <th scope='row'>" . $row['JOBID'] . "</th>
                                         <td>" . $row['COMPANYID'] . "</td>
                                         <td>" . $row['CATEGORY'] . "</td>
-                                        <td>" . $row['OCCUPATIONTITLE'] . "</td>
+                                        <td>" . $row['JOBTITLE'] . "</td>
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Closed" : "Active") . "</span></td>
                                         <td>                                            
                                             <div class='d-flex'>
