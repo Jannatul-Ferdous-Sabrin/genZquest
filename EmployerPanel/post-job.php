@@ -71,19 +71,19 @@
             </div>
 
             <div class="mt-4 form-floating">
-                <textarea class="form-control" placeholder="" id=""
-                    style="height: 100px"></textarea>
-                <label for="Job Description">sabb</label>
-            </div>
-
-            <div class="mt-4 form-floating">
-                <textarea class="form-control" placeholder="" id=""
+                <textarea class="form-control" placeholder="" id="floatingTextarea2"
                     style="height: 100px"></textarea>
                 <label for="floatingTextarea2">sabb</label>
             </div>
 
             <div class="mt-4 form-floating">
-                <textarea class="form-control" placeholder="" id=""
+                <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">sabb</label>
+            </div>
+
+            <div class="mt-4 form-floating">
+                <textarea class="form-control" placeholder="" id="floatingTextarea2"
                     style="height: 100px"></textarea>
                 <label for="floatingTextarea2">sabb</label>
             </div>
