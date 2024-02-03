@@ -38,13 +38,9 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
     <div class="d-flex flex-row flex-nowrap">
         <?php include 'sidebar.php' ?>
 
-        <div style="text-align: center;">
+        <div style="width: 100%;">
             <?php include 'adminheader.php'; ?>
-            <h4 style="color: #3498db; font-weight: bold;">ADMIN DASHBOARD</h4>
-
-
-                    
-
+            <h4 class="ms-5 fw-bold" style="color: #3498db;">ADMIN DASHBOARD</h4>
         
             <!-- Dashboard Section -->
             <div class="d-flex flex-row flex-wrap m-5">

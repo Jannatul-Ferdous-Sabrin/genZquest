@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
             $row = mysqli_fetch_assoc($statusQuery);
             // Check if the user is an employer
             if ($row['preference'] === 'employer') {
-                echo "<script>location.href='EmployerPanel/employerhome.php'</script>";
+                echo "<script>location.href='index.php'</script>";
             } else {
                 echo "<script>location.href='index.php'</script>";
             }

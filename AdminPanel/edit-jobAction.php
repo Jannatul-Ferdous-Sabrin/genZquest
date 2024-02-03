@@ -32,7 +32,7 @@ if (isset($_POST['editJob'])) {
     }
 
 }
-
+  //Delete row of joblist
 if (isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
 
@@ -48,10 +48,51 @@ if (isset($_GET['deleteid'])) {
 
 }
 
-if(isset($_POST['employeeEdit'])) {
-    
+
+//delete row of userlist 
+if (isset($_GET['deleteid'])) {
+    $id = $_GET['deleteid'];
+
+    $deleteQuery = mysqli_query($conn, "DELETE FROM registration WHERE ID='$id'");
+
+    if($deleteQuery) {
+        echo "<script>alert('Information Deleted Successfully!!')</script>";
+        echo "<script>location.href='employer.php'</script>";
+    } else {
+        echo "<script>alert('Deletion Failed!!')</script>";
+        echo "<script>location.href='employer.php'</script>";
+    }
 
 }
+
+
+
+
+if(isset($_POST['userEdit'])) {
+    $id = $_POST['id'];
+    $verify = $_POST['verify'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $username = $_POST['username'];
+    $mob = $_POST['mob'];
+    $email = $_POST['email'];
+
+
+   $update = mysqli_query($conn, "UPDATE `registration` SET `verify_status`='$verify',`firstname`='$fname',`lastname`='$lname',
+        `username`='$username',`mobile`='$mob',`email`='$email' WHERE `id`='$id'");
+
+if ($update) {
+    echo "<script>alert('Information Updated Successfully!!')</script>";
+    echo "<script>location.href='employee.php'</script>";
+} else {
+    echo "<script>alert('Information Updated Failed!!')</script>";
+    echo "<script>location.href='employee.php'</script>";
+
+    echo mysqli_error($conn);
+}
+
+}
+
 
 else {
     echo "<script>alert('Not Accessible')</script>";

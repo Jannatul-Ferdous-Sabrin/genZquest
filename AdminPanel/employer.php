@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../config.php';
+
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='login.php'</script>";
@@ -98,12 +99,15 @@ $clientcollapse = 1;
                                                 <div class='d-flex'>
                                                    
                                                     <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='submit' class='btn btn-outline-success me-3'
-                                                    onclick='openForm()' name='edit'>Edit</button>
+                                                    <button type='button' class='btn btn-outline-success me-3'
+                                                    onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
 
                                                     <form method='POST' action='delete.php'>
                                                     <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
+                                                    <button type='button' class='btn btn-outline-danger'
+                                                    onclick='DeleteForm(" . $row['id'] . ")'
+
+                                                     name='delete'>Delete</button>
                                                 </form>
                             
                                                 </div>
@@ -126,73 +130,78 @@ $clientcollapse = 1;
                 <!-- Form Div -->
                 <div class="border border-secondary-subtle shadow-lg rounded">
                     <div class="d-flex justify-content-between">
+                        
                         <div>
 
                         </div>
                         <div>
                             <div class="d-flex justify-content-center">
-                                <img src="https://avatars.githubusercontent.com/u/124907468?s=400&u=250d6918fb6787cb7362d114df25ea5b94963fef&v=4"
-                                    alt="profile" width="80" height="80" class="mt-2 rounded-circle">
+                            <img src="" alt="profile" width="80" height="80" id="profilePic"
+                                    class="mt-2 rounded-circle">
                             </div>
                         </div>
                         <div>
                             <a onclick="closeForm()"><i class="pe-auto fa-solid fa-xmark m-3"></i></a>
                         </div>
                     </div>
-
+       
                     <div class="d-flex gap-3 mt-4">
                         <div class="ms-5">
                             <p class="m-0 p-0">Id</p>
-                            <input type="text" class="form-control" name="id" value="">
+                            <input type="text" class="form-control" id="employerID" name="id" 
+                            value="<?php echo $row['id']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Verify Status</p>
-                            <input type="text" class="form-control" name="verify" value="">
+                            <input type="text" class="form-control" id="employerstatus" name="verify" 
+                            value="<?php echo $row['verify_status']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
                             <p class="m-0 p-0">First Name</p>
-                            <input type="text" class="form-control" name="fname" value="">
+                            <input type="text" class="form-control" id="employerfirstname" name="fname" 
+                            value="<?php echo $row['firstname']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Last Name</p>
-                            <input type="text" class="form-control" name="lname" value="">
+                            <input type="text" class="form-control" id="employerlastname" name="lname" 
+                            value="<?php echo $row['lastname']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
-                            <p class="m-0 p-0">email</p>
-                            <input type="text" class="form-control" name="email" value="">
+                            <p class="m-0 p-0">Username</p>
+                            <input type="text" class="form-control" id="employerusername" name="username"
+                            value="<?php echo $row['username']; ?>">
                         </div>
-                    </div>
 
-                    <div class="d-flex gap-3 mt-4">
-                        <div class=" ms-5">
-                            <p class="m-0 p-0">username</p>
-                            <input type="text" class="form-control" name="username" value="">
-                        </div>
-                    </div>
-
-                    <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
                             <p class="m-0 p-0">Mobile</p>
-                            <input type="text" class="form-control" name="mob" value="">
+                            <input type="text" class="form-control" id="employermobile" name="mob"
+                            value="<?php echo $row['mobile']; ?>">
                         </div>
+                    </div>
 
+                    <div class="d-flex gap-3 mt-4 ">
+                        <div class="col-8 ms-5">
+                            <p class="m-0 p-0">Email</p>
+                            <input type="text" class="form-control" id="employeremail" name="email"
+                            value="<?php echo $row['email']; ?>">
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-center my-5">
-                        <button type="submit" class="btn btn-outline-primary">Update</button>
+                        <button type="submit" name="userEdit" class="btn btn-outline-primary">Update</button>
                     </div>
+                </div>
             </form>
         </div>
     </div>
-
     <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -207,7 +216,34 @@ $clientcollapse = 1;
             $('#datatable').DataTable();
         });
 
-        function openForm() {
+        function openForm(row) {
+            console.log("3");
+            $.ajax({
+                type: "POST",
+                url: "dataFetch.php",
+                data: { row: row },
+                success: function (employer) {
+                    console.log("1");
+                    if (employer && employer.error) {
+                        console.error("Error From Server: ", employer.error);
+                    } else {
+                        console.log("Employer Data: ", employer);
+
+                        $('#employerID').val(employer.id);
+                        $('#employerstatus').val(employer.verify_status);
+                        $('#employerfirstname').val(employer.firstname);
+                        $('#employerlastname').val(employer.lastname);
+                        $('#employermobile').val(employer.mobile);
+                        $('#employeremail').val(employer.email);
+                        $('#employerusername').val(employer.username);
+                        $('#profilePic').attr('src', employer.profilePicture);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Error: ", status, error);
+                }
+            });
+
             let editForm = document.getElementById("editForm");
             let blur = document.getElementById("blur");
 

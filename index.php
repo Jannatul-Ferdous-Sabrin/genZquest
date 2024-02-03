@@ -2,110 +2,107 @@
 require('config.php');
 session_start();
 
+if (!isset($_SESSION['username'])) {
+    echo "<script>alert('Please login first!')</script>";
+    echo "<script>location.href='login.php'</script>";
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>genZquest</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
-<link rel="stylesheet" href="style.css" >
-  <style>
-    * {
-      font-family: 'Poppins', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>genZquest Jobs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .h-font {
-      font-family: 'Merienda', cursive;
-    }
+        .h-font {
+            font-family: 'Merienda', cursive;
+        }
 
-    h6 {
-  color: black;
-}
+        h6 {
+            color: black;
+        }
 
-    .swiper-container {
-      width: 100%;
-      height: 50vh;
-    }
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 45vh;
+            background-size: cover;
+            background-position: center;
+        }
 
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-    }
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(3px);
+        }
 
-    .blur-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(3px);
-    }
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
 
-    .slide-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-    }
+        .form-inline .form-control {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
 
-    .form-inline .form-control {
-      display: inline-block;
-      width: auto;
-      vertical-align: middle;
-    }
-
-    .job-col:hover {
-      cursor: pointer;
-      box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-      -webkit-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-    }
-  </style>
-
+        .job-col:hover {
+            cursor: pointer;
+            box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+        }
+    </style>
 </head>
 
 <body>
-  <?php require('inc/header.php'); ?>
-  <div class="container-fluid px-lg-4 mt-4">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url('Images/pic1.jpeg');">
-          <div class="blur-overlay"></div>
-          <div class="jumbotron text-center py-6 slide-content">
-            <h1 class="h-font">Your Bright Future Starts Here Now</h1>
-            <p>Find the most exciting startup jobs</p>
 
-            <form class="form-inline" id="homesearch" action="search.php" method="POST">
-              <input type="text" class="form-control" size="40" placeholder="Job title or keyword" name="keyword"
-                id="keyword">
-              <button type="submit" class="btn btn-danger" style="color: white;">
-                <i class="fas fa-search"></i> Find Job
-              </button>
-            </form>
-          </div>
+    <?php require('include/header.php'); ?>
+
+    <div class="container-fluid px-lg-4 mt-4">
+        <div class="banner-container" style="background-image: url('Images/pic1.jpeg');">
+            <div class="blur-overlay"></div>
+            <div class="jumbotron text-center py-6 banner-content">
+                <h1 class="h-font">Your Bright Future Starts Here Now</h1>
+                <p>Finding your next job or career on genZquest Jobs</p>
+
+                <form class="form-inline" id="homesearch" action="search.php" method="POST">
+                    <input type="text" class="form-control" size="40" placeholder="Job title or keyword" name="keyword"
+                        id="keyword">
+                    <button type="submit" class="btn btn-danger" style="color: white;">
+                        <i class="fas fa-search"></i> Find Job
+                    </button>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 
-
-    <!-- Container (About Section) -->
-    <section id="about">
+        <!-- Container (About Section) -->
+        <section id="about">
       <div class="container my-4 py-4">
         <div class="row">
           <div class="col-md-6 d-flex align-items-center">
@@ -128,63 +125,94 @@ session_start();
     </section>
 
     <section class="content-header">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 latest-job margin-bottom-20">
-            <h1 class="text-center">Latest Jobs</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 latest-job margin-bottom-20">
+                    <h1 class="text-center">Latest Jobs</h1>
 
-            <br>
-            <?php
+                    <br>
+                    <?php
+                    // Fetch the job listings based on user preferences
+                    $sql = "SELECT * FROM `company` c, `job` j, `registration` r 
+                        WHERE c.`COMPANYID` = j.`COMPANYID` 
+                        ORDER BY r.`miscell` = j.`keyword` DESC, DATEPOSTED DESC 
+                        LIMIT 4"; // Limit to 4 latest jobs
 
-            // Fetch the job listings based on user preferences
-            $sql = "SELECT * FROM `company` c, `job` j, `registration` r  WHERE c.`COMPANYID` = j.`COMPANYID` 
-        ORDER BY r.`Preference` = j.`keyword` DESC, DATEPOSTED DESC 
-        LIMIT 4";
+                    $result = $conn->query($sql);
 
-            $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $jobCount = 0;
+                        echo '<div class="container">'; // Start a container for rows
 
-            // Display the job listings
-           if ($result) {
-    $jobCount = 0;
-    echo '<div class="container">'; // Start a container for rows
+                        while ($row = $result->fetch_assoc()) {
+                            if ($jobCount % 2 == 0) {
+                                echo '<div class="row">'; // Start a new row after every 2 jobs
+                            }
+                            ?>
+                            <div class="col-md-6">
+                                <div class="attachment-block clearfix">
+                                    <?php
+                                    // Check if the job has an image (replace 'IMAGEURL' with your actual column name)
+                                    if (!empty($row['IMAGEURL'])) {
+                                        ?>
+                                        <img class="attachment-img" src="<?php echo $row['IMAGEURL']; ?>"
+                                            alt="Attachment Image" style="width: 150px; height: 80px;">
+                                    <?php
+                                    } else {
+                                        ?>
+                                      
+                    <!-- Placeholder image if no image is available -->
+                    <img class="attachment-img" src="Images/logo.webp" alt="Placeholder Image"
+                      style="width: 150px; height: 80px;">
+                    <?php
+                  }
+                  ?>
+                  <div class="attachment-pushed">
+                    <h4 class="attachment-heading">
+                      <a href="http://localhost/genzquest/jobapplication.php?search=<?php echo $row['JOBID']; ?>"
+                        style="text-decoration: none; color: black; font-weight: bold;">
+                        <?php echo $row['JOBTITLE']; ?>
+                      </a>
 
-    while ($row = $result->fetch_assoc()) {
-        if ($jobCount % 4 == 0) {
-            echo '<div class="row">'; // Start a new row after every 4 jobs
-        }
+                      <span class="attachment-heading pull-right" style=" font-weight: 400;">$
+                        <?php echo $row['SALARIES']; ?>/Month
+                      </span>
+                    </h4>
 
-        echo '<div class="col-md-3 job-col" style="border: 2px solid #ccc; margin: 10px; padding: 10px;">'; // Add borders and spacing
-        echo '<h3><a href="http://localhost/pro/applicationform.php?search=' . $row['JOBID'] . '" style="text-decoration: none; color: black;">' . $row['OCCUPATIONTITLE'] . '</a></h3>';
-        
-        echo '<p> ' . $row['COMPANYNAME'] . '</p>'; // Dynamic company name
-        echo '<p>Work Experience: ' .$row['WORK_EXPERIENCE']  . '</p>';
-        echo '<p>Experience Requirement : ' . $row['keyword'] . '</p>'; 
+                    <div class="attachment-text" style=" font-weight: 400;">
+                      <div>
+                        <p>
+                          <?php echo $row['COMPANYNAME']; ?> | Requirement :
+                          <?php echo $row['keyword']; ?>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php
 
-        echo '<p>Date Posted: ' . date_format(date_create($row['DATEPOSTED']), 'M d, Y') . '</p>';
-        // Display other job details here...
-        echo '</div>';
+              if ($jobCount % 2 == 1 || $jobCount == $result->num_rows - 1) {
+                echo '</div>'; // Close the row after every 2 jobs or at the end
+              }
 
-        if ($jobCount % 4 == 3 || $jobCount == $result->num_rows - 1) {
-            echo '</div>'; // Close the row
-        }
+              $jobCount++;
+            }
 
-        $jobCount++;
-    }
-
-    echo '</div>'; // Close the container
-    $result->free_result();
-} else {
-    echo "Error: " . $conn->error;
-}
-?>
-          </div>
+            echo '</div>'; // Close the container
+          } else {
+            echo "No jobs found.";
+          }
+          ?>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- CETA SECTION -->
-    <section class="ceta">
+
+
+  <section class="ceta">
       <div class="container-fluid py-3 text-center">
         <p style="color: red;">Our Specialization</p>
         <h2>Browse Top Categories</h2>
@@ -195,91 +223,100 @@ session_start();
                 <div class="card py-3">
                   <div class="card-body">
                     <img src="Images/icon1.JPG" class="img-fluid my-3" alt="graphics">
-                    <h6><a href="graphics.php">Graphics & Design</a></h6>
+                    <h6><a href="category.php?search=Graphics">Graphics & Design</a></h6>
+                  
                     <h6 style="color: red;"></h6>
                   </div>
                 </div>
               </div>
+
               <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon2.JPG" class="img-fluid my-3" alt="programming">
-                    <h6>Programming & Tech</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon3.JPG" class="img-fluid my-3" alt="">
-                    <h6>Wordpress</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon4.JPG" class="img-fluid my-3" alt="">
-                    <h6>Digital Marketing</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon2.JPG" class="img-fluid my-3" alt="Programming & Tech">
+                  <h6><a href="category.php?search=Technology">Programming & Tech</a></h6>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon5.JPG" class="img-fluid my-3" alt="Animation">
-                    <h6>Video & Animation</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
+
+           
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon3.JPG" class="img-fluid my-3" alt="Business">
+                  <h6><a href="category.php?search=Business">Business</a></h6>
                 </div>
               </div>
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon6.JPG" class="img-fluid my-3" alt="">
-                    <h6>Music and Audio</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon7.JPG" class="img-fluid my-3" alt="">
-                    <h6>UI/UX Illustrator</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="card py-3">
-                  <div class="card-body">
-                    <img src="Images/icon8.JPG" class="img-fluid my-3" alt="">
-                    <h6>Writing & Translation</h6>
-                    <h6 style="color: red;"></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="row py-3">
-                <div class="col-lg-5 m-auto">
-                  <button class="btn3">BROWSE ALL SECTORS</button>
+            </div>
+
+           
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon4.JPG" class="img-fluid my-3" alt="Data">
+                  <h6><a href="category.php?search=Data">Data</a></h6>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="row py-3">
+           
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon5.JPG" class="img-fluid my-3" alt="Video & Animation">
+                  <h6><a href="category.php?search=VideoAnimation">Video & Animation</a></h6>
+                </div>
+              </div>
+            </div>
+
+           
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon6.jpg" class="img-fluid my-3" alt="Digital Marketing">
+                  <h6><a href="category.php?search=DigitalMarketing">Digital Marketing</a></h6>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon7.JPG" class="img-fluid my-3" alt="Lifestyle">
+                  <h6><a href="category.php?search=Lifestyle">Lifestyle</a></h6>
+                </div>
+              </div>
+            </div>
+
+           
+            <div class="col-lg-3">
+              <div class="card py-3">
+                <div class="card-body">
+                  <img src="Images/icon8.JPG" class="img-fluid my-3" alt="Writing & Translation">
+                  <h6><a href="category.php?search=WritingTranslation">Writing & Translation</a></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row py-5">
+            <div class="col-lg-5 m-auto">
+              <button class="btn3">BROWSE ALL SECTORS</button>
+            </div>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
 
 
-
-    <!-- Carousel wrapper -->
-    <div class="container">
+   <!-- Carousel wrapper -->
+   <div class="container">
       <div class="row justify-content-center mb-3 pb-3">
         <div class="col-md-7 text-center heading-section ftco-animate">
           <span class="subheading">Testimonial</span>
@@ -415,6 +452,31 @@ session_start();
         }
       }
     </script>
+</body>
+
+</html>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+  <script>
+    function scrollToSection(sectionClass) {
+      const section = document.querySelector(sectionClass);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+  </script>
 </body>
 
 </html>

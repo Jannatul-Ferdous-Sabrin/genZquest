@@ -32,8 +32,7 @@
 
 </style>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-2 shadow-sm sticky-top">
+  
   <div class="container-fluid">
     <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">genZquest</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

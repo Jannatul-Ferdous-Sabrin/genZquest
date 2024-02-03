@@ -65,7 +65,7 @@ $unseenNum = mysqli_num_rows($notificationUnseenQuery);
                         alt="profile" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item" href="">My Profile</a></li>
+                <li><a class="dropdown-item" href="profile-admin.php">My Profile</a></li> 
                     <li>
                         <hr class="dropdown-divider">
                     <li><a class="dropdown-item" href="../index.php">Go to Homepage</a></li>

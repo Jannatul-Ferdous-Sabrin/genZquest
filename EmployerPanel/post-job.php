@@ -15,8 +15,15 @@
 </head>
 
 <body>
-    <div class="container d-flex justify-content-center mt-5">
-        <form id="jobForm">
+
+<?php require('header.php'); ?>
+
+
+
+         <div class="col-lg-9">
+                <div class="container d-flex justify-content-center mt-5">
+                 
+                    <form id="postJobAction.php" METHOD="POST">
             <div>
                 <h2 class="mb-4">Post a Job</h2>
             </div>

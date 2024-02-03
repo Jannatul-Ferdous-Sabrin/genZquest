@@ -1,63 +1,95 @@
+*{
+  font-family: 'Poppins', sans-serif; 
+}
+
+.h-font{
+  font-family: 'Merienda', cursive;
+}
 .jumbotron {
-  color: black;
-  padding: 100px 25px;
-  font-family: Montserrat, sans-serif;
+    padding: 100px 25px;
+    
+  }
+  
+  .ceta h1 {
+    color: rgb(7, 7, 78);
+    font-size: 3.5em;
+  }
+  
+  .card-body img {
+    display: block;
+    height: 48px;
+    margin: 0 auto 15px;
+    width: 48px;
+  }
+  
+  .ceta .card:hover {
+    cursor: pointer;
+    box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
+  }
+  
+  .btn3 {
+    height: 70px;
+    width: 70%;
+    border: 1px solid rgba(130, 130, 231);
+    background: transparent;
+    border-radius: 5px;
+    color: rgba(130, 130, 231);
+    transition: all 0.4s;
+  }
+  
+  .btn3:hover {
+    background: rgba(130, 130, 231);
+    border: none;
+    outline: none;
+    color: white;
+    transition: all 0.4s;
+  }
+
+
+    /* Example CSS for job listings */
+    .job-listing {
+      border: 2px solid #ddd;
+      padding: 50px;
+      margin: 50px 50px;
+      background-color: #f9f9f9;
+  }
+ 
+  .job-title {
+    
+      font-weight: bold;
+      color: rgba(130,130,231);
+  }
+
+  .job-details {
+      margin-top: 5px;
+  }
+
+  .apply-button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+  .job-details-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 70%; /* Adjust the width as needed */
+    float: left; /* Position on the left side */
+    box-sizing: border-box;
 }
 
-.ceta h1 {
-  color: rgb(7, 7, 78);
-  font-size: 3.5em;
-}
-
-.card-body img {
-  display: block;
-  height: 48px;
-  margin: 0 auto 15px;
-  width: 48px;
-}
-
-.bucket-top .img-wrapper {
-  height: 100%;
-  width: 100%;
-}
-
-.bucket-top .img-wrapper {
-  border-radius: 8px;
-  height: 54px;
-  width: 80px;
-}
-
-.ceta .card:hover {
-  color: red;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -3px 3px 23px -12px rgba(0, 0, 0, 0.75);
-}
-
-.btn3 {
-  height: 70px;
-  width: 70%;
-  border: 1px solid rgba(130, 130, 231);
-  background: transparent;
-  border-radius: 10px;
-  color: rgba(130, 130, 231);
-  transition: all 0.4s;
-}
-
-.btn3:hover {
-
-  background: rgba(102, 102, 214);
-  border: none;
-  outline: none;
-  color: white;
-  transition: all 0.4s;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 /*login and Signup */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -72,6 +104,7 @@ body {
   width: 930px;
 }
 
+/*------------ Right box ------------*/
 
 .right-box {
   padding: 40px 30px 40px 40px;

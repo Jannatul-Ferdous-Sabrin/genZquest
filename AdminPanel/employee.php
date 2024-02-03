@@ -2,7 +2,7 @@
 session_start();
 include '../config.php';
 
-// Check if the user is not logged in
+
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='login.php'</script>";
@@ -96,10 +96,10 @@ $clientcollapse = 1;
                                         <td>
                                             <div class='d-flex'>
                                                 <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='submit' class='btn btn-outline-success me-3' onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
+                                                    <button type='button' class='btn btn-outline-success me-3' onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
                                                 <form method='POST' action='delete.php'>
                                                     <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='submit' class='btn btn-outline-danger' name='delete'>Delete</button>
+                                                    <button type='button' class='btn btn-outline-danger' name='delete'>Delete</button>
                                                 </form>
                                             </div>
                                         </td>
@@ -124,8 +124,8 @@ $clientcollapse = 1;
                         <div></div>
                         <div>
                             <div class="d-flex justify-content-center">
-                                <img src="https://avatars.githubusercontent.com/u/124907468?s=400&u=250d6918fb6787cb7362d114df25ea5b94963fef&v=4"
-                                    alt="profile" width="80" height="80" class="mt-2 rounded-circle">
+                                <img src="" alt="profile" width="80" height="80" id="profilePic"
+                                    class="mt-2 rounded-circle">
                             </div>
                         </div>
                         <div>
@@ -136,48 +136,56 @@ $clientcollapse = 1;
                     <div class="d-flex gap-3 mt-4">
                         <div class="ms-5">
                             <p class="m-0 p-0">Id</p>
-                            <input type="text" class="form-control" id="employeeID" name="id" value="">
+                            <input type="text" class="form-control" id="employeeID" name="id"
+                                value="<?php echo $row['id']; ?>">
                         </div>
+
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Verify Status</p>
-                            <input type="text" class="form-control" id="employeestatus" name="verify" value="">
+                            <input type="text" class="form-control" id="employeestatus" name="verify"
+                                value="<?php echo $row['verify_status']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
                             <p class="m-0 p-0">First Name</p>
-                            <input type="text" class="form-control" id="employeefirstname" name="fname" value="">
+                            <input type="text" class="form-control" id="employeefirstname" name="fname"
+                                value="<?php echo $row['firstname']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Last Name</p>
-                            <input type="text" class="form-control" id="employeelastname" name="lname" value="">
+                            <input type="text" class="form-control" id="employeelastname" name="lname"
+                                value="<?php echo $row['lastname']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
                             <p class="m-0 p-0">Username</p>
-                            <input type="text" class="form-control" id="employeeusername" name="username" value="">
+                            <input type="text" class="form-control" id="employeeusername" name="username"
+                                value="<?php echo $row['username']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Mobile</p>
-                            <input type="text" class="form-control" id="employeemobile" name="mob" value="">
+                            <input type="text" class="form-control" id="employeemobile" name="mob"
+                                value="<?php echo $row['mobile']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4 ">
-                        <div class="col-9 ms-5">
+                        <div class="col-8 ms-5">
                             <p class="m-0 p-0">Email</p>
-                            <input type="text" class="form-control" id="employeeemail" name="email" value="">
+                            <input type="text" class="form-control" id="employeeemail" name="email"
+                                value="<?php echo $row['email']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center my-5">
-                        <button type="submit" name="employeeEdit" class="btn btn-outline-primary">Update</button>
+                        <button type="submit" name="userEdit" class="btn btn-outline-primary">Update</button>
                     </div>
                 </div>
             </form>
@@ -199,13 +207,13 @@ $clientcollapse = 1;
         });
 
         function openForm(row) {
-            console.log("3");
+            // console.log("3");
             $.ajax({
                 type: "POST",
                 url: "dataFetch.php",
                 data: { row: row },
                 success: function (employee) {
-                    console.log("1");
+                    // console.log("1");
                     if (employee && employee.error) {
                         console.error("Error From Server: ", employee.error);
                     } else {
@@ -218,6 +226,7 @@ $clientcollapse = 1;
                         $('#employeemobile').val(employee.mobile);
                         $('#employeeemail').val(employee.email);
                         $('#employeeusername').val(employee.username);
+                        $('#profilePic').attr('src', employee.profilePicture);
                     }
                 },
                 error: function (xhr, status, error) {
