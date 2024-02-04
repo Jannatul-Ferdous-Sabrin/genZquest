@@ -97,10 +97,10 @@ $clientcollapse = 1;
                                             <div class='d-flex'>
                                                 <input type='hidden' name='user_id' value='" . $row['id'] . "'>
                                                     <button type='button' class='btn btn-outline-success me-3' onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
-                                                <form method='POST' action='delete.php'>
-                                                    <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='button' class='btn btn-outline-danger' name='delete'>Delete</button>
-                                                </form>
+
+                                                    <button type='button' class='btn btn-outline-danger' onclick='openDelete(" . $row['id'] . ")' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+                                                        Delete
+                                                    </button>
                                             </div>
                                         </td>
                                     </tr>";
@@ -111,6 +111,27 @@ $clientcollapse = 1;
                 </div>
             </div>
         </div>
+
+        <!-- Delete Form -->
+        <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Confirmation</h1>
+                        <span id="id"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are You Sure You Want To Delete?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="deleteID()">Yes</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Blurred Background -->
         <div id="blur"></div>
@@ -247,6 +268,16 @@ $clientcollapse = 1;
 
             blur.style.display = "none";
             editForm.classList.remove("openForm");
+        }
+
+        var deleterow;
+        function openDelete(row) {
+            deleterow = row;
+            $("#id").text(row);
+        }
+
+        function deleteID() {
+            window.location.href = "edit-jobAction.php?deleteuserid=" + deleterow;
         }
     </script>
 </body>

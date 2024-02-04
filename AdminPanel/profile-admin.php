@@ -2,7 +2,6 @@
 
 include '../config.php';
 
-
 ?>
 
 <!DOCTYPE html>
@@ -40,26 +39,36 @@ include '../config.php';
                     </div>
                     <!-- Info Container -->
                     <div>
-                        <div class="my-3 me-5 text-bg-dark" style="height: 5rem; width: 20rem;">
-                            <p>Name</p>
-                            <span>Preference</span>
+                        <div class="my-3 me-5 text-bg-light" style="height: 5rem; width: 20rem;">
+                            <h4 class="ms-4">Jannatul Ferdous Sabrin</h4>
+                            <span class="ms-4">administrator</span>
                         </div>
                         <div>
-                            <div>
-                                <span>Position: </span>
-                                <span class="ms-4">....</span>
+                            <div class="d-flex">
+                                <div class="col-3">
+                                    <span>Position: </span>
+                                </div>
+
+                                <span class="ms-4">Admin</span>
                             </div>
-                            <div>
-                                <span>Experience: </span>
-                                <span class="ms-4">....</span>
+                            <div class="d-flex">
+                                <div class="col-3">
+                                    <span>Experience: </span>
+                                </div>
+                                <span class="ms-4">2 Years</span>
                             </div>
-                            <div>
+
+                            <div class="d-flex">
+                            <div class="col-3">
                                 <span>Email:</span>
-                                <span class="ms-4">....</span>
                             </div>
-                            <div>
+                                <span class="ms-4">jannatulsabrina1067@gmail.com</span>
+                            </div>
+                            <div class="d-flex">
+                            <div class="col-3">
                                 <span>Phone: </span>
-                                <span class="ms-4">....</span>
+                            </div>
+                                <span class="ms-4">+8801783-618103</span>
                             </div>
                         </div>
                     </div>
@@ -69,7 +78,7 @@ include '../config.php';
             </div>
             <!-- About Me -->
             <div class="mx-4">
-                <p class="fs-4" style="color: #eb8634;">About Me</p>
+                <p class="fs-4" style="color: #d16912; font-weight: bold;">About Me</p>
                 <p>Dedicated Website Administrator with 1 year of experience in managing
                     and maintaining websites, ensuring optimal performance and user
                     satisfaction. Proficient in content management systems, website analytics,
@@ -81,33 +90,33 @@ include '../config.php';
 
             <!-- Skill Section -->
             <div class="mx-4">
-                <p class="fs-4" style="color: #eb8634;">Skills</p>
+                <p class="fs-4" style="color: #d16912; font-weight: bold;">Skills</p>
                 <div>
                     <div class="d-flex gap-5">
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-success">
                             HTML5
                         </div>
                         <div class="mt-2 col-3 alert alert-danger">
                             CSS3
                         </div>
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-info">
                             JavaScript
                         </div>
                     </div>
 
                     <div class="d-flex gap-5">
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-warning">
                             PHP
                         </div>
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-info">
                             MySQL
                         </div>
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-warning">
                             MERN
                         </div>
                     </div>
                     <div class="d-flex gap-5">
-                        <div class="mt-2 col-3 alert alert-primary">
+                        <div class="mt-2 col-3 alert alert-secondary">
                             Testing and Debugging
                         </div>
                         <div class="mt-2 col-3 alert alert-primary">
@@ -117,38 +126,27 @@ include '../config.php';
                             SEO
                         </div>
                     </div>
+
+
+
+                    <!-- Education Section -->
+                    <div class="mx-1">
+                        <p class="fs-4" style="color: #d16912; font-weight:bold;">Education</p>
+                        <p>Bachelor of Computer Science and Engineering at
+                            Leading University, Sylhet, IN
+                            January 2020 - January 2024
+                            Relevant Coursework: Web
+                            Programming. Database Management,
+                            Information Architecture, Web Design.
+                            Mobile App Development. Cloud
+                            Computing. UX/UI Design, Network
+                            Security, System Administration, and
+                            Project Management.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- Education Section -->
-    <div class="mx-4">
-        <p class="fs-4" style="color: #eb8634;">Education</p>
-        <p>Bachelor of Computer Science and Engineering at
-           Leading University, Sylhet, IN
-           January 2020 - January 2024
-            Relevant Coursework: Web
-            Programming. Database Management,
-            Information Architecture, Web Design.
-            Mobile App Development. Cloud
-            Computing. UX/UI Design, Network
-            Security, System Administration, and
-            Project Management.</p>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

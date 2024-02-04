@@ -32,9 +32,10 @@ if (isset($_POST['editJob'])) {
     }
 
 }
-  //Delete row of joblist
-if (isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
+
+//Delete row of joblist
+if (isset($_GET['deleteJobid'])) {
+    $id = $_GET['deleteJobid'];
 
     $deleteQuery = mysqli_query($conn, "DELETE FROM job WHERE JOBID='$id'");
 
@@ -45,27 +46,22 @@ if (isset($_GET['deleteid'])) {
         echo "<script>alert('Deletion Failed!!')</script>";
         echo "<script>location.href='joblist.php'</script>";
     }
-
 }
 
+//Delete row of Employee & Employer
+if (isset($_GET['deleteuserid'])) {
+    $id = $_GET['deleteuserid'];
 
-//delete row of userlist 
-if (isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
-
-    $deleteQuery = mysqli_query($conn, "DELETE FROM registration WHERE ID='$id'");
+    $deleteQuery = mysqli_query($conn, "DELETE FROM registration WHERE id='$id'");
 
     if($deleteQuery) {
         echo "<script>alert('Information Deleted Successfully!!')</script>";
-        echo "<script>location.href='employer.php'</script>";
+        echo "<script>location.href='employee.php'</script>";
     } else {
         echo "<script>alert('Deletion Failed!!')</script>";
-        echo "<script>location.href='employer.php'</script>";
+        echo "<script>location.href='employee.php'</script>";
     }
-
 }
-
-
 
 
 if(isset($_POST['userEdit'])) {
@@ -90,9 +86,7 @@ if ($update) {
 
     echo mysqli_error($conn);
 }
-
 }
-
 
 else {
     echo "<script>alert('Not Accessible')</script>";
