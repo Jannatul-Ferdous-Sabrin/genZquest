@@ -13,7 +13,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <?php require('header.php'); ?>
@@ -100,7 +99,7 @@
                 <label for="qualifications">Qualifications</label>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-4">Post Job</button>
+            <button type="submit" class="btn btn-primary mt-4 mb-4">Post Job</button>
         </form>
     </div>
 

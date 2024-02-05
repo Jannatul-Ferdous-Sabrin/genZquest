@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = $_POST['category'];
     $workExperience= $_POST["workExperience"];
     $employmentDuration = $_POST["employmentDuration"];
-    $jobDescription = $_POST["jobDescription "];
+    $jobDescription = $_POST["jobDescription"];
     $qualifications = $_POST["qualifications"];
    
 

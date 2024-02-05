@@ -12,7 +12,6 @@ $employerNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM regist
 $verifieduser = mysqli_num_rows(mysqli_query($conn, "SELECT verify_status FROM registration WHERE verify_status ='1'"));
 $authcomp = mysqli_num_rows(mysqli_query($conn, "SELECT COMPANYSTATUS FROM company WHERE COMPANYSTATUS = '1'"));
 $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE `status` = '1'"));
-
 ?>
 
 <!DOCTYPE html>
@@ -108,15 +107,9 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         </div>
                     </div>
                 </div>
-
-                
-
-
             </div>
         </div>
-
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
