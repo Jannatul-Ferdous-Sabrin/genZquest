@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('Not Accessible!')</script>";
-    echo "<script>location.href='login.php'</script>";
+    echo "<script>location.href='../login.php'</script>";
     exit();
 }
 
@@ -51,7 +51,6 @@ include '../config.php';
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 15%;">JOBID</th>
-                                    <th scope="col" style="width: 20%;">COMPANYID</th>
                                     <th scope="col" style="width: 20%;">CATEGORY</th>
                                     <th scope="col" style="width: 20%;">JOBTITLE</th>
                                     <th scope="col" style="width: 15%;">JOB STATUS</th>
@@ -69,7 +68,6 @@ include '../config.php';
                                     echo
                                         "<tr>
                                         <th scope='row'>" . $row['JOBID'] . "</th>
-                                        <td>" . $row['COMPANYID'] . "</td>
                                         <td>" . $row['CATEGORY'] . "</td>
                                         <td>" . $row['JOBTITLE'] . "</td>
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Closed" : "Active") . "</span></td>

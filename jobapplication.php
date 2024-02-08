@@ -60,15 +60,7 @@ if (isset($_GET['search'])) {
 </head>
 <body>
     <?php require('include/header.php'); ?>
-
-    <div class="form-container">
-        <!-- Include the Applicant Form -->
-        <?php include 'form.php'; ?>
-    </div>
-
- 
-       
-        <div class="job-details-container">
+            <div class="job-details-container">
         <h3 class="" style="font-weight: bold;">Job Details</h3>
             <h2><?php echo $row['JOBTITLE']; ?></h2>
             <p>Date Posted: <?php echo date_format(date_create($row['DATEPOSTED']), 'M d, Y'); ?></p>
@@ -77,7 +69,7 @@ if (isset($_GET['search'])) {
             <ul>
                 <li>Required No. of Employees: <?php echo $row['REQ_NO_EMPLOYEES']; ?></li>
                 <li>Salary: <?php echo number_format($row['SALARIES'], 2); ?></li>
-                <li>Duration of Employment: <?php echo $row['DURATION_EMPLOYEMENT']; ?></li>
+                <li>Duration of Employment: <?php echo $row['DURATION_EMPLOYMENT']; ?></li>
               
             </ul>
 

@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              <ul>
                  <li>Required No. of Employees: <?php echo $row['REQ_NO_EMPLOYEES']; ?></li>
                  <li>Salary: <?php echo number_format($row['SALARIES'], 2); ?></li>
-                 <li>Duration of Employment: <?php echo $row['DURATION_EMPLOYEMENT']; ?></li>
+                 <li>Duration of Employment: <?php echo $row['DURATION_EMPLOYMENT']; ?></li>
                  <li>Prefered Sex : <?php echo  $row['PREFEREDSEX']; ?></li>
                  <li>Sector of Vacancy : <?php echo  $row['SECTOR_VACANCY'];  ?></li>
                  

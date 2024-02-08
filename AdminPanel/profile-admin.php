@@ -1,6 +1,12 @@
 <?php
+session_start();
 
 include '../config.php';
+
+if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
+    echo "<script>alert('Not Accessible!')</script>";
+    echo "<script>location.href='../login.php'</script>";
+}
 
 ?>
 
@@ -33,10 +39,13 @@ include '../config.php';
                 <!--  -->
                 <div class="d-flex justify-content-around">
                     <!-- Image Container -->
-                    <div class="m-3 text-bg-primary" style="height: 15rem; width: 10rem;">
-                        <img src="../Images/admin.jpeg" class="img-fluid" alt=""
-                            style="object-fit: cover; height: 100%;">
+                    <!-- Image Container -->
+                    <div class="m-3 text-bg-primary"
+                        style="height: 15rem; width: 10rem; overflow: hidden; border-radius: 50%;">
+                        <img src="../Images/pic1.jpeg" class="img-fluid rounded-circle" alt=""
+                            style="object-fit: cover; height: 100%; width: 100%;">
                     </div>
+
                     <!-- Info Container -->
                     <div>
                         <div class="my-3 me-5 text-bg-light" style="height: 5rem; width: 20rem;">
@@ -59,16 +68,23 @@ include '../config.php';
                             </div>
 
                             <div class="d-flex">
-                            <div class="col-3">
-                                <span>Email:</span>
-                            </div>
+                                <div class="col-3">
+                                    <span>Email:</span>
+                                </div>
                                 <span class="ms-4">jannatulsabrina1067@gmail.com</span>
                             </div>
                             <div class="d-flex">
-                            <div class="col-3">
-                                <span>Phone: </span>
-                            </div>
+                                <div class="col-3">
+                                    <span>Phone: </span>
+                                </div>
                                 <span class="ms-4">+8801783-618103</span>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="col-3">
+                                    <span>Office Hours: </span>
+                                </div>
+                                <span class="ms-4">9:00-5:00 pm  (Mon-Sat)</span>
                             </div>
                         </div>
                     </div>

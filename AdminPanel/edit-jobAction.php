@@ -48,7 +48,7 @@ if (isset($_GET['deleteJobid'])) {
     }
 }
 
-//Delete row of Employee & Employer
+//Delete row of Employees
 if (isset($_GET['deleteuserid'])) {
     $id = $_GET['deleteuserid'];
 
@@ -64,6 +64,7 @@ if (isset($_GET['deleteuserid'])) {
 }
 
 
+//Edit Employer & Employee Information 
 if(isset($_POST['userEdit'])) {
     $id = $_POST['id'];
     $verify = $_POST['verify'];
