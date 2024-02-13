@@ -38,13 +38,16 @@
           </ul>
         </li>
         <?php
+       if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
+        
         $userData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE username = '$username'"));
         if ($userData['preference'] == 'employer') {
           echo "<li class='nav-item'>
                   <a class='nav-link me-2' href='EmployerPanel/post-job.php'>Create Job</a>
                 </li>";
         }
+      }
         ?>
         <?php
         if (!isset($_SESSION['username'])) {
@@ -55,9 +58,18 @@
                   <a class='nav-link' href='login.php'><i class='bi bi-box-arrow-in-right'></i> Login</a>
                 </li>";
         } else {
-          echo "<li class='nav-item'>
-                  <a class='nav-link' href='logout.php'><i class='bi bi-box-arrow-in-right'></i>Logout</a>
-                </li>";
+          echo "
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+              <i class='bi bi-person'></i> Welcome, {$_SESSION['username']}
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+              <a class='dropdown-item' href='profile.php'>Profile</a>
+              <div class='dropdown-divider'></div>
+              <a class='dropdown-item' href='logout.php'><i class='bi bi-box-arrow-in-right'></i> Logout</a>
+            </div>
+          </li>";
+      
         }
         ?>
       </ul>

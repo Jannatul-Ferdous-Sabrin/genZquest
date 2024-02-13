@@ -60,6 +60,11 @@ if (isset($_GET['search'])) {
 </head>
 <body>
     <?php require('include/header.php'); ?>
+    <section id="content">
+        
+        <div class="form-container">
+                    <?php require('applyform.php'); ?>
+                </div>
             <div class="job-details-container">
         <h3 class="" style="font-weight: bold;">Job Details</h3>
             <h2><?php echo $row['JOBTITLE']; ?></h2>

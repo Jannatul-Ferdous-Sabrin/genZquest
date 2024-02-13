@@ -1,6 +1,8 @@
 <!-- Fontawesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
+
 <div class="flex-shrink-0 p-3 sidebar" style="width: 280px; min-height: 100vh; max-height: auto; background-color: #222e3c;">
     <a href="adminhome.php" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
         <span class="ms-5 fs-4 fw-bolder text-white">genZquest</span>
