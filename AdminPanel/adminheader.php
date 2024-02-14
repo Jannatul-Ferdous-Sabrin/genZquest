@@ -1,10 +1,8 @@
 <?php
-
-// Mark All As Read Notification
+// Mark all as read notification
 if (isset($_GET['notificationreset'])) {
     $notificationSeen = mysqli_query($conn, "UPDATE `notification` SET `ADMINSEEN`='1'");
 }
-
 $notificationQuery = mysqli_query($conn, "SELECT * FROM `notification` WHERE `status` = '0'");
 $notificationUnseenQuery = mysqli_query($conn, "SELECT * FROM `notification` WHERE `status` = '0' AND ADMINSEEN = '0'");
 $unseenNum = mysqli_num_rows($notificationUnseenQuery);
@@ -65,7 +63,7 @@ $unseenNum = mysqli_num_rows($notificationUnseenQuery);
                         alt="profile" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small shadow">
-                <li><a class="dropdown-item" href="profile-admin.php">My Profile</a></li> 
+                    <li><a class="dropdown-item" href="profile-admin.php">My Profile</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     <li><a class="dropdown-item" href="../index.php">Go to Homepage</a></li>
