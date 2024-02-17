@@ -84,7 +84,7 @@
 <body>
     <div class="container">
         <h2>Applicant Form</h2>
-        <form action="process_application.php" method="post">
+        <form action="applyformAction.php" method="post">
             <div class="form-group">
                 <label for="FNAME">Firstname:</label>
                 <input class="form-control" type="text" id="FNAME" name="FNAME" placeholder="Firstname" required>
@@ -117,18 +117,6 @@
                 <label for="TELNO">Contact No.:</label>
                 <input class="form-control" type="text" id="TELNO" name="TELNO" placeholder="Contact No." required>
             </div>
-            <div class="form-group">
-                    <label for="street" class="form-label">Street</label>
-                    <input type="text" placeholder="Enter Your Street" class="form-control" id="street" name="street"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="zip" class="form-label">Zip Code</label>
-                    <input type="text" placeholder="Enter Your Zip Code" class="form-control" id="zip" name="zip"
-                        required>
-                </div>
-            
                 <div class="form-group">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" placeholder="Country" class="form-control" id="country" name="country"

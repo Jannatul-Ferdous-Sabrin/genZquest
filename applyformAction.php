@@ -1,38 +1,37 @@
 <?php
+
+include 'config.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and process the form data
     $fname = $_POST["FNAME"];
     $lname = $_POST["LNAME"];
-    $address = $_POST["ADDRESS"];
     $sex = $_POST["optionsRadios"];
     $dob = $_POST["DOB"];
-    $birthplace = $_POST["BIRTHPLACE"];
     $telno = $_POST["TELNO"];
-    $civilstatus = $_POST["CIVILSTATUS"];
+    $street = $_POST["street"];
+    $zip = $_POST["zip"];
+    $country = $_POST["country"];
     $email = $_POST["EMAILADDRESS"];
-    $username = $_POST["USERNAME"];
-    $password = $_POST["PASS"];
     $degreeFile = $_FILES["DEGREE"];
 
-    // Example: Save data to a database or perform other actions
-    // ...
 
-    // Example: Upload the file
-    $targetDirectory = "uploads/";
-    $targetFile = $targetDirectory . basename($degreeFile["name"]);
+ 
 
-    if (move_uploaded_file($degreeFile["tmp_name"], $targetFile)) {
-        echo "The file " . htmlspecialchars(basename($degreeFile["name"])) . " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+    // SQL query to insert data into the applyform table
+    $sql = "INSERT INTO applyform (FNAME, LNAME, optionsRadios, DOB, TELNO, street, zip, country, EMAILADDRESS, DEGREE) 
+    VALUES ('$fname', '$lname', '$sex', '$dob', '$telno', '$street', '$zip', '$country', '$email', '$degreeFile')";
 
-    // Redirect to a thank you page or any other appropriate action
-    // header("Location: thank_you_page.php");
-    // exit();
+// Execute the query
+$result = mysqli_query($conn, $sql);
+
+if ($result) {
+    echo "Data inserted successfully!";
 } else {
-    // Redirect back to the form if accessed directly without a POST request
-    header("Location: form.php");
-    exit();
+    echo "Error: " . mysqli_error($conn);
 }
+}
+
+// Close the database connection
+mysqli_close($conn);
 ?>

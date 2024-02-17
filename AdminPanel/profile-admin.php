@@ -36,14 +36,12 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         <div class="" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
             <div class="text-bg-secondary mx-4 my-5 rounded-3">
-                <!--  -->
                 <div class="d-flex justify-content-around">
-                    <!-- Image Container -->
                     <!-- Image Container -->
                     <div class="m-3 text-bg-primary"
                         style="height: 15rem; width: 10rem; overflow: hidden; border-radius: 50%;">
-                        <img src="../Images/pic1.jpeg" class="img-fluid rounded-circle" alt=""
-                            style="object-fit: cover; height: 100%; width: 100%;">
+                        <img src="../Images/admin.jpeg" class="img-fluid rounded-circle" alt=""
+                            style="object-fit: cover; height: 100%; width: 100%; border-radius: 50%;">
                     </div>
 
                     <!-- Info Container -->
