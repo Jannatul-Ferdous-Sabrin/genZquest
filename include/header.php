@@ -44,8 +44,10 @@
         $userData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE username = '$username'"));
         if ($userData['preference'] == 'employer') {
           echo "<li class='nav-item'>
-                  <a class='nav-link me-2' href='EmployerPanel/post-job.php'>Create Job</a>
-                </li>";
+          <a class='nav-link me-2' href='EmployerPanel/post-job.php'>
+            <span class='badge bg-primary rounded-pill'><i class='bi bi-plus'></i></span> Create Job
+          </a>
+        </li>";
         }
       }
         ?>
