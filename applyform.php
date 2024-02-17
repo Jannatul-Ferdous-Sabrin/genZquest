@@ -8,73 +8,74 @@
  
     <style>
        
-        .container {
-            width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-        form {
-            width: 100%;
-        }
+        body {
+    background: linear-gradient(90deg, wheat,#8282e7);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+form {
+    width: 100%;
+}
 
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+label {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+}
+
+input:focus {
+    outline-color: royalblue;
+}
 
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
+.button-container {
+    display: flex;
+    
+    margin-top: 10px;
+}
+
+.button {
+    background: #8282e7;
+            color: white;
+            border-color: #8282e7;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 0;
+            display: inline-block;
+            text-align: center;
+}
 
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
 
+.textarea-control {
+    grid-column: 1 / span 2;
+}
 
-        input[type="submit"] {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+@media (max-width: 460px) {
+    .textarea-control {
+        grid-column: 1 / span 1;
+    }
+}
 
-
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-
-        .terms {
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-
-
-        /* Improved styling for sex option */
-        .sex-group {
-            display: flex;
-            justify-content: space-between;
-        }
-
-
-        .sex-label {
-            margin-right: 10px;
-        }
-
-
-        .sex-radio {
-            display: flex;
-            align-items: center;
-        }
 
 
 </style>
@@ -82,65 +83,71 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container  mt-4">
         <h2>Applicant Form</h2>
         <form action="applyformAction.php" method="post">
-            <div class="form-group">
-                <label for="FNAME">Firstname:</label>
-                <input class="form-control" type="text" id="FNAME" name="FNAME" placeholder="Firstname" required>
-            </div>
-            <div class="form-group">
-                <label for="LNAME">Lastname:</label>
-                <input class="form-control" type="text" id="LNAME" name="LNAME" placeholder="Lastname" required>
-            </div>
-        
-           
-            <div class="form-group">
-                <div class="sex-group">
-                    <span class="sex-label">Sex:</span>
-                    <div class="sex-radio">
-                        <label>
-                            <input id="optionsRadios1" checked="True" name="optionsRadios" type="radio" value="Female">Female
-                        </label>
-                        <label>
-                            <input id="optionsRadios2" name="optionsRadios" type="radio" value="Male">Male
-                        </label>
-                    </div>
+        <div class="d-flex gap-5 mt-4">
+                <div class="">
+                    <label for="FNAME">Firstname</label>
+                    <input class="form-control" type="text" id="FNAME" name="FNAME" placeholder="Firstname" required>
+                </div>
+
+                <div class="">
+                    <label for="LNAME">Lastname</label>
+                    <input class="form-control" type="text" id="LNAME" name="LNAME" placeholder="Lastname" required>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="DOB">Date of Birth:</label>
+
+            <div class="d-flex gap-5 mt-4">
+                <div class="">
+                    <label for="TELNO">Contact No :</label>
+                    <input class="form-control" type="tel" id="TELNO" name="TELNO" placeholder="Contact No." required>
+                </div>
+
+                <div class="">
+                    <label for="EMAILADDRESS">Email Address:</label>
+                    <input class="form-control" type="email" id="EMAILADDRESS" name="EMAILADDRESS" placeholder="Email Address">
+                </div>
+               
+            
+            </div>
+            <div class="d-flex gap-5 mt-4">
+                <div class="">
+                    <label for="street">City</label>
+                    <input class="form-control" type="text" placeholder="Enter Your city"  id="street" name="street" required>
+                </div>
+
+                <div class="">
+                    <label for="zip" >Zip Code</label>
+                    <input class="form-control" type="text" placeholder="Enter Your Zip Code" id="zip" name="zip" required>
+                </div>
+            </div>
+
+            <div class="textarea-control gap-5 mt-4">
+                        <label for="address">Address</label>
+                        <textarea name="address" id="address" cols="45" rows="3" placeholder="Enter Address"></textarea>
+                        
+                    </div>
+                    <div class="d-flex gap-5 mt-4">
+                <div class="">
+                    <label for="DOB">Date of Birth:</label>
                 <input class="form-control" type="date" id="DOB" name="DOB" placeholder="Date of Birth" required>
             </div>
-           
-            <div class="form-group">
-                <label for="TELNO">Contact No.:</label>
-                <input class="form-control" type="text" id="TELNO" name="TELNO" placeholder="Contact No." required>
-            </div>
-                <div class="form-group">
-                    <label for="country" class="form-label">Country</label>
-                    <input type="text" placeholder="Country" class="form-control" id="country" name="country"
-                        required>
-                </div>
 
-
-           
-            <div class="form-group">
-                <label for="EMAILADDRESS">Email Address:</label>
-                <input class="form-control" type="email" id="EMAILADDRESS" name="EMAILADDRESS" placeholder="Email Address">
-            </div>
-            
-            <div class="form-group">
-                <label for="DEGREE">Educational Attainment:</label>
+                <div class="">
+                    <label for="DEGREE">Add CV</label>
                  <input class="form-control" type="file" id="DEGREE" name="DEGREE" accept=".pdf, .doc, .docx" />
             </div>
+
+            </div>
+
 
             <div class="form-group">
                 <input type="checkbox" id="terms" name="terms">
                 <label for="terms">By signing up, you agree to our <a href="#">terms and conditions</a>.</label>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="button-container ">
+                <button type="submit" class="btn btn-main btn-next-tab  button">Submit</button>
             </div>
         </form>
     </div>
