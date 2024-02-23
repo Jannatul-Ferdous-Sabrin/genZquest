@@ -69,8 +69,8 @@ $clientcollapse = 1;
             <?php include 'adminheader.php'; ?>
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                    <h4>List of Employees</h4>
-                    <br>
+                    <h4 class="mb-4">List of Employees</h4>
+                   
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
@@ -138,7 +138,7 @@ $clientcollapse = 1;
 
         <!-- Edit Form -->
         <div class="editForm col-lg-5" id="editForm">
-            <form action="edit-jobAction.php" METHOD="POST">
+            <form action="adminAction.php" METHOD="POST">
                 <!-- Form Div -->
                 <div class="border border-secondary-subtle shadow-lg rounded">
                     <div class="d-flex justify-content-between">
@@ -277,7 +277,7 @@ $clientcollapse = 1;
         }
 
         function deleteID() {
-            window.location.href = "edit-jobAction.php?deleteuserid=" + deleterow;
+            window.location.href ="adminAction.php?deleteuserid=" + deleterow;
         }
     </script>
 </body>

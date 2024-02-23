@@ -1,3 +1,34 @@
+<?php
+// Start the session if not started already
+session_start();
+
+// Include the database configuration file
+include('config.php');
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect to the login page or handle the case where the user is not logged in
+    header("Location: login.php"); // Replace with your login page URL
+    exit();
+}
+$username = $_SESSION['username'];
+
+// Fetch user information from the database
+$sql = "SELECT * FROM `registration` WHERE `username` = '$username'";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    
+} else {
+    // Handle the case where user data is not found in the database
+    // You can redirect to an error page or take appropriate action
+    die("User data not found in the database");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +64,40 @@
 body {
     background: linear-gradient(90deg, pink, wheat);
 }
- 
+.upload{
+  width: 125px;
+  position: relative;
+  margin: auto;
+}
+
+.upload img{
+  border-radius: 50%;
+  border: 8px solid #ffffff;
+}
+
+.upload .round{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #8282e7;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.upload .round input[type = "file"]{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+    cursor: pointer;
+}
+
+
 
 
     </style>
@@ -47,8 +111,22 @@ body {
         <form action="profileAction.php" method="POST">
             <div>
             <h2 class="mb-4 text-center">Profile</h2>
+            <div class="upload">
+        <?php
+        
+        $image = $user["image"];
+        ?>
+        <img src="pic/<?php echo $image; ?>" width = 125 height = 125 title="<?php echo $image; ?>">
+        <div class="round">
+          <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png">
+          <i class = "fa fa-camera" style = "color: #fff;"></i>
+        </div>
+      </div>
 
             </div>
+            
+
+        <h4 class="mb-4 text-center"> <?php echo $username; ?></h4>
 
             <div class="d-flex gap-5 mt-4">
                 <div class="">
@@ -63,55 +141,32 @@ body {
             </div>
 
             <div class="d-flex gap-5 mt-4">
-                <div class="">
-                    <label for="DEGREE">Educational Level:</label>
-                    <input class="form-control" type="text" id="DEGREE" name="degree" placeholder="Educational Level">
-                </div>
-
+                
+            <div class="">
+    <label for="DEGREE">Educational Level:</label>
+    <select class="form-control" id="DEGREE" name="degree">
+        <option value="" disabled selected hidden>Choose Educational Level</option>
+        <option value="High School">High School</option>
+        <option value="Associate's Degree">Associate's Degree</option>
+        <option value="Bachelor's Degree">Bachelor's Degree</option>
+        <option value="Master's Degree">Master's Degree</option>
+        <option value="Doctorate">Doctorate</option>
+    </select>
+</div>
                 <div class="">
                     <label for="EMAILADDRESS">Email Address:</label>
                     <input class="form-control" type="email" id="EMAILADDRESS" name="email" placeholder="Email Address">
                 </div>
             </div>
 
-            <div class=" mt-4">
-                <label for="DOB">Date of Birth:</label>
-                <input class="form-control" type="date" id="DOB" name="bdate" placeholder="Date of Birth" required>
-            </div>
+          
 
-            <div class="row mb-3 mt-4">
-                <div class="col-md-6">
-                    <label for="city" class="form-label">City/Town</label>
-                    <input type="text" placeholder="Enter Your City" class="form-control" id="city" name="city" required>
-                </div>
 
-                <div class="col-md-6">
-                    <label for="gender" class="form-label">Gender</label>
-                    <select class="form-select" name="gender" required="">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-            </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="street" class="form-label">Street</label>
-                    <input type="text" placeholder="Enter Your Street" class="form-control" id="street" name="street"
-                        required>
-                </div>
-
-                <div class="col-md-6">
-                    <label for="zip" class="form-label">Zip Code</label>
-                    <input type="text" placeholder="Enter Your Zip Code" class="form-control" id="zip" name="zip"
-                        required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Country</label>
-                    <input type="text" placeholder="Country" class="form-control" id="country" name="country" required>
+                <label for="miscell" class="form-label">Skills</label>
+                    <input type="text" placeholder="skills" class="form-control" id="miscell" name="miscell" required>
                 </div>
 
                 <div class="col-md-6">
@@ -122,9 +177,9 @@ body {
             </div>
 
             <div class="mb-3 form-floating">
-                <textarea class="form-control" placeholder="About me" id="about" style="height: 100px"
+                <textarea class="form-control" placeholder="Bio " id="about" style="height: 100px"
                     name="about"></textarea>
-                <label for="aboutme">About me</label>
+                <label for="aboutme">Bio</label>
             </div>
 
             <button type="submit" class="btn btn-main btn-next-tab update-button">Update</button>
@@ -135,6 +190,52 @@ body {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+    document.getElementById("image").onchange = function(){
+        document.getElementById("form").submit();
+    };
+</script>
+
+<?php
+
+if (isset($_FILES["image"]["name"])) {
+    $imageName = $_FILES["image"]["name"];
+    $imageSize = $_FILES["image"]["size"];
+    $tmpName = $_FILES["image"]["tmp_name"];
+
+    // Image validation
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $imageName);
+    $imageExtension = strtolower(end($imageExtension));
+
+    if (!in_array($imageExtension, $validImageExtension)) {
+        echo "<script>alert('Invalid Image Extension');</script>";
+        echo "<script>document.location.href = '../pro';</script>";
+    } elseif ($imageSize > 1200000) {
+        echo "<script>alert('Image Size Is Too Large');</script>";
+        echo "<script>document.location.href = '../pro';</script>";
+    } else {
+        $newImageName = $username . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
+        $newImageName .= '.' . $imageExtension;
+
+        // Perform the database update only if the file is successfully moved
+        if (move_uploaded_file($tmpName, 'pic/' . $newImageName)) {
+            $query = "UPDATE registration SET image = '$newImageName' WHERE username = '$username'";
+            mysqli_query($conn, $query);
+
+            echo "<script>alert('Image updated successfully');</script>";
+            echo "<script>document.location.href = '../pro';</script>";
+        } else {
+            echo "<script>alert('Error moving uploaded file');</script>";
+        }
+    }
+}
+?>
+
+
+    
 </body>
 
 </html>

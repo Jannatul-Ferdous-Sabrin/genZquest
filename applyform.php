@@ -118,8 +118,8 @@ input:focus {
                 </div>
 
                 <div class="">
-                    <label for="zip" >Zip Code</label>
-                    <input class="form-control" type="text" placeholder="Enter Your Zip Code" id="zip" name="zip" required>
+                    <label for="country" >country</label>
+                    <input class="form-control" type="text" placeholder="Enter Your country" id="country" name="country" required>
                 </div>
             </div>
 

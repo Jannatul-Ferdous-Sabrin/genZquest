@@ -34,7 +34,7 @@ $row = mysqli_fetch_array($jobQuery);
             <?php include 'adminheader.php'; ?>
 
             <div>
-                <form action="edit-jobAction.php" METHOD="POST">
+                <form action="adminAction.php" METHOD="POST">
                     <div class="d-flex justify-content-start mt-3 mx-5 fw-bold fs-5">
                         <p>JOB Post Date:</p>
                         <span class="ms-4 fw-bold fs-5">

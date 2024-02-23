@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+//Count number of rows from DB query
 $employeeNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM registration WHERE preference ='employee'"));
 $employerNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM registration WHERE preference ='employer'"));
 $verifieduser = mysqli_num_rows(mysqli_query($conn, "SELECT verify_status FROM registration WHERE verify_status ='1'"));
@@ -16,7 +17,6 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +45,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
             <div class="d-flex flex-row flex-wrap m-5">
                 
                 <!-- Card Section -->
-                <div class="card col-lg-3 me-4">
+                <div class="card col-lg-3 me-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-primary" style="width: 1rem;">
                         </div>
@@ -57,7 +57,8 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         </div>
                     </div>
                 </div>
-                <div class="card col-lg-3 me-4">
+                
+                <div class="card col-lg-3 me-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-warning" style="width: 1rem;">
                         </div>
@@ -69,7 +70,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         </div>
                     </div>
                 </div>
-                <div class="card col-lg-3 me-4">
+                <div class="card col-lg-3 me-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-danger" style="width: 1rem;">
                         </div>
@@ -82,7 +83,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                     </div>
                 </div>
 
-                <div class="card col-lg-3 me-4 mt-4">
+                <div class="card col-lg-3 me-5 mt-4">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-success" style="width: 1rem;">
                         </div>
@@ -111,6 +112,8 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
         </div>
     </div>
 
+         <!--Bootstrap JavaScript functionality-->
+         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>

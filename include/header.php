@@ -1,5 +1,4 @@
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -22,39 +21,51 @@
           <a class="nav-link me-2" href="./contact.php">Contact Us</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Jobs category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="category.php?search=Technology">Technology Jobs</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="category.php?search=Engineer">Engineering Jobs</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="category.php?search=Graphics">Graphics & Design Jobs</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="category.php?search=DigitalMarketing">Digital Marketing Jobs</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="category.php?search=WritingTranslation">Writing & Translation Jobs</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="category.php?search=WritingTranslation">Writing & Translation Jobs</a>
+            </li>
           </ul>
         </li>
         <?php
-       if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-        
-        $userData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE username = '$username'"));
-        if ($userData['preference'] == 'employer') {
-          echo "<li class='nav-item'>
-          <a class='nav-link me-2' href='EmployerPanel/post-job.php'>
-            <span class='badge bg-primary rounded-pill'><i class='bi bi-plus'></i></span> Create Job
-          </a>
-        </li>";
+        if (isset($_SESSION['username'])) {
+          $username = $_SESSION['username'];
+
+          $userData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE username = '$username'"));
+          if ($userData['preference'] == 'employer') {
+            echo "<li class='nav-item'>
+                    <a class='nav-link me-2' href='EmployerPanel/post-job.php'>
+                      <span class='badge bg-primary rounded-pill'><i class='bi bi-plus'></i></span> Create Job
+                    </a>
+                  </li>";
+          } else {
+            echo "<li></li>";
+          }
         }
-      }
         ?>
         <?php
         if (!isset($_SESSION['username'])) {
           echo "<li class='nav-item'>
-                  <a class='nav-link' href='register.php'><i class='bi bi-person'></i> Register</a>
+                  <a class='nav-link' href='register.php'><i class='bi bi-person'></i>Register</a>
                 </li>
                 <li class='nav-item'>
                   <a class='nav-link' href='login.php'><i class='bi bi-box-arrow-in-right'></i> Login</a>
@@ -71,7 +82,7 @@
               <a class='dropdown-item' href='logout.php'><i class='bi bi-box-arrow-in-right'></i> Logout</a>
             </div>
           </li>";
-      
+
         }
         ?>
       </ul>
@@ -85,6 +96,9 @@
 </nav>
 
 <!-- Bootstrap JS and Popper.js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-LlYA1EnLs1JlGDeSfDE+t9z9s7l5WWE+h/6UJ5jPLfi5TCKZ4IFQqBcZHDO26zgP" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-XSmMXYGiAWEC2thTOgBt7L/zy9oBqCy+lX4xg4GUrwrMfU9qlC2Iq8wb2R1EX6dE" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-LlYA1EnLs1JlGDeSfDE+t9z9s7l5WWE+h/6UJ5jPLfi5TCKZ4IFQqBcZHDO26zgP" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+  integrity="sha384-XSmMXYGiAWEC2thTOgBt7L/zy9oBqCy+lX4xg4GUrwrMfU9qlC2Iq8wb2R1EX6dE" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -3,10 +3,12 @@ session_start();
 
 include '../config.php';
 
-if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='../login.php'</script>";
 }
+
+$row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE username = '{$_SESSION['username']}'"));
 
 ?>
 
@@ -19,7 +21,8 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     <title>Admin Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .sidebar span {
             color: #fff;
@@ -31,24 +34,33 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php'; ?>
 
-
         <!-- Form -->
         <div class="" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
-            <div class="text-bg-secondary mx-4 my-5 rounded-3">
+            <div class="text-bg-white mx-5 my-5 rounded-3">
                 <div class="d-flex justify-content-around">
                     <!-- Image Container -->
-                    <div class="m-3 text-bg-primary"
-                        style="height: 15rem; width: 10rem; overflow: hidden; border-radius: 50%;">
-                        <img src="../Images/admin.jpeg" class="img-fluid rounded-circle" alt=""
+                    <div class="m-3" style="height: 15rem; width: 15rem;">
+                        <img src="<?php echo $row['profilePicture']; ?>" class="img-fluid" alt=""
                             style="object-fit: cover; height: 100%; width: 100%; border-radius: 50%;">
+                        <form id="fileForm" action="adminAction.php" method="post" enctype="multipart/form-data">
+                            <div class="d-flex justify-content-center">
+                                <input type="file" id="upload" name="profilePic" hidden>
+                                <label class="text-bg-dark p-2 rounded" for="upload">
+                                    <i class='fa-solid fa-pen-to-square'></i>
+                                </label>
+                                <input type="hidden" name="uploadBtn" value="1">
+                            </div>
+                        </form>
                     </div>
+
+
 
                     <!-- Info Container -->
                     <div>
-                        <div class="my-3 me-5 text-bg-light" style="height: 5rem; width: 20rem;">
-                            <h4 class="ms-4">Jannatul Ferdous Sabrin</h4>
-                            <span class="ms-4">administrator</span>
+                        <div class="my-3 p-1 rounded me-5 text-bg-light" style="height: 5rem; width: 23rem;">
+                            <h4 class="ms-4">Jannatul Ferdous (Sabrin)</h4>
+                            <span class="ms-4">Backend Developer </span>
                         </div>
                         <div>
                             <div class="d-flex">
@@ -82,7 +94,7 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
                                 <div class="col-3">
                                     <span>Office Hours: </span>
                                 </div>
-                                <span class="ms-4">9:00-5:00 pm  (Mon-Sat)</span>
+                                <span class="ms-4">9:00-5:00 pm (Mon-Sat)</span>
                             </div>
                         </div>
                     </div>
@@ -90,16 +102,15 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
                     <div class="me-5"></div>
                 </div>
             </div>
-            <!-- About Me -->
+            <!-- services integrations -->
             <div class="mx-4">
-                <p class="fs-4" style="color: #d16912; font-weight: bold;">About Me</p>
-                <p>Dedicated Website Administrator with 1 year of experience in managing
-                    and maintaining websites, ensuring optimal performance and user
+                <p class="fs-4" style="color: #d16912; font-weight: bold;">Services Integrations</p>
+                <p>Dedicated Website Administrator with 2 year of experience in
+                    maintaining websites connections,company records,
+                    and drafting relevant documents.Ensuring optimal performance and user
                     satisfaction. Proficient in content management systems, website analytics,
                     and troubleshooting issues. Demonstrates strong attention to detail,
-                    problem solving skills, and a commitment to delivering an exceptional
-                    online experience. Eager to contribute and continue growing in the field of
-                    website administration.</p>
+                    problem solving skills.</p>
             </div>
 
             <!-- Skill Section -->
@@ -162,9 +173,18 @@ if(!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#upload').on('change', function () {
+                $('#fileForm').submit();
+            });
+        });
+    </script>
 </body>
 
 </html>

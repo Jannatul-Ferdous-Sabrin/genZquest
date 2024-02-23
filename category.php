@@ -114,16 +114,15 @@ if ($result) {
     </html>
 
     <?php
-    // Free the result set
+
     $stmt->free_result();
 } else {
     echo "Error: " . $stmt->error;
 }
 
-// Close the prepared statement
 $stmt->close();
 
-// Close the database connection
+
 $conn->close();
 ?>
 

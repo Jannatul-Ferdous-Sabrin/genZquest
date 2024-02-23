@@ -2,6 +2,8 @@
 
 include '../config.php';
 
+
+//joblist fetch from DB
 if (isset($_POST['editJob'])) {
     $jobid = $_POST['jobid'];
     $companyid = $_POST['companyid'];
@@ -39,7 +41,7 @@ if (isset($_GET['deleteJobid'])) {
 
     $deleteQuery = mysqli_query($conn, "DELETE FROM job WHERE JOBID='$id'");
 
-    if($deleteQuery) {
+    if ($deleteQuery) {
         echo "<script>alert('Information Deleted Successfully!!')</script>";
         echo "<script>location.href='joblist.php'</script>";
     } else {
@@ -54,7 +56,7 @@ if (isset($_GET['deleteuserid'])) {
 
     $deleteQuery = mysqli_query($conn, "DELETE FROM registration WHERE id='$id'");
 
-    if($deleteQuery) {
+    if ($deleteQuery) {
         echo "<script>alert('Information Deleted Successfully!!')</script>";
         echo "<script>location.href='employee.php'</script>";
     } else {
@@ -65,7 +67,7 @@ if (isset($_GET['deleteuserid'])) {
 
 
 //Edit Employer & Employee Information 
-if(isset($_POST['userEdit'])) {
+if (isset($_POST['userEdit'])) {
     $id = $_POST['id'];
     $verify = $_POST['verify'];
     $fname = $_POST['fname'];
@@ -75,18 +77,64 @@ if(isset($_POST['userEdit'])) {
     $email = $_POST['email'];
 
 
-   $update = mysqli_query($conn, "UPDATE `registration` SET `verify_status`='$verify',`firstname`='$fname',`lastname`='$lname',
+    $update = mysqli_query($conn, "UPDATE `registration` SET `verify_status`='$verify',`firstname`='$fname',`lastname`='$lname',
         `username`='$username',`mobile`='$mob',`email`='$email' WHERE `id`='$id'");
 
-if ($update) {
-    echo "<script>alert('Information Updated Successfully!!')</script>";
-    echo "<script>location.href='employee.php'</script>";
-} else {
-    echo "<script>alert('Information Updated Failed!!')</script>";
-    echo "<script>location.href='employee.php'</script>";
+    if ($update) {
+        echo "<script>alert('Information Updated Successfully!!')</script>";
+        echo "<script>location.href='employee.php'</script>";
+    } else {
+        echo "<script>alert('Information Updated Failed!!')</script>";
+        echo "<script>location.href='employee.php'</script>";
 
-    echo mysqli_error($conn);
+        echo mysqli_error($conn);
+    }
+} 
+
+// Update Profile Picture
+if (isset($_POST['uploadBtn'])) {
+    $photo = $_FILES['profilePic'];
+
+    $imageLocation = $_FILES['profilePic']['tmp_name'];
+    $imageName = $_FILES['profilePic']['name'];
+    $imageDestination = "../profilePicture/" .$imageName;
+    move_uploaded_file($imageLocation, $imageDestination);
+
+    $pictureUpload = mysqli_query($conn, "UPDATE `registration` SET `profilePicture`='$imageDestination' WHERE username='admin'");
+    echo "<script>location.href='profile-admin.php'</script>";
 }
+
+
+
+//jon vacancy add
+if(isset($_POST['addJob'])) {
+    // Get form data
+    $jobTitle = $_POST['jobTitle'];
+    $REQ_NO_EMPLOYEES = $_POST['REQ_NO_EMPLOYEES'];
+    $JOBSTATUS = $_POST['JOBSTATUS'];
+    $companyName = $_POST['companyName'];
+    $category = $_POST['category'];
+    $workExperience = $_POST["workExperience"];
+    $employmentDuration = $_POST["employmentDuration"];
+    $jobDescription = $_POST["jobDescription"];
+    $qualifications = $_POST["qualifications"];
+
+
+    // SQL query to insert data into the database (without password hashing)
+    $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`JOBSTATUS`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`, `JOBDESCRIPTION`, `QUALIFICATION`) 
+                    VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$JOBSTATUS','$companyName','$category','$workExperience','$employmentDuration','$jobDescription', '$qualifications')";
+
+    // Execute the query
+    $result = mysqli_query($conn, $insertQuery);
+
+    if ($result) {
+        echo "Data inserted successfully!";
+
+        $notificationAddQuery = "INSERT INTO `notification` (`COMPANYNAME`) VALUES ('$companyName')";
+        $notificationAdd = mysqli_query($conn, $notificationAddQuery);
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
 }
 
 else {

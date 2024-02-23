@@ -32,7 +32,6 @@ include '../config.php';
 </head>
 
 <body>
-
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
 
@@ -45,8 +44,9 @@ include '../config.php';
             <div style="flex: 1;">
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                        <h4>List of vacancies</h4>
-                        <br>
+                        <h4 class="mb-4">List of Vacancies <a href="job-add.php" class="btn btn-primary"> <i
+                                    class="fa fa-plus-circle fw-fa"></i> Add Job Vacancy</a></h4>
+                      
                         <table class="table table-striped" id="datatable">
                             <thead>
                                 <tr>
@@ -55,8 +55,6 @@ include '../config.php';
                                     <th scope="col" style="width: 20%;">JOBTITLE</th>
                                     <th scope="col" style="width: 15%;">JOB STATUS</th>
                                     <th scope="col" style="width: 15%;">DETAILS</th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,8 +105,8 @@ include '../config.php';
                     </div>
                 </div>
             </div>
-
         </div>
+
         <!-- Bootstrap JS and DataTables JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -131,7 +129,7 @@ include '../config.php';
             }
 
             function deleteID() {
-                window.location.href = "edit-jobAction.php?deleteJobid=" + deleterow;
+                window.location.href = "adminAction.php?deleteJobid=" + deleterow;
             }
         </script>
 </body>

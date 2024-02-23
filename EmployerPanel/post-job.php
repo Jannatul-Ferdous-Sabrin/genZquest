@@ -8,24 +8,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
-    body {
-    background: linear-gradient(90deg, wheat,#8282e7);
-}
+        body {
+            background: linear-gradient(90deg, wheat, #8282e7);
+        }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 40px;
-}
-.post-job-heading {
-    color: #6b0c6b; 
-}
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 40px;
+        }
 
-
+        .post-job-heading {
+            color: #6b0c6b;
+        }
     </style>
 </head>
 
@@ -46,13 +45,15 @@
 
             <div class="d-flex gap-5 mt-4">
                 <div class="">
-                    <label for="JOBID">Job Id</label>
-                    <input type="number" class="form-control" id="JOBID" name="JOBID" placeholder="Job Id" required>
+                    <label for="REQ_NO_EMPLOYEES">Required Employees</label>
+                    <input type="number" class="form-control" id="REQ_NO_EMPLOYEE" name="REQ_NO_EMPLOYEES"
+                        placeholder="Required Employees" required>
                 </div>
 
                 <div class="">
                     <label for="JOBSTATUS">Job Status</label>
-                    <input type="text" class="form-control" id="JOBSTATUS" name="JOBSTATUS" placeholder="Job Status" required>
+                    <input type="text" class="form-control" id="JOBSTATUS" name="JOBSTATUS" placeholder="Job Status"
+                        required>
                 </div>
             </div>
 
@@ -61,12 +62,14 @@
             <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="companyName">Company Name</label>
-                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" required>
+                    <input type="text" class="form-control" id="companyName" name="companyName"
+                        placeholder="Company Name" required>
                 </div>
 
                 <div class="">
                     <label for="category">Category</label>
-                    <input type="text" class="form-control" id="category" name="category" placeholder="Category" required>
+                    <input type="text" class="form-control" id="category" name="category" placeholder="Category"
+                        required>
                 </div>
             </div>
 
@@ -94,12 +97,14 @@
             <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="workExperience">Work Experience</label>
-                    <input type="text" class="form-control" id="workExperience" name="workExperience" placeholder="work Experience"required>
+                    <input type="text" class="form-control" id="WorkExperience" name="workExperience"
+                        placeholder="work Experience" required>
                 </div>
 
                 <div class="">
                     <label for="employmentDuration">Duration of Employment</label>
-                    <input type="text" class="form-control" id="employmentDuration" name="employmentDuration"placeholder="Category" required>
+                    <input type="text" class="form-control" id="employmentDuration" name="employmentDuration"
+                        placeholder="Duration Employment" required>
                 </div>
             </div>
 
@@ -124,4 +129,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>

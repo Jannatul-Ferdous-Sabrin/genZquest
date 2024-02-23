@@ -37,8 +37,8 @@
             <div class="collapse <?php if (isset($clientcollapse))
                 echo "show" ?>" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-5">
-                        <li><a href="employer.php" class="link-body-emphasis rounded"><span>Employer</span></a></li>
-                        <li><a href="employee.php" class="link-body-emphasis rounded"><span>Employee</span></a></li>
+                        <li><a href="employer.php" class="link-body-emphasis text-decoration-none rounded "><span>Employer</span></a></li>
+                        <li><a href="employee.php" class="link-body-emphasis text-decoration-none rounded"><span>Employee</span></a></li>
                     </ul>
                 </div>
             </li>

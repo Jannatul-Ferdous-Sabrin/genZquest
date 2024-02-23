@@ -54,6 +54,7 @@
       padding: 50px;
       margin: 50px 50px;
       background-color: #f9f9f9;
+      
   }
  
   .job-title {
@@ -64,6 +65,7 @@
 
   .job-details {
       margin-top: 5px;
+      color: #fff;
   }
 
   .apply-button {
