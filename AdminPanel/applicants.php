@@ -50,10 +50,11 @@ include '../config.php';
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 15%;">Profile</th>
-                                    <th scope="col" style="width: 20%;">Applicants</th>
+                                    <th scope="col" style="width: 15%;">Applicants</th>
+                                    <th scope="col" style="width: 15%;">Mobile</th>
                                     <th scope="col" style="width: 15%;">Job Title</th>
                                     <th scope="col" style="width: 15%;">Company </th>
-                                    <th scope="col" style="width: 15%;">Applied Date</th>
+                                    <th scope="col" style="width: 20%;">Applied Date</th>
                                     <th scope="col" style="width: 15%;">Comments</th>
                                     <th scope="col" style="width: 15%;">Application Status</th>
                                 </tr>
@@ -69,6 +70,7 @@ include '../config.php';
                                                     </div>
                                                 </td>
                                                 <td>" . $row['applicants'] . "</td>
+                                                <td>" . $row['contact'] . "</td>
                                                 <td>" . $row['jobtitle'] . "</td>
                                                 <td>" . $row['companyname'] . "</td>
                                                 <td>" . $row['applieddate'] . "</td>

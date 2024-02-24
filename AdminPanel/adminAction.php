@@ -144,6 +144,7 @@ if (isset($_POST['addapplicants'])) {
   
 
     $applicants = $_POST['applicants'];
+    $contact = $_POST['contact'];
     $jobtitle = $_POST['jobtitle'];
     $companyname = $_POST['companyname'];
     $applieddate = $_POST['applieddate'];
@@ -152,7 +153,7 @@ if (isset($_POST['addapplicants'])) {
     $status = $_POST['status'];
   
 
-    $update = mysqli_query($conn, "UPDATE `applicants` SET `applicants`='$applicants',`jobtitle`='$jobtitle',`companyname`='$companyname',
+    $update = mysqli_query($conn, "UPDATE `applicants` SET `applicants`='$applicants',`contact`='$contact',`jobtitle`='$jobtitle',`companyname`='$companyname',
         `applieddate`='$applieddate',`comments`='$comments',
         `WORK_EXPERIENCE`='$exp',`JOBSTATUS`='$jobstatus',
         `profile`= '$profile',`status`='$status' WHERE `applicants`='$applicants'");
