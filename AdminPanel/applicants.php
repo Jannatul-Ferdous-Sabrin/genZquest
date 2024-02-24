@@ -45,39 +45,43 @@ include '../config.php';
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                         <h4 class="mb-4">Applicants</h4>
-                      
+
                         <table class="table table-striped" id="datatable">
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 15%;">Profile</th>
-                                    <th scope="col" style="width: 15%;">Applicants</th>
+                                    <th scope="col" style="width: 10%;">Applicants</th>
                                     <th scope="col" style="width: 15%;">Mobile</th>
-                                    <th scope="col" style="width: 15%;">Job Title</th>
+                                    <th scope="col" style="width: 20%;">Job Title</th>
                                     <th scope="col" style="width: 15%;">Company </th>
                                     <th scope="col" style="width: 20%;">Applied Date</th>
                                     <th scope="col" style="width: 15%;">Comments</th>
-                                    <th scope="col" style="width: 15%;">Application Status</th>
+                                    <th scope="col" style="width: 20%;">Application Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    $applicants = mysqli_query($conn, "SELECT * FROM `applicants`");
-                                    while ($row = mysqli_fetch_array($applicants)) {
-                                        echo "<tr>
+                                $applicants = mysqli_query($conn, "SELECT * FROM `applicants`");
+                                while ($row = mysqli_fetch_array($applicants)) {
+                                    echo "<tr>
                                                 <td>
                                                     <div class='d-flex align-items-center'>
                                                         <img src='" . $row['profile'] . "' alt='logo' style='width: 45px; height: 45px' class='rounded-circle'/>
                                                     </div>
                                                 </td>
                                                 <td>" . $row['applicants'] . "</td>
-                                                <td>" . $row['contact'] . "</td>
+                                                <td>
+                                                <span class='badge bg-primary'>" . $row['contact'] . "</span>
+                                            </td>
                                                 <td>" . $row['jobtitle'] . "</td>
-                                                <td>" . $row['companyname'] . "</td>
+                                                <td>
+                                                <span class='badge bg-info'>" . $row['companyname'] . "</span>
+                                            </td>
                                                 <td>" . $row['applieddate'] . "</td>
                                                 <td>" . $row['comments'] . "</td>
-                                                <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
+                                                <td><span class='badge text-bg-" . ($row['status'] == 0 ? "warning" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
                                             </tr>";
-                                    }
+                                }
                                 ?>
                             </tbody>
                         </table>
