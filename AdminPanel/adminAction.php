@@ -35,6 +35,23 @@ if (isset($_POST['editJob'])) {
 
 }
 
+
+// Delete row of applicants
+if (isset($_GET['deleteApplicant'])) {
+    $id = $_GET['deleteApplicant'];
+
+    $deleteQuery = mysqli_query($conn, "DELETE FROM applicants WHERE id='$id'");
+
+    if ($deleteQuery) {
+        echo "<script>alert('Information Deleted Successfully!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    } else {
+        echo "<script>alert('Deletion Failed!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    }
+}
+
+
 //Delete row of joblist
 if (isset($_GET['deleteJobid'])) {
     $id = $_GET['deleteJobid'];
@@ -106,7 +123,72 @@ if (isset($_POST['uploadBtn'])) {
 
 
 
-//jon vacancy add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//applicants information fetch 
+
+if (isset($_POST['addapplicants'])) {
+  
+
+    $applicants = $_POST['applicants'];
+    $jobtitle = $_POST['jobtitle'];
+    $companyname = $_POST['companyname'];
+    $applieddate = $_POST['applieddate'];
+    $comments = $_POST['comments'];
+    $profile = $_POST['profile'];
+    $status = $_POST['status'];
+  
+
+    $update = mysqli_query($conn, "UPDATE `applicants` SET `applicants`='$applicants',`jobtitle`='$jobtitle',`companyname`='$companyname',
+        `applieddate`='$applieddate',`comments`='$comments',
+        `WORK_EXPERIENCE`='$exp',`JOBSTATUS`='$jobstatus',
+        `profile`= '$profile',`status`='$status' WHERE `applicants`='$applicants'");
+
+    if ($update) {
+        echo "<script>alert('Information Updated Successfully!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    } else {
+        echo "<script>alert('Information Updated Failed!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//job vacancy add
 if(isset($_POST['addJob'])) {
     // Get form data
     $jobTitle = $_POST['jobTitle'];

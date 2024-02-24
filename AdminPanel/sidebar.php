@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
-  <div class="flex-shrink-0 p-3 sidebar"
+<div class="flex-shrink-0 p-3 sidebar"
     style="width: 280px; min-height: 100vh; max-height: auto; background-color: #222e3c;">
 
 
@@ -11,7 +11,7 @@
         <span class="ms-5 fs-4 fw-bolder text-white">genZquest</span>
     </a>
 
- 
+
     <!-- Sidebar Navigation List -->
     <ul class="list-unstyled ps-0">
 
@@ -26,6 +26,7 @@
                 </button>
             </a>
         </li>
+        <li class="border-top my-3"></li>
 
         <!-- Manage Users Section -->
         <li class="mb-2">
@@ -37,8 +38,10 @@
             <div class="collapse <?php if (isset($clientcollapse))
                 echo "show" ?>" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-5">
-                        <li><a href="employer.php" class="link-body-emphasis text-decoration-none rounded "><span>Employer</span></a></li>
-                        <li><a href="employee.php" class="link-body-emphasis text-decoration-none rounded"><span>Employee</span></a></li>
+                        <li><a href="employer.php"
+                                class="link-body-emphasis text-decoration-none rounded "><span>Employer</span></a></li>
+                        <li><a href="employee.php"
+                                class="link-body-emphasis text-decoration-none rounded"><span>Employee</span></a></li>
                     </ul>
                 </div>
             </li>
@@ -54,21 +57,28 @@
 
 
             <!-- company details -->
-                <li class="mb-2">
-                    <a href="companydetails.php" class="btn fw-semibold fs-5 text-white">
-                        <i class="fa-solid fa-book-tanakh me-2"></i>
-                        <span>Company Details</span>
-                    </a>
-                </li>
-                <li class="border-top my-3"></li>
+            <li class="mb-2">
+                <a href="companydetails.php" class="btn fw-semibold fs-5 text-white">
+                    <i class="fa-solid fa-book-tanakh me-2"></i>
+                    <span>Company Details</span>
+                </a>
+            </li>
 
+            <!-- Applicants Approval -->
+            <li class="mb-2">
+                <a href="applicants.php" class="btn fw-semibold fs-5 text-white">
+                <i class="fa-solid fa-users-rectangle me-2"></i>
+                    <span>Applicants</span>
+                </a>
+            </li>
+            <li class="border-top my-3"></li>
 
-                <!-- Admin Query -->
-                <li class="mb-2">
-                    <a href="profile-admin.php" class="btn fw-semibold fs-5 text-white">
-                        <i class="fa-solid fa-book-tanakh me-2"></i>
-                        <span>Admin Query</span>
-                    </a>
-                </li>
-    </ul>
+            <!-- Admin Query -->
+            <li class="mb-2">
+                <a href="profile-admin.php" class="btn fw-semibold fs-5 text-white">
+                    <i class="fa-solid fa-book-tanakh me-2"></i>
+                    <span>Admin Query</span>
+                </a>
+            </li>
+        </ul>
     </div>
