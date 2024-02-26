@@ -13,6 +13,7 @@ $employerNo = mysqli_num_rows(mysqli_query($conn, "SELECT preference FROM regist
 $verifieduser = mysqli_num_rows(mysqli_query($conn, "SELECT verify_status FROM registration WHERE verify_status ='1'"));
 $authcomp = mysqli_num_rows(mysqli_query($conn, "SELECT COMPANYSTATUS FROM company WHERE COMPANYSTATUS = '1'"));
 $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE `status` = '1'"));
+$applicants = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM applicants WHERE `status` = '1'"));
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +106,7 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                     </div>
                 </div>
 
-                <div class="card col-lg-3 me-4 mt-4">
+                <div class="card col-lg-3 me-5 mt-4">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-info" style="width: 1rem;">
                         </div>
@@ -119,6 +120,44 @@ $activejob = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM job WHERE
                         </div>
                     </div>
                 </div>
+
+
+                <div class="card col-lg-3 me-5 mt-4">
+                    <div class="row g-0">
+                        <div class="rounded-start text-bg-primary" style="width: 1rem;">
+                        </div>
+                        <div class="col-lg-11">
+                            <div class="card-body">
+                                <h5 class="text-primary card-title">Selected Applicants</h5>
+                                <p class="card-text"><i class="fa-solid fa-house-user me-2"></i>
+                                    <?php echo $applicants; ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
