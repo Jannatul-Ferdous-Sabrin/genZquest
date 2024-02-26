@@ -56,7 +56,7 @@ include '../config.php';
                                     <th scope="col" style="width: 15%;">Company </th>
                                     <th scope="col" style="width: 20%;">Applied Date</th>
                                     <th scope="col" style="width: 15%;">Comments</th>
-                                    <th scope="col" style="width: 20%;">Application Status</th>
+                                    <th scope="col" style="width: 15%;">Application Status</th>
                                 </tr>
                             </thead>
                             <tbody>

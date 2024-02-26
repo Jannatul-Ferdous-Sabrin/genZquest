@@ -126,90 +126,140 @@ if (!isset($_SESSION['username'])) {
 
   <section class="content-header">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 latest-job margin-bottom-20">
-          <h1 class="text-center">Latest Jobs</h1>
+        <div class="row">
+            <div class="col-md-12 latest-job margin-bottom-20">
+                <h1 class="text-center mb-4">Latest Jobs</h1>
+                <br>
 
-          <br>
-          <?php
-          // Fetch the job listings based on miscell
-          $sql = "SELECT * FROM `company` c, `job` j, `registration` r 
-                        WHERE c.`COMPANYID` = j.`COMPANYID` 
-                        ORDER BY r.`miscell` = j.`keyword` DESC, DATEPOSTED DESC 
-                        LIMIT 4"; // Limit to 4 latest jobs
-          
-          $result = $conn->query($sql);
+                <?php
 
-          if ($result->num_rows > 0) {
-            $jobCount = 0;
-            echo '<div class="container">'; // Start a container for rows
-          
-            while ($row = $result->fetch_assoc()) {
-              if ($jobCount % 2 == 0) {
-                echo '<div class="row">'; // Start a new row after every 2 jobs
-              }
-              ?>
-              <div class="col-md-6">
-                <div class="attachment-block clearfix">
-                  <?php
-                  // Check if the job has an image (replace 'IMAGEURL' with your actual column name)
-                  if (!empty($row['IMAGEURL'])) {
+                // Retrieve preferences for user
+                $sql = "SELECT username, miscell FROM registration";
+                $result = $conn->query($sql);
+
+                if (!$result) {
+                    // Check for query error
+                    echo "Error in SQL query: " . $conn->error;
+                } else {
+                    if ($result->num_rows > 0) {
+                        echo '<div class="container">'; // Start a container for rows
+
+                        while ($row = $result->fetch_assoc()) {
+                            $username = $row['username'];
+                            $user_miscell = explode(",", $row["miscell"]);
+
+                            // Retrieve preference jobs
+                            $preference_sql = "SELECT * FROM job WHERE ";
+                            foreach ($user_miscell as $miscell) {
+                                $preference_sql .= "FIND_IN_SET('$miscell', KEYWORD) OR ";
+                            }
+                            $preference_sql = rtrim($preference_sql, " OR "); // Remove the last 'OR'
+                            $preference_sql .= " ORDER BY DATEPOSTED DESC LIMIT 4"; // Order by date and limit to 4
+
+                            $preference_result = $conn->query($preference_sql);
+
+                            if (!$preference_result) {
+                                // Check for query error
+                                echo "Error in job SQL query: " . $conn->error;
+                            } else {
+                                $jobCount = 0;
+                                $displayedJobs = array(); // To keep track of displayed job IDs
+
+                                echo '<div class="row">'; // Start a new row
+
+                                // Display preference jobs
+                                while ($preference_row = $preference_result->fetch_assoc()) {
+                                    if (!in_array($preference_row['JOBID'], $displayedJobs)) {
+                                        displayJob($preference_row);
+                                        $displayedJobs[] = $preference_row['JOBID'];
+                                        $jobCount++;
+
+                                        if ($jobCount >= 4) {
+                                            break; // Stop after displaying a total of 4 jobs
+                                        }
+                                    }
+                                }
+
+                                // Display latest jobs if needed
+                                if ($jobCount < 4) {
+                                    $remainingJobs = 4 - $jobCount;
+
+                                    $latest_sql = "SELECT * FROM job WHERE JOBID NOT IN (" . implode(",", $displayedJobs) . ") ORDER BY DATEPOSTED DESC LIMIT $remainingJobs";
+                                    $latest_result = $conn->query($latest_sql);
+
+                                    if ($latest_result) {
+                                        while ($latest_row = $latest_result->fetch_assoc()) {
+                                            displayJob($latest_row);
+                                            $displayedJobs[] = $latest_row['JOBID'];
+                                            $jobCount++;
+
+                                            if ($jobCount >= 4) {
+                                                break; // Stop after displaying a total of 4 jobs
+                                            }
+                                        }
+                                    }
+                                }
+
+                                echo '</div>'; // Close the row
+                            }
+                        }
+
+                        echo '</div>'; // Close the container
+                    } else {
+                        echo "No users found with miscell";
+                    }
+                }
+
+                // Function to display job HTML
+                function displayJob($job_row)
+                {
                     ?>
-                    <img class="attachment-img" src="<?php echo $row['IMAGEURL']; ?>" alt="Attachment Image"
-                      style="width: 150px; height: 80px;">
-                    <?php
-                  } else {
-                    ?>
-
-                    <!-- Placeholder image if no image is available -->
-                    <img class="attachment-img" src="Images/logo.webp" alt="Placeholder Image"
-                      style="width: 150px; height: 80px;">
-                    <?php
-                  }
-                  ?>
-                  <div class="attachment-pushed">
-                    <h4 class="attachment-heading">
-                      <a href="http://localhost/genzquest/jobapplication.php?search=<?php echo $row['JOBID']; ?>"
-                        style="text-decoration: none; color: black; font-weight: bold;">
-                        <?php echo $row['JOBTITLE']; ?>
-                      </a>
-
-                      <span class="attachment-heading pull-right" style=" font-weight: 400;">$
-                        <?php echo $row['SALARIES']; ?>
-                      </span>
-
-                    </h4>
-
-                    <div class="attachment-text" style=" font-weight: 400;">
-                      <div>
-                        <p>
-                          <?php echo $row['COMPANYNAME']; ?>
-                          <?php echo $row['keyword']; ?>
-                        </p>
-                      </div>
+                    <div class="col-md-6">
+                        <div class="attachment-block clearfix">
+                            <?php
+                            // Check if the job has an image (replace 'IMAGEURL' with your actual column name)
+                            if (!empty($job_row['IMAGEURL'])) {
+                                ?>
+                                <img class="attachment-img" src="<?php echo $job_row['IMAGEURL']; ?>"
+                                     alt="Attachment Image" style="width: 150px; height: 80px;">
+                                <?php
+                            } else {
+                                ?>
+                                <!-- Placeholder image if no image is available -->
+                                <img class="attachment-img" src="pic/logo.webp" alt="Placeholder Image"
+                                     style="width: 150px; height: 80px;">
+                                <?php
+                            }
+                            ?>
+                            <h4 class="attachment-heading">
+                                <a href="http://localhost/genzquest/jobapplication.php?search=<?php echo $job_row['JOBID']; ?>"
+                                   style="text-decoration: none; color: black; font-weight: bold;">
+                                    <?php echo $job_row['JOBTITLE']; ?>
+                                </a>
+                                <span class="attachment-heading pull-right" style="font-weight: 400;">
+                                    $<?php echo $job_row['SALARIES']; ?>/Month
+                                </span>
+                            </h4>
+                            <div class="attachment-text" style="font-weight: 400;">
+                                <div>
+                                    <p>
+                                        <?php echo $job_row['COMPANYNAME']; ?> | Requirement : <?php echo $job_row['KEYWORD']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <?php
+                    <?php
+                }
 
-              if ($jobCount % 2 == 1 || $jobCount == $result->num_rows - 1) {
-                echo '</div>'; // Close the row after every 2 jobs or at the end
-              }
+                // Close the database connection
+                $conn->close();
+                ?>
 
-              $jobCount++;
-            }
-
-            echo '</div>'; // Close the container
-          } else {
-            echo "No jobs found.";
-          }
-          ?>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-
+</section>
 
 
 

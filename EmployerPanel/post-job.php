@@ -28,9 +28,9 @@
     </style>
 </head>
 
-<body>
+<body style="width: 100%";>
 
-    <?php require('header.php'); ?>
+    <?php include('header.php'); ?>
 
     <div class="container d-flex justify-content-center mt-5">
         <form action="postJobAction.php" method="POST">
@@ -97,7 +97,7 @@
             <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="workExperience">Work Experience</label>
-                    <input type="text" class="form-control" id="WorkExperience" name="workExperience"
+                    <input type="text" class="form-control" id="WorkExperience" name="WorkExperience"
                         placeholder="work Experience" required>
                 </div>
 
@@ -125,9 +125,9 @@
     </div>
 
     <!-- Add Bootstrap JS and Popper.js CDN links here if needed -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

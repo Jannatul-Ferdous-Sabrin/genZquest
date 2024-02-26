@@ -14,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Build conditions for each keyword
     foreach ($keywords as $keyword) {
-        $conditions[] = "(j.`JOBTITLE` LIKE '%$keyword%'
+        $conditions[] = "(j.JOBTITLE LIKE '%$keyword%'
                      
-                        OR j.`keyword` LIKE '%$keyword%')";
+                        OR j.keyword LIKE '%$keyword%')";
     }
     
 
@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conditionsString = implode(' OR ', $conditions);
 
     // SQL query to retrieve job details matching the search query
-    $sql = "SELECT * FROM `company` c, `job` j 
-            WHERE c.`COMPANYID` = j.`COMPANYID` AND ($conditionsString) 
-            ORDER BY j.`DATEPOSTED` DESC";
+    $sql = "SELECT j.* FROM job j 
+        WHERE ($conditionsString) 
+        ORDER BY j.DATEPOSTED DESC";
 
     // Execute the query
     $result = $conn->query($sql);
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              </ul>
  
              <p>Qualification/Work Experience: <?php echo $row['WORK_EXPERIENCE']; ?></p>
-             <p>Experience Requirement : <?php echo $row['keyword']; ?></p>
+             <p>Experience Requirement : <?php echo $row['KEYWORD']; ?></p>
              
     
              <p>Job Description:<?php echo $row['JOBDESCRIPTION']; ?></p>

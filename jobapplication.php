@@ -2,14 +2,14 @@
 require_once('config.php'); // Include the database configuration
 
 // Define the base URL of your website
-define('web_root', 'http://localhost/genzquest/'); // Change this to your actual base URL
+define('web_root', 'http://localhost/pro/'); // Change this to your actual base URL
 
 // Check if a job ID is provided in the URL
 if (isset($_GET['search'])) {
     $jobid = $_GET['search'];
 
     // SQL query to retrieve job details based on the JOBID
-    $sql = "SELECT * FROM `company` c, `job` j WHERE c.`COMPANYID` = j.`COMPANYID` AND j.JOBID = " . $jobid;
+    $sql = "SELECT * FROM company c, job j WHERE c.COMPANYID = j.COMPANYID AND j.JOBID = " . $jobid;
 
     // Execute the query
     $result = $conn->query($sql);
@@ -24,7 +24,7 @@ if (isset($_GET['search'])) {
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>genZquest Jobs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +99,7 @@ if (isset($_GET['search'])) {
             <ul style="list-style: none;">
                 <li><?php echo $row['JOBDESCRIPTION']; ?></li>
             </ul>
-            <p>Experience Requirement : <?php echo $row['keyword']; ?></p>
+            <p>Experience Requirement : <?php echo $row['KEYWORD']; ?></p>
             <p>Job Status : <?php echo $row['JOBSTATUS']; ?></p>
 
         </div>
