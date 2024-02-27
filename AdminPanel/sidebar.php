@@ -26,8 +26,9 @@
                 </button>
             </a>
         </li>
-        <li class="border-top my-3"></li>
 
+        <li class="border-top my-3"></li>
+        
         <!-- Manage Users Section -->
         <li class="mb-2">
             <button class="btn fw-semibold fs-5 text-white" data-bs-toggle="collapse"
@@ -76,7 +77,7 @@
             <!-- Admin Query -->
             <li class="mb-2">
                 <a href="profile-admin.php" class="btn fw-semibold fs-5 text-white">
-                    <i class="fa-solid fa-book-tanakh me-2"></i>
+                <i class="fa-solid fa-user-tie me-2"></i>
                     <span>Admin Query</span>
                 </a>
             </li>

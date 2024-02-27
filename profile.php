@@ -21,14 +21,10 @@ if ($result && $result->num_rows > 0) {
     $user = $result->fetch_assoc();
     
 } else {
-    // Handle the case where user data is not found in the database
-    // You can redirect to an error page or take appropriate action
     die("User data not found in the database");
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 

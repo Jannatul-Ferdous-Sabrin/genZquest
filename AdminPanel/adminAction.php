@@ -1,5 +1,4 @@
 <?php
-
 include '../config.php';
 
 
@@ -36,6 +35,9 @@ if (isset($_POST['editJob'])) {
 }
 
 
+
+
+
 // Delete row of applicants
 if (isset($_GET['deleteApplicant'])) {
     $id = $_GET['deleteApplicant'];
@@ -50,6 +52,9 @@ if (isset($_GET['deleteApplicant'])) {
         echo "<script>location.href='applicants.php'</script>";
     }
 }
+
+
+
 
 
 //Delete row of joblist
@@ -67,6 +72,11 @@ if (isset($_GET['deleteJobid'])) {
     }
 }
 
+
+
+
+
+
 //Delete row of Employees
 if (isset($_GET['deleteuserid'])) {
     $id = $_GET['deleteuserid'];
@@ -81,6 +91,9 @@ if (isset($_GET['deleteuserid'])) {
         echo "<script>location.href='employee.php'</script>";
     }
 }
+
+
+
 
 
 //Edit Employer & Employee Information 
@@ -108,7 +121,11 @@ if (isset($_POST['userEdit'])) {
     }
 } 
 
-// Update Profile Picture
+
+
+
+
+// Update Admin Profile Picture
 if (isset($_POST['uploadBtn'])) {
     $photo = $_FILES['profilePic'];
 
@@ -120,18 +137,6 @@ if (isset($_POST['uploadBtn'])) {
     $pictureUpload = mysqli_query($conn, "UPDATE `registration` SET `profilePicture`='$imageDestination' WHERE username='admin'");
     echo "<script>location.href='profile-admin.php'</script>";
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -167,23 +172,6 @@ if (isset($_POST['addapplicants'])) {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

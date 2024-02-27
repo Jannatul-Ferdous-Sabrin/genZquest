@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 include '../config.php';
-
 if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     echo "<script>alert('Not Accessible!')</script>";
     echo "<script>location.href='../login.php'</script>";
@@ -39,6 +37,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE 
             <?php include 'adminheader.php'; ?>
             <div class="text-bg-white mx-5 my-5 rounded-3">
                 <div class="d-flex justify-content-around">
+
                     <!-- Image Container -->
                     <div class="m-3" style="height: 15rem; width: 15rem;">
                         <img src="<?php echo $row['profilePicture']; ?>" class="img-fluid" alt=""
@@ -173,11 +172,15 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE 
         </div>
     </div>
 
+<!--Jquery-->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <!--Bootstrap JS Bundle-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 
+        <!--Custom Script-->
     <script>
         $(document).ready(function () {
             $('#upload').on('change', function () {

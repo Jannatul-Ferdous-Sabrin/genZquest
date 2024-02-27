@@ -1,53 +1,52 @@
 <?php
-
 include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fname = $_POST["FNAME"];
+    $lname = $_POST["LNAME"];
+    $dob = $_POST["DOB"];
+    $telno = $_POST["TELNO"];
+  
+    $email = $_POST["EMAILADDRESS"];
+    $degreeFile = $_FILES["DEGREE"]["name"];
+    $country = $_POST["country"];
+
     // Validate and process the form data
-    $fname = mysqli_real_escape_string($conn, $_POST["FNAME"]);
-    $lname = mysqli_real_escape_string($conn, $_POST["LNAME"]);
-    $dob = mysqli_real_escape_string($conn, $_POST["DOB"]);
-    $telno = mysqli_real_escape_string($conn, $_POST["TELNO"]);
-    $street = mysqli_real_escape_string($conn, $_POST["STREET"]);
-    $country = mysqli_real_escape_string($conn, $_POST["COUNTRY"]);
-    $email = mysqli_real_escape_string($conn, $_POST["EMAILADDRESS"]);
-    
-    // Check if "DEGREE" key is set in $_FILES
-    $degreeFile = isset($_FILES["DEGREE"]) ? $_FILES["DEGREE"] : null;
 
-    // File upload directory
-    $uploadDirectory = "cv/";
+    // Uploads files
+    $filename = $_FILES['DEGREE']['name'];
+    $temp_file = $_FILES['DEGREE']['tmp_name'];
+    $file_size = $_FILES['DEGREE']['size'];
 
-    // File name with a timestamp to avoid collision
-    $degreeFileName = null;
-    if ($degreeFile && $degreeFile["error"] == UPLOAD_ERR_OK) {
-        $originalFileName = basename($degreeFile["name"]);
-        $extension = pathinfo($originalFileName, PATHINFO_EXTENSION);
-        $degreeFileName = "degree_" . time() . "." . $extension;
-        $uploadFilePath = $uploadDirectory . $degreeFileName;
+    $destination = 'uploads/' . $filename;
 
-        // Move the uploaded file to the specified folder
-        if (!move_uploaded_file($degreeFile["tmp_name"], $uploadFilePath)) {
-            die("Error uploading file.");
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    if (!in_array($extension, ['pdf', 'doc', 'docx'])) {
+        echo "File extension must be .pdf, .doc, or .docx";
+    } elseif ($file_size > 1000000) { // File shouldn't be larger than 1 Megabyte
+        echo "File size too large!";
+    } else {
+        // Move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($temp_file, $destination)) {
+            // SQL query to insert data into the applicant table
+            $sql = "INSERT INTO applicants (fname, lname, DOB, contact,  email, degree, country) 
+                    VALUES ('$fname', '$lname', '$dob', '$telno',  '$email', '$filename', '$country')";
+
+            // Execute the query
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+                echo "Data inserted successfully!";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        } else {
+            echo "Failed to upload file.";
         }
     }
 
-    // SQL query to insert data into the applyform table
-    $sql = "INSERT INTO applyform (FNAME, LNAME, DOB, TELNO, STREET,COUNTRY, EMAILADDRESS, DEGREE) 
-            VALUES ('$fname', '$lname', '$dob', '$telno', '$street', '$country', '$email', '$degreeFileName')";
-
-    // Execute the query
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        // Redirect to submission confirmation page
-        header("Location: submissionconfirm.php");
-        exit();
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
+    // Close the database connection
+    mysqli_close($conn);
 }
-
-// Close the database connection
-mysqli_close($conn);
 ?>

@@ -85,7 +85,7 @@ input:focus {
 <body>
     <div class="container  mt-4">
         <h2>Applicant Form</h2>
-        <form action="applyformAction.php" method="post">
+        <form action="applyformAction.php" method="post" enctype="multipart/form-data">
         <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="FNAME">Firstname</label>
@@ -135,8 +135,9 @@ input:focus {
             </div>
 
                 <div class="">
-                    <label for="DEGREE">Add CV</label>
-                 <input class="form-control" type="file" id="DEGREE" name="DEGREE" accept=".pdf, .doc, .docx" />
+                    <label for="DEGREE">Educational Attainment:</label>
+                    <input class="form-control" type="file" id="DEGREE" name="DEGREE" accept=".pdf, .doc, .docx" />
+
             </div>
 
             </div>

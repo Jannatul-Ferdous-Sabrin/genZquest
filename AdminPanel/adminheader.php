@@ -1,3 +1,4 @@
+
 <?php
 // Mark all as read notification
 if (isset($_GET['notificationreset'])) {
@@ -53,6 +54,7 @@ $unseenNum = mysqli_num_rows($notificationUnseenQuery);
                                 <hr>
                             </li>
                         </a>
+                        
                     <?php endwhile; ?>
                     <a class="text-decoration-none text-dark" href="?notificationreset=1">
                         <li class="d-flex justify-content-center">Mark All As Read</li>
@@ -68,7 +70,7 @@ $unseenNum = mysqli_num_rows($notificationUnseenQuery);
                 <p class="text-body-dark">admin</p>
             </div>
             <div class="ms-3 flex-shrink-0 dropdown">
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" 
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="../Images/admin.jpeg" alt="profile" width="32" height="32" class="rounded-circle">
                 </a>
