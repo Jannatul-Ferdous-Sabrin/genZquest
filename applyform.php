@@ -96,7 +96,7 @@
         <form action="applyformAction.php" method="post" enctype="multipart/form-data" onsubmit="return validateContactNumber();">
             <div class="d-flex gap-5 mt-4">
                 <div class="">
-                    <label for="fname">Firstname</label>
+                    <label for="applicants">Firstname</label>
                     <input class="form-control" type="text" id="applicants" name="applicants" placeholder="First" required>
                 </div>
 
