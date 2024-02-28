@@ -1,14 +1,8 @@
 <?php
-// Start the session if not started already
 session_start();
-
-// Include the database configuration file
 include('../config.php');
-
-// Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    // Redirect to the login page or handle the case where the user is not logged in
-    header("Location: login.php"); // Replace with your login page URL
+    header("Location: login.php"); 
     exit();
 }
 $username = $_SESSION['username'];

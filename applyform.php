@@ -97,7 +97,7 @@
             <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="fname">Firstname</label>
-                    <input class="form-control" type="text" id="applicants" name="applicants" placeholder="First Name" required>
+                    <input class="form-control" type="text" id="applicants" name="applicants" placeholder="First" required>
                 </div>
 
                 <div class="">
