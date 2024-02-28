@@ -99,9 +99,9 @@
 
             <div class="d-flex gap-5 mt-4">
                 <div class="">
-                    <label for="workExperience">Work Experience</label>
-                    <input type="text" class="form-control" id="WorkExperience" name="WorkExperience"
-                        placeholder="work Experience" required>
+                    <label for="WORK_EXPERIENCE">Work Experience</label>
+                    <input type="text" class="form-control" id="WORK_EXPERIENCE" name="WORK_EXPERIENCE"
+                        placeholder="WORK_EXPERIENCE" required>
                 </div>
 
                 <div class="">
@@ -110,6 +110,11 @@
                         placeholder="Duration Employment" required>
                 </div>
             </div>
+
+            <div class="gap-5 mt-4">
+                    <label for="KEYWORD"><p>Requirement : </p></label>
+                    <input type="text" class="form-control" id="KEYWORD" name="KEYWORD" placeholder="Requirement"required>
+                </div>
 
             <div class="mt-4 form-floating">
                 <textarea class="form-control" placeholder="Job Description" id="jobDescription" style="height: 100px"

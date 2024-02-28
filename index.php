@@ -226,7 +226,7 @@ if (!isset($_SESSION['username'])) {
                             } else {
                                 ?>
                                 <!-- Placeholder image if no image is available -->
-                                <img class="attachment-img" src="pic/logo.webp" alt="Placeholder Image"
+                                <img class="attachment-img" src="Images/logo.webp" alt="Placeholder Image"
                                      style="width: 150px; height: 80px;">
                                 <?php
                             }

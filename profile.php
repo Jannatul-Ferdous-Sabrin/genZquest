@@ -21,6 +21,8 @@ if ($result && $result->num_rows > 0) {
     $user = $result->fetch_assoc();
     
 } else {
+    // Handle the case where user data is not found in the database
+    // You can redirect to an error page or take appropriate action
     die("User data not found in the database");
 }
 
@@ -101,10 +103,12 @@ input[type=file]::-webkit-file-upload-button{
 
 <body>
 
-    <?php require('include/header.php'); ?>
+<?php require('include/header.php'); ?>
 
-    <div class="container d-flex justify-content-center mt-5">
-        <form action="profileAction.php" method="POST">
+<div class="container d-flex justify-content-center mt-5">
+    <form action="profileAction.php" method="POST" enctype="multipart/form-data">
+
+
             <div>
             <h2 class="mb-4 text-center">Profile</h2>
             <div class="upload">
@@ -124,15 +128,17 @@ input[type=file]::-webkit-file-upload-button{
 
         <h4 class="mb-4 text-center"> <?php echo $username; ?></h4>
 
-            <div class="d-flex gap-5 mt-4">
+        <div class="d-flex gap-5 mt-4">
                 <div class="">
                     <label for="FNAME">Firstname</label>
-                    <input class="form-control" type="text" id="FNAME" name="fname" placeholder="Firstname" required>
+                    <input class="form-control" type="text" id="FNAME" name="fname" placeholder="Firstname" required
+                        value="<?php echo $user['firstname']; ?>">
                 </div>
 
                 <div class="">
                     <label for="LNAME">Lastname</label>
-                    <input class="form-control" type="text" id="LNAME" name="lname" placeholder="Lastname" required>
+                    <input class="form-control" type="text" id="LNAME" name="lname" placeholder="Lastname" required
+                        value="<?php echo $user['lastname']; ?>">
                 </div>
             </div>
 
@@ -151,7 +157,8 @@ input[type=file]::-webkit-file-upload-button{
 </div>
                 <div class="">
                     <label for="EMAILADDRESS">Email Address:</label>
-                    <input class="form-control" type="email" id="EMAILADDRESS" name="email" placeholder="Email Address">
+                    <input class="form-control" type="email" id="EMAILADDRESS" name="email" placeholder="Email Address"required
+                        value="<?php echo $user['email']; ?>">
                 </div>
             </div>
 
@@ -161,14 +168,15 @@ input[type=file]::-webkit-file-upload-button{
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                <label for="miscell" class="form-label">Skills</label>
-                    <input type="text" placeholder="skills" class="form-control" id="miscell" name="miscell" required>
+                    <label for="miscell" class="form-label">Skills</label>
+                    <input type="text" placeholder="skills" class="form-control" id="miscell" name="miscell" required
+                        value="<?php echo $user['miscell']; ?>">
                 </div>
 
                 <div class="col-md-6">
                     <label for="mobile" class="form-label">Phone Number</label>
                     <input type="text" placeholder="Enter Your Phone Number" class="form-control" id="mobile"
-                        name="mobile" required>
+                        name="mobile" required value="<?php echo $user['mobile']; ?>">
                 </div>
             </div>
 
@@ -193,45 +201,6 @@ input[type=file]::-webkit-file-upload-button{
         document.getElementById("form").submit();
     };
 </script>
-
-<?php
-
-if (isset($_FILES["image"]["name"])) {
-    $imageName = $_FILES["image"]["name"];
-    $imageSize = $_FILES["image"]["size"];
-    $tmpName = $_FILES["image"]["tmp_name"];
-
-    // Image validation
-    $validImageExtension = ['jpg', 'jpeg', 'png'];
-    $imageExtension = explode('.', $imageName);
-    $imageExtension = strtolower(end($imageExtension));
-
-    if (!in_array($imageExtension, $validImageExtension)) {
-        echo "<script>alert('Invalid Image Extension');</script>";
-        echo "<script>document.location.href = '../pro';</script>";
-    } elseif ($imageSize > 1200000) {
-        echo "<script>alert('Image Size Is Too Large');</script>";
-        echo "<script>document.location.href = '../pro';</script>";
-    } else {
-        $newImageName = $username . " - " . date("Y.m.d") . " - " . date("h.i.sa"); // Generate new image name
-        $newImageName .= '.' . $imageExtension;
-
-        // Perform the database update only if the file is successfully moved
-        if (move_uploaded_file($tmpName, 'pic/' . $newImageName)) {
-            $query = "UPDATE registration SET image = '$newImageName' WHERE username = '$username'";
-            mysqli_query($conn, $query);
-
-            echo "<script>alert('Image updated successfully');</script>";
-            echo "<script>document.location.href = '../pro';</script>";
-        } else {
-            echo "<script>alert('Error moving uploaded file');</script>";
-        }
-    }
-}
-?>
-
-
-    
 </body>
 
 </html>

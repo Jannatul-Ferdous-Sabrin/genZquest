@@ -9,15 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $JOBSTATUS = $_POST['JOBSTATUS'];
     $companyName = $_POST['companyName'];
     $category = $_POST['category'];
-    $workExperience = $_POST["workExperience"];
+    $WORK_EXPERIENCE = $_POST["WORK_EXPERIENCE"];
+    $KEYWORD= $_POST["KEYWORD"];
     $employmentDuration = $_POST["employmentDuration"];
     $jobDescription = $_POST["jobDescription"];
     $qualifications = $_POST["qualifications"];
 
 
     // SQL query to insert data into the database (without password hashing)
-    $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`JOBSTATUS`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`, `JOBDESCRIPTION`, `QUALIFICATION`) 
-                    VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$JOBSTATUS','$companyName','$category','$workExperience','$employmentDuration','$jobDescription', '$qualifications')";
+    $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`JOBSTATUS`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `KEYWORD`, `DURATION_EMPLOYMENT`, `JOBDESCRIPTION`, `QUALIFICATION`) 
+                    VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$JOBSTATUS','$companyName','$category','$WORK_EXPERIENCE', '$KEYWORD', '$employmentDuration','$jobDescription', '$qualifications')";
 
     // Execute the query
     $result = mysqli_query($conn, $insertQuery);
