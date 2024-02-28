@@ -83,9 +83,7 @@ include '../config.php';
                                 
                                     <td>
                                         <div class='d-flex'>
-                                            <form method='POST' action='applicantDetails.php'>
-                                                <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                <button type='submit' class='btn btn-outline-success me-3' name='see_details'>See Details</button>
+                                        
                                             </form>
                                             <form method='POST' action='delete.php'>
                                                 <input type='hidden' name='user_id' value='" . $row['id'] . "'>
