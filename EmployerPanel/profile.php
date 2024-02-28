@@ -12,8 +12,7 @@ $sql = "SELECT * FROM `registration` WHERE `username` = '$username'";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-
+    $row = $result->fetch_assoc();
 } else {
     die("User data not found in the database");
 }
@@ -57,16 +56,11 @@ if ($result && $result->num_rows > 0) {
                 <h2 class="container d-flex justify-content-center mb-5">Profile</h2>
             </div>
 
-            <!-- <div class="d-flex flex-row flex-nowrap">
-                <?php include 'sidebar.php' ?>
-            </div> -->
-
             <div class="form-group">
                 <label for="title">Company Name</label>
                 <input type="text" placeholder="Enter Your Company Name" class="form-control" id="title" name="company"
                     value="<?php echo $row['firstname']; ?>" readonly>
             </div>
-
 
             <div class="d-flex gap-5 mt-4">
                 <div class="">
@@ -128,31 +122,21 @@ if ($result && $result->num_rows > 0) {
                 </div>
             </div>
 
-
             <div class="mt-4 form-floating">
                 <textarea class="form-control" placeholder="Company Background" id="about" style="height: 100px"
                     name="about"><?php echo $row['about']; ?></textarea>
                 <label for="companyBackground">Company Background</label>
             </div>
 
-
             <div class="mt-4 form-floating">
                 <textarea class="form-control" placeholder="Service" id="service" style="height: 100px"
                     name="service"><?php echo $row['service']; ?></textarea>
-                <label for="service">Serivce</label>
+                <label for="service">Service</label>
             </div>
 
             <button type="submit" class="btn btn-primary mt-4 mb-4">Save & Changes</button>
 
-            <div class="d-flex gap-5 mt-4">
-
-
-                <div class="">
-                    <label for="">Company Logo</label>
-                    <input type="file" class="form-control" name="profilePicture">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-4 mb-4">Save & Changes</button>
+           
 
         </form>
     </div>

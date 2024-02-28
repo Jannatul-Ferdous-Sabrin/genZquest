@@ -31,6 +31,7 @@ $clientcollapse = 1;
             color: #fff;
         }
 
+        
         /* Edit Form */
         .editForm {
             position: absolute;

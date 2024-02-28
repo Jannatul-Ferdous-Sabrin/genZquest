@@ -8,12 +8,15 @@ include '../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Vacancy Add</title>
+    <title>Job Post</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
         .sidebar span {
             color: #fff;
+        }
+        body {
+            background: linear-gradient(90deg, wheat, #8282e7);
         }
 
         .container {
@@ -25,7 +28,6 @@ include '../config.php';
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border-radius: 40px;
         }
-        
 
         .post-job-heading {
             color: #6b0c6b;
@@ -62,9 +64,9 @@ include '../config.php';
                         </div>
 
                         <div class="">
-                            <label for="JOBSTATUS">Job Status</label>
-                            <input type="text" class="form-control" id="JOBSTATUS" name="JOBSTATUS"
-                                placeholder="Job Status" required>
+                            <label for="SALARY">Salary</label>
+                            <input type="number" class="form-control" id="SALARIES" name="SALARIES"
+                                placeholder="SALARY" required>
                         </div>
                     </div>
 
@@ -113,12 +115,22 @@ include '../config.php';
                                 placeholder="work Experience" required>
                         </div>
 
+
+
                         <div class="">
                             <label for="employmentDuration">Duration of Employment</label>
                             <input type="text" class="form-control" id="employmentDuration" name="employmentDuration"
                                 placeholder="Duration Employment" required>
                         </div>
                     </div>
+
+
+                    
+                    <div class="gap-5 mt-4">
+                    <label for="KEYWORD"><p>Requirement: </p></label>
+                    <input type="text" class="form-control" id="KEYWORD" name="KEYWORD" placeholder="Requirement"required>
+                </div>
+
 
                     <div class="mt-4 form-floating">
                         <textarea class="form-control" placeholder="Job Description" id="jobDescription"

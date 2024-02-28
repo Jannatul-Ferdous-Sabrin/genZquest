@@ -22,6 +22,7 @@ $row = mysqli_fetch_array($jobQuery);
             color: #fff;
         }
         
+        
     </style>
 </head>
 

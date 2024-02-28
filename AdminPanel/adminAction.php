@@ -182,18 +182,19 @@ if(isset($_POST['addJob'])) {
     // Get form data
     $jobTitle = $_POST['jobTitle'];
     $REQ_NO_EMPLOYEES = $_POST['REQ_NO_EMPLOYEES'];
-    $JOBSTATUS = $_POST['JOBSTATUS'];
+    $SALARIES = $_POST['SALARIES'];
     $companyName = $_POST['companyName'];
     $category = $_POST['category'];
     $workExperience = $_POST["workExperience"];
     $employmentDuration = $_POST["employmentDuration"];
+    $KEYWORD = $_POST["KEYWORD"];
     $jobDescription = $_POST["jobDescription"];
     $qualifications = $_POST["qualifications"];
 
 
     // SQL query to insert data into the database (without password hashing)
-    $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`JOBSTATUS`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`, `JOBDESCRIPTION`, `QUALIFICATION`) 
-                    VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$JOBSTATUS','$companyName','$category','$workExperience','$employmentDuration','$jobDescription', '$qualifications')";
+    $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`SALARIES`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`,`KEYWORD`, `JOBDESCRIPTION`, `QUALIFICATION`) 
+                    VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$SALARIES','$companyName','$category','$workExperience','$employmentDuration','$KEYWORD','$jobDescription', '$qualifications')";
 
     // Execute the query
     $result = mysqli_query($conn, $insertQuery);

@@ -28,6 +28,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         .sidebar span {
             color: #fff;
         }
+        
     </style>
 </head>
 
