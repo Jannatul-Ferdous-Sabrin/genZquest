@@ -69,6 +69,7 @@ include '../config.php';
                                                         <img src='" . $row['profile'] . "' alt='logo' style='width: 45px; height: 45px' class='rounded-circle'/>
                                                     </div>
                                                 </td>
+                                                
                                                 <td>" . $row['applicants'] . "</td>
                                                 <td>
                                                 <span class='badge bg-primary'>" . $row['contact'] . "</span>

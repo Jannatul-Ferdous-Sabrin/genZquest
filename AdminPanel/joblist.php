@@ -50,9 +50,10 @@ include '../config.php';
                         <table class="table table-striped" id="datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width: 15%;">JOBID</th>
-                                    <th scope="col" style="width: 20%;">CATEGORY</th>
-                                    <th scope="col" style="width: 20%;">JOBTITLE</th>
+                                    <th scope="col" style="width: 10%;">JOBID</th>
+                                    <th scope="col" style="width: 15%;">CATEGORY</th>
+                                    <th scope="col" style="width: 15%;">JOBTITLE</th>
+                                    <th scope="col" style="width: 20%;">JOB POSTED DATE</th>
                                     <th scope="col" style="width: 15%;">JOB STATUS</th>
                                     <th scope="col" style="width: 15%;">DETAILS</th>
                                 </tr>
@@ -60,7 +61,6 @@ include '../config.php';
                             <tbody>
 
                                 <?php
-
                                 $unregistered = mysqli_query($conn, "SELECT * FROM `job`");
                                 while ($row = mysqli_fetch_array($unregistered)) {
                                     echo
@@ -68,10 +68,18 @@ include '../config.php';
                                         <th scope='row'>" . $row['JOBID'] . "</th>
                                         <td>" . $row['CATEGORY'] . "</td>
                                         <td>" . $row['JOBTITLE'] . "</td>
+                                        <td><span class='badge bg-secondary'>" . $row['DATEPOSTED'] . "</span></td>
+
+                                        
+
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Closed" : "Active") . "</span></td>
-                                        <td>                                            
+                                        <td>
+                                        
+                                        
                                             <div class='d-flex'>
                                                 <a href='edit-job.php?id=" . $row['JOBID'] . "'><button class='btn btn-outline-primary me-3'><i class='fa-solid fa-pen-to-square'></i></button></a>
+
+                                                
                                                 <button type='button' class='btn btn-outline-danger' onclick='openDelete(" . $row['JOBID'] . ")' data-bs-toggle='modal' data-bs-target='#exampleModal'>
                                                     Delete
                                                 </button>
@@ -99,8 +107,8 @@ include '../config.php';
                             Are You Sure You Want To Delete?
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" onclick="deleteID()">Yes</button>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-success" onclick="deleteID()">Yes</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                         </div>
                     </div>
                 </div>

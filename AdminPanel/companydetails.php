@@ -17,7 +17,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company</title>
 
-      <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -30,6 +30,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         }
     </style>
 </head>
+
 <body>
     <div class="d-flex flex-nowrap">
         <?php include 'sidebar.php' ?>
@@ -37,11 +38,11 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         <!-- Form -->
         <div class="" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
-            <div style="flex: 1;">
+            <div style="flex: 1;">         
                 <div class="d-flex row justify-content-center container-fluid">
-                    <div class=" border-secondary col-lg-10 col-md-12 col-sm-12 rounded m-4">
-                        <h4 class="mb-4">List of companies</h4>
-                       
+                    <div class=" border-secondary col-lg-10 col-md-10 col-sm-10 rounded m-4">
+                        <h4 class="mb-4">List of Companies</h4>
+
                         <table class="table table-striped" id="datatable">
                             <thead class="bg-light">
                                 <tr>
@@ -59,7 +60,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <img src="<?php echo $row['COMPANYLOGO'] ?>" alt="logo"
-                                                    style="width: 45px; height: 45px" class="rounded-circle"/>
+                                                    style="width: 45px; height: 45px" class="rounded-circle" />
                                                 <div class="ms-3">
                                                     <p class="fw-bold mb-1">
                                                         <?php echo $row['COMPANYNAME']; ?>
@@ -88,7 +89,6 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                                                 <?php echo ($row['COMPANYSTATUS'] == 0 ? "Unauthorized" : "Authorized"); ?>
                                             </span>
                                         </td>
-
                                     </tr>
                                     <?php
                                 }
@@ -108,7 +108,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
         <script>
-            
+
             // DataTable Initialization
             $(document).ready(function () {
                 $('#datatable').DataTable();

@@ -41,168 +41,197 @@ $row = mysqli_fetch_array($jobQuery);
                             <?php echo $row['DATEPOSTED']; ?>
                         </span>
                     </div>
-                    
+
                     <!-- Form Div -->
                     <div class="border border-secondary-subtle shadow-lg rounded mx-5">
+
+                        <!-- Job Id -->
                         <div class="d-flex mt-4">
                             <div class="col-lg-3 ms-5">
                                 <p>JOB ID</p>
                             </div>
-
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
-
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="jobid"
                                     value="<?php echo $row['JOBID']; ?>">
                             </div>
                         </div>
 
+
+                        <!-- Company Id -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>COMPANYID</p>
                             </div>
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="companyid"
                                     value="<?php echo $row['COMPANYID']; ?>">
                             </div>
                         </div>
 
+                        <!-- Company Name -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>COMPANYNAME</p>
                             </div>
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="companyname"
                                     value="<?php echo $row['COMPANYNAME']; ?>">
                             </div>
                         </div>
 
-
+                        <!-- Category -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>CATEGORY</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="category"
                                     value="<?php echo $row['CATEGORY']; ?>">
                             </div>
                         </div>
 
+
+                        <!-- Job Title -->
                         <div class="d-flex">
-                            <div class="col-lg-3 ms-5"><p>JOBTITLE</p></div>
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <div class="col-lg-3 ms-5">
+                                <p>JOBTITLE</p>
+                            </div>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="jobTitle"
                                     value="<?php echo $row['JOBTITLE']; ?>">
                             </div>
                         </div>
 
+                        <!-- REQ_NO_EMPLOYEES -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>REQ_NO_EMPLOYEES</p>
                             </div>
-
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="employee"
                                     value="<?php echo $row['REQ_NO_EMPLOYEES']; ?>">
                             </div>
                         </div>
 
+
+                        <!-- Salaries -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>SALARIES</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="salaries"
                                     value="<?php echo $row['SALARIES']; ?>">
                             </div>
                         </div>
 
+                
+
+                        <!-- DURATION_EMPLOYMENT -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>DURATION_EMPLOYMENT</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="duration"
                                     value="<?php echo $row['DURATION_EMPLOYMENT']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- WORK_EXPERIENCE -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>WORK_EXPERIENCE</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="exp"
                                     value="<?php echo $row['WORK_EXPERIENCE']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- Job Description -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>JOBDESCRIPTION</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="jobdes"
                                     value="<?php echo $row['JOBDESCRIPTION']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- Preferedsex -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>PREFEREDSEX</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="gender"
                                     value="<?php echo $row['PREFEREDSEX']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- Vacancy -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>SECTOR_VACANCY</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5">
                                 <input type="text" class="form-control" name="sector"
                                     value="<?php echo $row['SECTOR_VACANCY']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- Job Status -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>JOBSTATUS</p>
                             </div>
 
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="col-lg-4 ms-5 mb-3">
                                 <input type="text" class="form-control" name="jobstatus"
                                     value="<?php echo $row['JOBSTATUS']; ?>">
                             </div>
                         </div>
 
+
+                        
+                        <!-- Verified Status -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
                                 <p>Verified STATUS</p>
                             </div>
-
-                            <i class="fa-solid fa-arrow-right mt-2"></i>
+                            <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="d-flex ms-4 mt-1">
                                 <div class="form-check">
                                     <input type="radio" name="status" value="1" <?php echo ($row['status'] == 1 ? "checked" : "") ?>>Approved
@@ -221,10 +250,8 @@ $row = mysqli_fetch_array($jobQuery);
         </div>
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
