@@ -43,8 +43,16 @@
                     <li class="nav-item">
                         <a class="nav-link active me-2" href="../contact.php">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+    <a class="nav-link active me-2" href="applicants.php">
+        <i class="fa-solid fa-circle-check text-success me-1"></i>
+        Confirm Applicants
+    </a>
+</li>
+
                 </ul>
             </div>
+            
 
             <div class="d-flex">
                 <div>
@@ -53,10 +61,10 @@
                 <div class="flex-shrink-0 dropdown position-static">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../Images/person2.svg" alt="profile" width="32" height="32" class="rounded-circle">
+                        <img src="https://avatars.githubusercontent.com/u/69327775?v=4" alt="profile" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small shadow dropdown-menu-end ">
-                        <li><a class="dropdown-item" href="employerhome.php">My Profile</a></li>
+                        <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
                         <hr class="dropdown-divider">
                         <li><a class="dropdown-item" href="../logout.php">Sign out</a></li>
                     </ul>
