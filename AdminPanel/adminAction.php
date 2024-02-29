@@ -119,7 +119,7 @@ if (isset($_POST['userEdit'])) {
 
         echo mysqli_error($conn);
     }
-} 
+}
 
 
 
@@ -131,7 +131,7 @@ if (isset($_POST['uploadBtn'])) {
 
     $imageLocation = $_FILES['profilePic']['tmp_name'];
     $imageName = $_FILES['profilePic']['name'];
-    $imageDestination = "../profilePicture/" .$imageName;
+    $imageDestination = "../profilePicture/" . $imageName;
     move_uploaded_file($imageLocation, $imageDestination);
 
     $pictureUpload = mysqli_query($conn, "UPDATE `registration` SET `profilePicture`='$imageDestination' WHERE username='admin'");
@@ -141,12 +141,10 @@ if (isset($_POST['uploadBtn'])) {
 
 
 
-
-
 //applicants information fetch 
 
 if (isset($_POST['addapplicants'])) {
-  
+
 
     $applicants = $_POST['applicants'];
     $contact = $_POST['contact'];
@@ -156,30 +154,20 @@ if (isset($_POST['addapplicants'])) {
     $comments = $_POST['comments'];
     $profile = $_POST['profile'];
     $status = $_POST['status'];
-  
+
 
     $update = mysqli_query($conn, "UPDATE `applicants` SET `applicants`='$applicants',`contact`='$contact',`jobtitle`='$jobtitle',`companyname`='$companyname',
         `applieddate`='$applieddate',`comments`='$comments',
         `WORK_EXPERIENCE`='$exp',`JOBSTATUS`='$jobstatus',
         `profile`= '$profile',`status`='$status' WHERE `applicants`='$applicants'");
 
-    if ($update) {
-        echo "<script>alert('Information Updated Successfully!!')</script>";
-        echo "<script>location.href='applicants.php'</script>";
-    } else {
-        echo "<script>alert('Information Updated Failed!!')</script>";
-        echo "<script>location.href='applicants.php'</script>";
-    }
-
 }
 
 
 
-
-
 //job vacancy add
-if(isset($_POST['addJob'])) {
-    // Get form data
+if (isset($_POST['addJob'])) {
+
     $jobTitle = $_POST['jobTitle'];
     $REQ_NO_EMPLOYEES = $_POST['REQ_NO_EMPLOYEES'];
     $SALARIES = $_POST['SALARIES'];
@@ -196,6 +184,8 @@ if(isset($_POST['addJob'])) {
     $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`SALARIES`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`,`KEYWORD`, `JOBDESCRIPTION`, `QUALIFICATION`) 
                     VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$SALARIES','$companyName','$category','$workExperience','$employmentDuration','$KEYWORD','$jobDescription', '$qualifications')";
 
+
+
     // Execute the query
     $result = mysqli_query($conn, $insertQuery);
 
@@ -207,9 +197,7 @@ if(isset($_POST['addJob'])) {
     } else {
         echo "Error: " . mysqli_error($conn);
     }
-}
-
-else {
+} else {
     echo "<script>alert('Not Accessible')</script>";
     echo "<script>location.href='joblist.php'</script>";
 }

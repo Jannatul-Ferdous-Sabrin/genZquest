@@ -78,15 +78,9 @@ background: #8282e7;
 <section id="content">
     <div class="container content">
         <h2 class="text-center py-5 m-auto" style="color:#1E395E;">Hiring Now</h2>
-        <b style="color:white">
-      
-Unlock Your Potential with Work Your Way.</b>
-<br>
-<b style="color:white"> 
-We're here to redefine success, making earning easier, better, and setting a new standard for excellence.
-</b>
+
         <?php
-        // Fetch and display job listings
+       
         while ($row = $result->fetch_assoc()) {
         ?>
         <div class="job-listing">

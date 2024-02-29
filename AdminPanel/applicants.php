@@ -44,7 +44,7 @@ include '../config.php';
             <div style="flex: 1;">
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                        <h4 class="mb-4">Applicants</h4>
+                        <h4 class="mb-4"> Applicants</h4>
 
                         <table class="table table-striped" id="datatable">
                             <thead>
@@ -53,10 +53,10 @@ include '../config.php';
                                     <th scope="col" style="width: 10%;">Applicants</th>
                                     <th scope="col" style="width: 15%;">Mobile</th>
                                     <th scope="col" style="width: 20%;">Job Title</th>
-                                    <th scope="col" style="width: 15%;">Company </th>
+                                    <th scope="col" style="width: 10%;">Company </th>
                                     <th scope="col" style="width: 20%;">Applied Date</th>
-                                    <th scope="col" style="width: 15%;">Comments</th>
-                                    <th scope="col" style="width: 15%;">Application Status</th>
+                                    <th scope="col" style="width: 25%;">Comments</th>
+                                    <th scope="col" style="width: 20%;">Application Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +69,6 @@ include '../config.php';
                                                         <img src='" . $row['profile'] . "' alt='logo' style='width: 45px; height: 45px' class='rounded-circle'/>
                                                     </div>
                                                 </td>
-                                                
                                                 <td>" . $row['applicants'] . "</td>
                                                 <td>
                                                 <span class='badge bg-primary'>" . $row['contact'] . "</span>

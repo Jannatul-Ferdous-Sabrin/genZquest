@@ -44,7 +44,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
                     <div class=" border-secondary col-lg-10 col-md-10 col-sm-10 rounded m-4">
                         <h4 class="mb-4">List of Companies</h4>
 
-                        <table class="table table-striped" id="datatable">
+                        <table class="border table table-striped" id="datatable">
                             <thead class="bg-light">
                                 <tr>
                                     <th>COMPANYLOGO</th>

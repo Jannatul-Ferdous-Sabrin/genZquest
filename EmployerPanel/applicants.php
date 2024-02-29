@@ -30,6 +30,20 @@ include '../config.php';
         .sidebar span {
             color: #fff;
         }
+
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid rgba(255, 2, 0, 0, 0.1);
+            border-radius: 40px;55, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0
+        }
+
+       
+  
     </style>
 </head>
 
@@ -45,17 +59,17 @@ include '../config.php';
                 <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
                     <h4 class="mb-4">Applicants</h4>
 
-                    <table class="table table-striped" id="datatable">
+                    <table class="container table table-striped" id="datatable">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 15%;">Profile</th>
+                                <th  scope="col" style="width: 15%;">Profile</th>
                                 <th scope="col" style="width: 10%;">Applicants</th>
                                 <th scope="col" style="width: 15%;">Mobile</th>
                                 <th scope="col" style="width: 20%;">Job Title</th>
                                 <th scope="col" style="width: 15%;">Company </th>
                                 <th scope="col" style="width: 20%;">Applied Date</th>
                                 <th scope="col" style="width: 15%;">Comments</th>
-                                <th scope="col" style="width: 15%;">Application Status</th>
+                                <th scope="col" style="width: 20%;">Application Status</th>
                                 <th scope="col" style="width: 10%;">Action</th>
                             </tr>
                         </thead>
