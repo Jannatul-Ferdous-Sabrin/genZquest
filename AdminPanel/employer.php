@@ -41,6 +41,7 @@ $clientcollapse = 1;
             transition: all 0.3s;
             z-index: 100;
         }
+
         .openForm {
             visibility: visible;
             transform: scale(1);
@@ -67,10 +68,10 @@ $clientcollapse = 1;
         <div style="width: 100%;">
             <?php include 'adminheader.php'; ?>
             <div class="d-flex row justify-content-center container-fluid">
-                <div class=" border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                    <h4 class="mb-4">List of Employers</h4>
-                    
-                    <table class="table table-striped" id="datatable">
+                <div class="order-secondary col-lg-10 col-md-10 col-sm-10 rounded m-4">
+                    <h4 class="mb-4 fw-bold">List of Employers</h4>
+
+                    <table class="border table table-striped" id="datatable">
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">ID</th>
@@ -85,13 +86,14 @@ $clientcollapse = 1;
                             <?php
 
                             $employerList = mysqli_query($conn, "SELECT * FROM `registration` WHERE `preference`='employer'");
-                            while ($row = mysqli_fetch_array($employerList)) 
-                            {
+                            while ($row = mysqli_fetch_array($employerList)) {
                                 echo
                                     "<tr>
                                             <th scope='row'>" . $row['id'] . "</th>
                                             <td>" . $row['username'] . "</td>
-                                            <td>" . $row['email'] . "</td>
+                                            <td>
+                                            <span class='badge bg-primary'>" . $row['email'] . "</span>
+                                            </td>
                                             <td>" . $row['mobile'] . "</td>
                                             <td><span class='badge text-bg-" . ($row['verify_status'] == 0 ? "danger" : "success") . "'>" . ($row['verify_status'] == 0 ? "No" : "Yes") . "</span></td>
 
@@ -100,7 +102,7 @@ $clientcollapse = 1;
                                                 <div class='d-flex'>
                                                    
                                                     <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='button' class='btn btn-outline-success me-3'
+                                                    <button type='button' class='btn btn-outline-primary me-3'
                                                     onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
                                                     
                                                     <button type='button' class='btn btn-outline-danger' onclick='openDelete(" . $row['id'] . ")' data-bs-toggle='modal' data-bs-target='#exampleModal'>
@@ -147,46 +149,46 @@ $clientcollapse = 1;
                 <!-- Form Div -->
                 <div class="border border-secondary-subtle shadow-lg rounded">
                     <div class="d-flex justify-content-between">
-                        
+
                         <div>
 
                         </div>
                         <div>
                             <div class="d-flex justify-content-center">
-                            <img src="" alt="profile" width="80" height="80" id="profilePic"
-                                    class="mt-2 rounded-circle">
+                                <img src="" alt="profile" width="90" height="90" id="profilePic"
+                                    class="mt-4 rounded-circle">
                             </div>
                         </div>
                         <div>
-                            <a onclick="closeForm()"><i class="pe-auto fa-solid fa-xmark m-3"></i></a>
+                            <a onclick="closeForm()"><i class="fa-solid fa-square-xmark m-3"></i></a>
                         </div>
                     </div>
-       
+
                     <div class="d-flex gap-3 mt-4">
                         <div class="ms-5">
                             <p class="m-0 p-0">Id</p>
-                            <input type="text" class="form-control" id="employerID" name="id" 
-                            value="<?php echo $row['id']; ?>">
+                            <input type="text" class="form-control" id="employerID" name="id"
+                                value="<?php echo $row['id']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Verify Status</p>
-                            <input type="text" class="form-control" id="employerstatus" name="verify" 
-                            value="<?php echo $row['verify_status']; ?>">
+                            <input type="text" class="form-control" id="employerstatus" name="verify"
+                                value="<?php echo $row['verify_status']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4">
                         <div class=" ms-5">
                             <p class="m-0 p-0">First Name</p>
-                            <input type="text" class="form-control" id="employerfirstname" name="fname" 
-                            value="<?php echo $row['firstname']; ?>">
+                            <input type="text" class="form-control" id="employerfirstname" name="fname"
+                                value="<?php echo $row['firstname']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Last Name</p>
-                            <input type="text" class="form-control" id="employerlastname" name="lname" 
-                            value="<?php echo $row['lastname']; ?>">
+                            <input type="text" class="form-control" id="employerlastname" name="lname"
+                                value="<?php echo $row['lastname']; ?>">
                         </div>
                     </div>
 
@@ -194,21 +196,21 @@ $clientcollapse = 1;
                         <div class=" ms-5">
                             <p class="m-0 p-0">Username</p>
                             <input type="text" class="form-control" id="employerusername" name="username"
-                            value="<?php echo $row['username']; ?>">
+                                value="<?php echo $row['username']; ?>">
                         </div>
 
                         <div class=" ms-5">
                             <p class="m-0 p-0">Mobile</p>
                             <input type="text" class="form-control" id="employermobile" name="mob"
-                            value="<?php echo $row['mobile']; ?>">
+                                value="<?php echo $row['mobile']; ?>">
                         </div>
                     </div>
 
                     <div class="d-flex gap-3 mt-4 ">
-                        <div class="col-8 ms-5">
+                        <div class=" ms-5">
                             <p class="m-0 p-0">Email</p>
                             <input type="text" class="form-control" id="employeremail" name="email"
-                            value="<?php echo $row['email']; ?>">
+                                value="<?php echo $row['email']; ?>">
                         </div>
                     </div>
 
@@ -261,6 +263,9 @@ $clientcollapse = 1;
                 }
             });
 
+
+
+            //openForm Function
             let editForm = document.getElementById("editForm");
             let blur = document.getElementById("blur");
 
@@ -268,6 +273,7 @@ $clientcollapse = 1;
             editForm.classList.add("openForm");
         }
 
+        //closeForm Function
         function closeForm() {
             let editForm = document.getElementById("editForm");
             let blur = document.getElementById("blur");
@@ -276,12 +282,13 @@ $clientcollapse = 1;
             editForm.classList.remove("openForm");
         }
 
+
+        //deletion of user
         var deleterow;
         function openDelete(row) {
             deleterow = row;
             $("#id").text(row);
         }
-
         function deleteID() {
             window.location.href = "adminAction.php?deleteuserid=" + deleterow;
         }

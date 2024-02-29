@@ -55,8 +55,6 @@ $clientcollapse = 1;
             display: none;
             backdrop-filter: blur(10px);
         }
-       
-        
     </style>
 </head>
 
@@ -104,7 +102,7 @@ $clientcollapse = 1;
                                         <td>
                                             <div class='d-flex'>
                                                 <input type='hidden' name='user_id' value='" . $row['id'] . "'>
-                                                    <button type='button' class='btn btn-outline-success me-3' onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
+                                                    <button type='button' class='btn btn-outline-primary me-3' onclick='openForm(" . $row['id'] . ")' name='edit'>Edit</button>
 
                                                     <button type='button' class='btn btn-outline-danger' onclick='openDelete(" . $row['id'] . ")' data-bs-toggle='modal' data-bs-target='#exampleModal'>
                                                         Delete
@@ -219,6 +217,8 @@ $clientcollapse = 1;
             </form>
         </div>
     </div>
+
+
     <!-- Bootstrap JS and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -261,6 +261,7 @@ $clientcollapse = 1;
                 }
             });
 
+            //openForm Function
             let editForm = document.getElementById("editForm");
             let blur = document.getElementById("blur");
 
@@ -268,6 +269,8 @@ $clientcollapse = 1;
             editForm.classList.add("openForm");
         }
 
+
+        //closeForm Function
         function closeForm() {
             let editForm = document.getElementById("editForm");
             let blur = document.getElementById("blur");
@@ -276,6 +279,8 @@ $clientcollapse = 1;
             editForm.classList.remove("openForm");
         }
 
+
+        //deletion of user
         var deleterow;
         function openDelete(row) {
             deleterow = row;
@@ -283,7 +288,7 @@ $clientcollapse = 1;
         }
 
         function deleteID() {
-            window.location.href = "adminAction.php?deleteuserid=" + deleterow;
+            window.location.href = "adminAction.php?deleteuserid=" + deleterow;       //query parameter
         }
     </script>
 </body>
