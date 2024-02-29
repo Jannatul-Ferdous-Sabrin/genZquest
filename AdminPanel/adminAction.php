@@ -73,10 +73,6 @@ if (isset($_GET['deleteJobid'])) {
 }
 
 
-
-
-
-
 //Delete row of Employees
 if (isset($_GET['deleteuserid'])) {
     $id = $_GET['deleteuserid'];
@@ -91,8 +87,6 @@ if (isset($_GET['deleteuserid'])) {
         echo "<script>location.href='employee.php'</script>";
     }
 }
-
-
 
 
 
@@ -122,9 +116,6 @@ if (isset($_POST['userEdit'])) {
 }
 
 
-
-
-
 // Update Admin Profile Picture
 if (isset($_POST['uploadBtn'])) {
     $photo = $_FILES['profilePic'];
@@ -140,11 +131,9 @@ if (isset($_POST['uploadBtn'])) {
 
 
 
-
 //applicants information fetch 
 
 if (isset($_POST['addapplicants'])) {
-
 
     $applicants = $_POST['applicants'];
     $contact = $_POST['contact'];
@@ -160,8 +149,8 @@ if (isset($_POST['addapplicants'])) {
         `applieddate`='$applieddate',`comments`='$comments',
         `WORK_EXPERIENCE`='$exp',`JOBSTATUS`='$jobstatus',
         `profile`= '$profile',`status`='$status' WHERE `applicants`='$applicants'");
-
 }
+
 
 
 
