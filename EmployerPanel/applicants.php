@@ -37,9 +37,9 @@ include '../config.php';
             margin: 0 auto;
             padding: 30px;
             border: 1px solid rgba(255, 2, 0, 0, 0.1);
-            border-radius: 40px;55, 255, 0.3);
+            border-radius: 40px, rgba(055, 255, 0.3);
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 30px rgba(0
+            box-shadow: 0 4px 30px ;
         }
 
        
@@ -57,9 +57,9 @@ include '../config.php';
         <div style="flex: 1;">
             <div class="d-flex row justify-content-center container-fluid">
                 <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                    <h4 class="mb-4">Applicants</h4>
+                    <h4 class="mb-4 fw-bold" style="color: #3498db;">Applicant Details</h4>
 
-                    <table class="container table table-striped" id="datatable">
+                    <table class="border container table table-striped" id="datatable">
                         <thead>
                             <tr>
                                 <th  scope="col" style="width: 15%;">Profile</th>
