@@ -37,7 +37,6 @@ if (isset($_POST['editJob'])) {
 
 
 
-
 // Delete row of applicants
 if (isset($_GET['deleteApplicant'])) {
     $id = $_GET['deleteApplicant'];
@@ -52,6 +51,7 @@ if (isset($_GET['deleteApplicant'])) {
         echo "<script>location.href='applicants.php'</script>";
     }
 }
+
 
 
 

@@ -49,6 +49,7 @@ include '../config.php';
                         <table class="table table-striped" id="datatable">
                             <thead>
                                 <tr>
+                                    <th scope="col" style="width: 15%;">ID</th>
                                     <th scope="col" style="width: 15%;">Profile</th>
                                     <th scope="col" style="width: 10%;">Applicants</th>
                                     <th scope="col" style="width: 15%;">Mobile</th>
@@ -57,6 +58,7 @@ include '../config.php';
                                     <th scope="col" style="width: 20%;">Applied Date</th>
                                     <th scope="col" style="width: 25%;">Comments</th>
                                     <th scope="col" style="width: 20%;">Application Status</th>
+                                    <th scope="col" style="width: 20%;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,6 +66,7 @@ include '../config.php';
                                 $applicants = mysqli_query($conn, "SELECT * FROM `applicants`");
                                 while ($row = mysqli_fetch_array($applicants)) {
                                     echo "<tr>
+                                    <td scope='row'>" . $row['id'] . "</td>
                                                 <td>
                                                     <div class='d-flex align-items-center'>
                                                         <img src='" . $row['profile'] . "' alt='logo' style='width: 45px; height: 45px' class='rounded-circle'/>
@@ -80,7 +83,21 @@ include '../config.php';
                                                 <td>" . $row['applieddate'] . "</td>
                                                 <td>" . $row['comments'] . "</td>
                                                 <td><span class='badge text-bg-" . ($row['status'] == 0 ? "warning" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
-                                            </tr>";
+
+
+                                                <td>
+                                                <div class='d-flex'>
+                                           <form method='POST' action='delete.php'>
+                                               <input type='hidden' name='user_id' value='" . $row['id'] . "'>
+                                               <button type='button' class='btn btn-outline-danger' onclick='openDelete(" . $row['id'] . ")' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+                                                   Delete
+                                               </button>
+                                               </form>
+                                           </div>
+                                       </td>
+                                   </tr>";
+
+
                                 }
                                 ?>
                             </tbody>
@@ -88,6 +105,30 @@ include '../config.php';
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- Delete Form -->
+            <div class="modal fade" id="exampleModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Confirmation</h1>
+                            <span id="id"></span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are You Sure You Want To Delete?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" onclick="deleteID()">Yes</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <!-- Bootstrap JS and DataTables JS -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -97,10 +138,22 @@ include '../config.php';
             <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
             <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
             <script>
-                // DataTable
+                // DataTable initialization
                 $(document).ready(function () {
                     $('#datatable').DataTable();
                 });
+
+                var deleterow;
+
+                function openDelete(row) {
+                    deleterow = row;
+                    console.log("1");
+                    $("#id").text(row);
+                }
+
+                function deleteID() {
+                    window.location.href = "adminAction.php?deleteApplicant=" + deleterow;
+                }
             </script>
         </div>
     </div>

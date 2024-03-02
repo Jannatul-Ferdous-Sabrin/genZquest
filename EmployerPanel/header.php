@@ -44,11 +44,15 @@
                         <a class="nav-link active me-2" href="../contact.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link active me-2" href="applicants.php">
-        <i class="fa-solid fa-circle-check text-success me-1"></i>
-        Confirm Applicants
-    </a>
-</li>
+                        <a class="nav-link active me-2" href="applicants.php">
+                            <i class="fa-solid fa-circle-check text-success me-1"></i>
+                            Confirm Applicants
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active me-2" href="post-job.php">Post New Job</a>
+                    </li>
 
                 </ul>
             </div>
