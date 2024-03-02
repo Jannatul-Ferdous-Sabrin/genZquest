@@ -216,7 +216,7 @@ $row = mysqli_fetch_array($jobQuery);
                         <!-- Job Status -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
-                                <p>JOBSTATUS</p>
+                                <p>JOBTYPE</p>
                             </div>
 
                             <i class="fa-solid fa-caret-right mt-2"></i>
@@ -231,15 +231,15 @@ $row = mysqli_fetch_array($jobQuery);
                         <!-- Verified Status -->
                         <div class="d-flex">
                             <div class="col-lg-3 ms-5">
-                                <p>Verified STATUS</p>
+                                <p>STATUS</p>
                             </div>
                             <i class="fa-solid fa-caret-right mt-2"></i>
                             <div class="d-flex ms-4 mt-1">
                                 <div class="form-check">
-                                    <input type="radio" name="status" value="1" <?php echo ($row['status'] == 1 ? "checked" : "") ?>>Approved
+                                    <input type="radio" name="status" value="1" <?php echo ($row['status'] == 1 ? "checked" : "") ?>>Active
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" name="status" value="0" <?php echo ($row['status'] == 0 ? "checked" : "") ?>>Not Approved
+                                    <input type="radio" name="status" value="0" <?php echo ($row['status'] == 0 ? "checked" : "") ?>>Closed
                                 </div>
                             </div>
                         </div>

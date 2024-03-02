@@ -42,7 +42,7 @@ $companyDetails = mysqli_query($conn, "SELECT * FROM `company`");
             <div style="flex: 1;">         
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class=" border-secondary col-lg-10 col-md-10 col-sm-10 rounded m-4">
-                        <h4 class="mb-4">List of Companies</h4>
+                        <h4 class="mb-4 fw-bold">List of Companies</h4>
 
                         <table class="border table table-striped" id="datatable">
                             <thead class="bg-light">

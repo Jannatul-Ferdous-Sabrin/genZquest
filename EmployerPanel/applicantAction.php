@@ -28,3 +28,20 @@ if (isset($_POST['addapplicants'])) {
     }
 
 }
+
+
+// Delete row of applicants
+if (isset($_GET['deleteApplicant'])) {
+    $id = $_GET['deleteApplicant'];
+
+    $deleteQuery = mysqli_query($conn, "DELETE FROM applicants WHERE id='$id'");
+
+    if ($deleteQuery) {
+        echo "<script>alert('Information Deleted Successfully!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    } else {
+        echo "<script>alert('Deletion Failed!!')</script>";
+        echo "<script>location.href='applicants.php'</script>";
+    }
+}
+

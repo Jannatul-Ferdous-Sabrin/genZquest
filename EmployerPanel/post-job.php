@@ -105,9 +105,9 @@
                 </div>
 
                 <div class="">
-                    <label for="employmentDuration">Duration of Employment</label>
-                    <input type="text" class="form-control" id="employmentDuration" name="employmentDuration"
-                        placeholder="Duration Employment" required>
+                    <label for="SALARIES">Salaries</label>
+                    <input type="int" class="form-control" id="SALARIES" name="SALARIES"
+                        placeholder="SALARIES" required>
                 </div>
             </div>
 

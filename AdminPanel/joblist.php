@@ -15,7 +15,9 @@ include '../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joblist</title>
+    <title>Job Vacancy</title>
+
+     <!--Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Fontawesome Icons -->
@@ -37,17 +39,17 @@ include '../config.php';
 
         <!-- Form -->
 
-        <div class="" style="width: 100%;">
+        <div class="header" style="width: 100%;">
             <?php include 'adminheader.php'; ?>
 
 
             <div style="flex: 1;">
                 <div class="d-flex row justify-content-center container-fluid">
                     <div class="border-secondary col-lg-12 col-md-12 col-sm-12 rounded m-4">
-                        <h4 class="mb-4">List of Vacancies <a href="job-add.php" class="btn btn-primary"> <i
-                                    class="fa fa-plus-circle fw-fa"></i> Add Job Vacancy</a></h4>
-                      
-                        <table class="table table-striped" id="datatable">
+                        <h4 class="mb-4 fw-bold">List of Vacancies <a href="job-add.php" class="btn btn-primary">
+                                <i class="fa fa-plus-circle fw-fa"></i> Add Job Vacancy</a></h4>
+
+                        <table class="border table table-striped" id="datatable">
                             <thead>
                                 <tr>
                                     <th scope="col" style="width: 10%;">JOBID</th>
