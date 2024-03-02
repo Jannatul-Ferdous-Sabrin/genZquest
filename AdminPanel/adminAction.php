@@ -173,8 +173,6 @@ if (isset($_POST['addJob'])) {
     $insertQuery = "INSERT INTO `job`(`JOBTITLE`,`REQ_NO_EMPLOYEES`,`SALARIES`,`COMPANYNAME`, `CATEGORY`, `WORK_EXPERIENCE`, `DURATION_EMPLOYMENT`,`KEYWORD`, `JOBDESCRIPTION`, `QUALIFICATION`) 
                     VALUES ('$jobTitle','$REQ_NO_EMPLOYEES','$SALARIES','$companyName','$category','$workExperience','$employmentDuration','$KEYWORD','$jobDescription', '$qualifications')";
 
-
-
     // Execute the query
     $result = mysqli_query($conn, $insertQuery);
 

@@ -172,7 +172,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE 
         </div>
     </div>
 
-<!--Jquery-->
+    <!--Jquery-->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
     <!--Bootstrap JS Bundle-->
@@ -180,7 +180,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM registration WHERE 
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 
-        <!--Custom Script-->
+    <!--Custom Script-->
     <script>
         $(document).ready(function () {
             $('#upload').on('change', function () {

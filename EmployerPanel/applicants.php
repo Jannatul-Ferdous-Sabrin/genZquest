@@ -37,11 +37,8 @@ include '../config.php';
             border: 1px solid rgba(255, 2, 0, 0, 0.1);
             border-radius: 40px, rgba(055, 255, 0.3);
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 30px ;
+            box-shadow: 0 4px 30px;
         }
-
-       
-  
     </style>
 </head>
 
@@ -60,8 +57,8 @@ include '../config.php';
                     <table class="border container table table-striped" id="datatable">
                         <thead>
                             <tr>
-                            <th  scope="col" style="width: 15%;">ID</th>
-                                <th  scope="col" style="width: 15%;">Profile</th>
+                                <th scope="col" style="width: 15%;">ID</th>
+                                <th scope="col" style="width: 15%;">Profile</th>
                                 <th scope="col" style="width: 10%;">Applicants</th>
                                 <th scope="col" style="width: 15%;">Mobile</th>
                                 <th scope="col" style="width: 20%;">Job Title</th>
@@ -86,13 +83,9 @@ include '../config.php';
                                         </div>
                                     </td>
                                     <td>" . $row['applicants'] . "</td>
-                                    <td>
-                                        <span class='badge bg-primary'>" . $row['contact'] . "</span>
-                                    </td>
+                                    <td>" . $row['contact'] . "</td>
                                     <td>" . $row['jobtitle'] . "</td>
-                                    <td>
-                                        <span class='badge bg-info'>" . $row['companyname'] . "</span>
-                                    </td>
+                                    <td>" . $row['companyname'] . "</td>
                                     <td>" . $row['applieddate'] . "</td>
                                     <td>" . $row['comments'] . "</td>
                                     <td><span class='badge text-bg-" . ($row['status'] == 0 ? "warning" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
@@ -117,8 +110,8 @@ include '../config.php';
         </div>
 
 
-  <!-- Delete Form -->
-  <div class="modal fade" id="exampleModal">
+        <!-- Delete Form -->
+        <div class="modal fade" id="exampleModal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -146,24 +139,24 @@ include '../config.php';
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
         <script>
-     
-                 // DataTable initialization
-        $(document).ready(function () {
-            $('#datatable').DataTable();
-        });
 
-        var deleterow;
+            // DataTable initialization
+            $(document).ready(function () {
+                $('#datatable').DataTable();
+            });
 
-        function openDelete(row) {
-            deleterow = row;
-            console.log("1");
-            $("#id").text(row);
-        }
+            var deleterow;
 
-        function deleteID() {
-            window.location.href = "applicantAction.php?deleteApplicant=" + deleterow;
-        }
-    </script>
+            function openDelete(row) {
+                deleterow = row;
+                console.log("1");
+                $("#id").text(row);
+            }
+
+            function deleteID() {
+                window.location.href = "applicantAction.php?deleteApplicant=" + deleterow;
+            }
+        </script>
     </div>
 </body>
 

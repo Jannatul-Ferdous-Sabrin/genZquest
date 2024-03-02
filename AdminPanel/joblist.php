@@ -72,7 +72,6 @@ include '../config.php';
                                         <td>" . $row['JOBTITLE'] . "</td>
                                         <td><span class='badge bg-secondary'>" . $row['DATEPOSTED'] . "</span></td>
 
-                                        
 
                                         <td><span class='badge text-bg-" . ($row['status'] == 0 ? "danger" : "success") . "'>" . ($row['status'] == 0 ? " Closed" : "Active") . "</span></td>
                                         <td>
@@ -134,7 +133,6 @@ include '../config.php';
             var deleterow;
             function openDelete(row) {
                 deleterow = row;
-                console.log("1");
                 $("#id").text(row);
             }
 

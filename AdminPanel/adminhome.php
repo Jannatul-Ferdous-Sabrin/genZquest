@@ -93,7 +93,7 @@ $applicants = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM applican
                     </div>
                 </div>
 
-                <div class="card col-lg-3 me-5 mt-4">
+                <div class="card col-lg-3 me-5 mt-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-success" style="width: 1rem;">
                         </div>
@@ -108,7 +108,7 @@ $applicants = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM applican
                     </div>
                 </div>
 
-                <div class="card col-lg-3 me-5 mt-4">
+                <div class="card col-lg-3 me-5 mt-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-info" style="width: 1rem;">
                         </div>
@@ -124,7 +124,7 @@ $applicants = mysqli_num_rows(mysqli_query($conn, "SELECT `status` FROM applican
                 </div>
 
 
-                <div class="card col-lg-3 me-5 mt-4">
+                <div class="card col-lg-3 me-5 mt-5">
                     <div class="row g-0">
                         <div class="rounded-start text-bg-primary" style="width: 1rem;">
                         </div>
