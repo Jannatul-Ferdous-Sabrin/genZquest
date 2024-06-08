@@ -133,16 +133,15 @@ if (!isset($_SESSION['username'])) {
 
                 <?php
 
-                // Retrieve preferences for user
                 $sql = "SELECT username, miscell FROM registration";
                 $result = $conn->query($sql);
 
                 if (!$result) {
-                    // Check for query error
+                    
                     echo "Error in SQL query: " . $conn->error;
                 } else {
                     if ($result->num_rows > 0) {
-                        echo '<div class="container">'; // Start a container for rows
+                        echo '<div class="container">'; 
 
                         while ($row = $result->fetch_assoc()) {
                             $username = $row['username'];
@@ -154,7 +153,7 @@ if (!isset($_SESSION['username'])) {
                                 $preference_sql .= "FIND_IN_SET('$miscell', KEYWORD) OR ";
                             }
                             $preference_sql = rtrim($preference_sql, " OR "); // Remove the last 'OR'
-                            $preference_sql .= " ORDER BY DATEPOSTED DESC LIMIT 4"; // Order by date and limit to 4
+                            $preference_sql .= " ORDER BY DATEPOSTED DESC LIMIT 4"; 
 
                             $preference_result = $conn->query($preference_sql);
 
@@ -165,7 +164,7 @@ if (!isset($_SESSION['username'])) {
                                 $jobCount = 0;
                                 $displayedJobs = array(); // To keep track of displayed job IDs
 
-                                echo '<div class="row">'; // Start a new row
+                                echo '<div class="row">';
 
                                 // Display preference jobs
                                 while ($preference_row = $preference_result->fetch_assoc()) {
@@ -200,11 +199,11 @@ if (!isset($_SESSION['username'])) {
                                     }
                                 }
 
-                                echo '</div>'; // Close the row
+                                echo '</div>'; 
                             }
                         }
-
-                        echo '</div>'; // Close the container
++
+                        echo '</div>';
                     } else {
                         echo "No users found with miscell";
                     }
@@ -217,7 +216,7 @@ if (!isset($_SESSION['username'])) {
                     <div class="col-md-6">
                         <div class="attachment-block clearfix">
                             <?php
-                            // Check if the job has an image (replace 'IMAGEURL' with your actual column name)
+                          
                             if (!empty($job_row['IMAGEURL'])) {
                                 ?>
                                 <img class="attachment-img" src="<?php echo $job_row['IMAGEURL']; ?>"
@@ -225,7 +224,7 @@ if (!isset($_SESSION['username'])) {
                                 <?php
                             } else {
                                 ?>
-                                <!-- Placeholder image if no image is available -->
+                               
                                 <img class="attachment-img" src="Images/logo.webp" alt="Placeholder Image"
                                      style="width: 150px; height: 80px;">
                                 <?php
@@ -252,7 +251,6 @@ if (!isset($_SESSION['username'])) {
                     <?php
                 }
 
-                // Close the database connection
                 $conn->close();
                 ?>
 

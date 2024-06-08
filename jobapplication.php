@@ -1,22 +1,20 @@
 <?php
-require_once('config.php'); // Include the database configuration
+require_once('config.php'); 
 
-// Define the base URL of your website
-define('web_root', 'http://localhost/genzquest/'); // Change this to your actual base URL
+define('web_root', 'http://localhost/genzquest/'); 
 
 // Check if a job ID is provided in the URL
 if (isset($_GET['search'])) {
     $jobid = $_GET['search'];
 
-    // SQL query to retrieve job details based on the JOBID
+    
     $sql = "SELECT * FROM `job` WHERE JOBID = " . $jobid;
 
-    // Execute the query
+
     $result = $conn->query($sql);
 
-    // Check if the query was successful
     if ($result) {
-        // Fetch and display job details
+
         while ($row = $result->fetch_assoc()) {
             ?>
             <!DOCTYPE html>
@@ -42,8 +40,8 @@ if (isset($_GET['search'])) {
     
     .job-details-container {
   
-  width: 50%; /* Adjust the width as needed */
-  float:  right; /* Position on the left side */
+  width: 50%; 
+  float:  right; 
   margin: 0 auto;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -54,7 +52,7 @@ if (isset($_GET['search'])) {
 }
 
 .form-container {
-          width: 45%; /* Adjust the width as needed */
+          width: 45%; 
           box-sizing: border-box;
           float: left; 
           
@@ -76,7 +74,6 @@ if (isset($_GET['search'])) {
                         <h2><?php echo $row['JOBTITLE']; ?></h2>
                         <p>Date Posted: <?php echo date_format(date_create($row['DATEPOSTED']), 'M d, Y'); ?></p>
 
-                        <!-- Display other job details here -->
                         <ul>
                             <li>Required No. of Employees: <?php echo $row['REQ_NO_EMPLOYEES']; ?></li>
                             <li>Salary: <?php echo number_format($row['SALARIES'], 2); ?></li>
@@ -109,14 +106,14 @@ if (isset($_GET['search'])) {
         }
         $result->free_result();
     } else {
-        // Handle query error
+        
         echo "Error: " . $conn->error;
     }
 } else {
     echo "Job ID is not specified.";
-    // Handle the case where no Job ID is specified.
+   
 }
 
-// Close the database connection
+
 $conn->close();
 ?>

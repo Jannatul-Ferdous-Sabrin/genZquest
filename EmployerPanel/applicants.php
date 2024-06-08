@@ -65,8 +65,9 @@ include '../config.php';
                                 <th scope="col" style="width: 15%;">Company </th>
                                 <th scope="col" style="width: 20%;">Applied Date</th>
                                 <th scope="col" style="width: 15%;">Comments</th>
-                                <th scope="col" style="width: 20%;">Application Status</th>
                                 <th scope="col" style="width: 10%;">Action</th>
+                                <th scope="col" style="width: 20%;">Application Status</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -88,8 +89,7 @@ include '../config.php';
                                     <td>" . $row['companyname'] . "</td>
                                     <td>" . $row['applieddate'] . "</td>
                                     <td>" . $row['comments'] . "</td>
-                                    <td><span class='badge text-bg-" . ($row['status'] == 0 ? "warning" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
-                                
+                                   
                                     <td>
                                              <div class='d-flex'>
                                         <form method='POST' action='delete.php'>
@@ -100,6 +100,8 @@ include '../config.php';
                                             </form>
                                         </div>
                                     </td>
+                                    <td><span class='badge text-bg-" . ($row['status'] == 0 ? "warning" : "success") . "'>" . ($row['status'] == 0 ? "Pending" : "Approved") . "</span></td>
+                                
                                 </tr>";
                             }
                             ?>
@@ -144,12 +146,12 @@ include '../config.php';
             $(document).ready(function () {
                 $('#datatable').DataTable();
             });
-
+;-[]\\
             var deleterow;
 
             function openDelete(row) {
                 deleterow = row;
-                console.log("1");
+                console.log("5");
                 $("#id").text(row);
             }
 

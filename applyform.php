@@ -74,9 +74,8 @@
     <script>
         function validateContactNumber() {
             var contactNumber = document.getElementById('contact').value;
-            console.log('Entered Contact Number:', contactNumber); // Log the entered phone number
-
-            // Regular expression to match Bangladesh phone number format
+            console.log('Entered Contact Number:', contactNumber); 
+           
             var bdPhoneNumberRegex = /^(\+88)?01[3-9]\d{8}$/;
 
             if (!bdPhoneNumberRegex.test(contactNumber)) {

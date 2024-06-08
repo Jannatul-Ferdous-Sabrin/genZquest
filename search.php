@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <title>Job Details</title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
                         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-                    <!-- Add your additional CSS and styles here -->
+                   
                     <link href="CSS/style.css" rel="stylesheet">
                     <style>
                         .apply-button {
@@ -63,8 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             padding: 20px;
                             margin: 10px;
                             width: 100%;
-                            /* Adjust the width as needed */
-
+                           
                             box-sizing: border-box;
                         }
                     </style>
@@ -89,7 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php echo date_format(date_create($row['DATEPOSTED']), 'M d, Y'); ?>
                         </p>
 
-                        <!-- Display other job details here -->
                         <ul>
                             <li>Required No. of Employees:
                                 <?php echo $row['REQ_NO_EMPLOYEES']; ?>

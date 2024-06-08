@@ -1,19 +1,17 @@
 <?php
-require_once('config.php'); // Include the database configuration
+require_once('config.php'); 
 
-// Define the base URL of your website
-define('web_root', 'http://localhost/genzquest/'); // Change this to your actual base URL
 
+define('web_root', 'http://localhost/genzquest/'); 
 // Initialize the category variable
 $category = isset($_GET['search']) ? $_GET['search'] : '';
 
-// SQL query to retrieve job listings based on the category
+
 $sql = "SELECT * FROM `job` j WHERE j.`CATEGORY` = '" . $category . "' ORDER BY j.`DATEPOSTED` DESC";
 
-// Execute the query
 $result = $conn->query($sql);
 
-// Check if the query was successful
+
 if ($result) {
 ?>
 
@@ -100,7 +98,7 @@ background: #8282e7;
             <p> DURATION EMPLOYMENT: <?php echo $row['DURATION_EMPLOYMENT']; ?></p>
            
 
-            <!-- Add the link to view job details with JOBID included in the URL -->
+           
             <a href="http://localhost/genzquest/jobapplication.php?search=<?php echo $row['JOBID']; ?>" class="btn btn-main btn-next-tab apply-button">Apply Now</a>
 
 
@@ -114,16 +112,15 @@ background: #8282e7;
     </div>
 </section>
 
-<!-- Add your HTML footer content here -->
 
 </body>
 </html>
 
 <?php
-// Free the result set
+
 $result->free_result();
 } else {
-// Handle query error
+
 echo "Error: " . $conn->error;
 }
 

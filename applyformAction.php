@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $degree = $_FILES["degree"]["name"];
     $country = $_POST["country"];
 
-    // Validate and process the form data
 
     // Uploads files
     $filename = $_FILES['degree']['name'];
@@ -29,17 +28,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($file_size > 1000000) { // File shouldn't be larger than 1 Megabyte
         echo "File size too large!";
     } else {
-        // Move the uploaded (temporary) file to the specified destination
+        
         if (move_uploaded_file($temp_file, $destination)) {
-            // SQL query to insert data into the applicant table
+            
             $sql = "INSERT INTO applicants (fname, lname, DOB, contact,  email, degree, country, applicants, jobtitle, companyname) 
                     VALUES ('$fname', '$lname', '$dob', '$contact',  '$email', '$filename', '$country','$applicants','$jobtitle','$companyname')";
 
-            // Execute the query
+           
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
-                  // Redirect to submission confirmation page
+                 
         header("Location: submissionconfirm.php");
         exit();
             } else {
@@ -50,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Close the database connection
     mysqli_close($conn);
 }
 ?>

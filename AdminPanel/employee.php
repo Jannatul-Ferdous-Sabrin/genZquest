@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-$clientcollapse = 1;
+$clientcollapse = 1;            //control initial visibility 
 ?>
 
 <!DOCTYPE html>
